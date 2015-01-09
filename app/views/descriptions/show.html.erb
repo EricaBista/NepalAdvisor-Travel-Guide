@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @description.Title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @description.Content %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @description.Order %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @description.item_id %>
+</p>
+
+<%= link_to 'Edit', edit_description_path(@description) %> |
+<%= link_to 'Back', descriptions_path %>

@@ -1,0 +1,40 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+<%= f.label :category_id, class: 'field-label' %>
+<div class="field">
+<%= collection_select( :item, :category_id, Category.all, :id, :Name, {}, { :multiple => false } ) %>
+</div>
+</div>
+
+  <div class="field">
+    <%= f.label :Name %><br>
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_area :Description %>
+  </div>
+  <div class="field">
+    <%= f.label :Order %><br>
+    <%= f.number_field :Order %>
+  </div>
+  <!-- <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div> -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
