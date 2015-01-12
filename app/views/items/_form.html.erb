@@ -30,10 +30,42 @@
     <%= f.label :Order %><br>
     <%= f.number_field :Order %>
   </div>
-  <!-- <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
-  </div> -->
+
+<p>
+<h4>Description Table</h4>
+</p>
+<%= fields_for @description do |fa| %>
+      <%=fa.label :Title %>
+      <%=fa.text_field :Title %>
+
+      <%=fa.label :Content %>
+      <%=fa.text_field :Content %>
+
+      <%=fa.label :Order %>
+      <%=fa.text_field :Order %>
+
+    
+<% end -%>
+
+<br />
+
+<p>
+<h4>Image Table</h4>
+</p>
+<%= fields_for @image, :html => {:multiple => true} do |fb| %>
+      <%=fb.label :Title %>
+      <%=fb.text_field :Title %>
+
+      <%=fb.label :Content %>
+      <%=fb.text_field :Content %>
+
+      <%=fb.label :Order %>
+      <%=fb.text_field :Order %>
+     
+      <%=fb.file_field :image %>
+      <% end -%>
+
+  
   <div class="actions">
     <%= f.submit %>
   </div>
