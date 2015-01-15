@@ -38,29 +38,11 @@
       <%= render partial:'description',object:@description %>
     </ul>
      <%= link_to "Add Another Description", "#add", :id => "add-another" %>
-     <br/>
 
-<!-- <p>
+     <br />
 
-</p> -->
-<%#= fields_for @description do |fa| %>
-      <%#=fa.label :Title %>
-      <%#=fa.text_field :Title %>
-
-      <%#=fa.label :Content %>
-      <%#=fa.text_field :Content %>
-
-      <%#=fa.label :Order %>
-      <%#=fa.text_field :Order %>
-    
-<% #end -%>
-
-<br />
-
-<p>
-<h4>Image Table</h4>
-</p>
-<%= fields_for @image, :html => {:multiple => true} do |fb| %>
+   <h4>Image Table</h4>
+    <%= fields_for @image, :html => {:multiple => true} do |fb| %>
       <%=fb.label :Title %>
       <%=fb.text_field :Title %>
 
@@ -70,13 +52,14 @@
       <%=fb.label :Order %>
       <%=fb.text_field :Order %>
     <br />
-      <%= fb.file_field :image %>
+    
       <p>
         <strong>Image:</strong>
-        <%= image_tag @image.image %>
+        <input type='file' id="imgInp" />
+        <img id="blah" src="#" />
+        <%#= image_tag @image.image %>
       </p>
 
- 
       <% end -%>
   
   <div class="actions">

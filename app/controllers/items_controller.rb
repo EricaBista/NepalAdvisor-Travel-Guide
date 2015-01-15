@@ -51,6 +51,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+
     respond_to do |format|
       
       if @image.update(image_params)
@@ -74,7 +75,7 @@ class ItemsController < ApplicationController
   def destroy
 
     @item.destroy
-    respond_to do |format|
+     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -98,7 +99,7 @@ class ItemsController < ApplicationController
     end
 
     def description_params
-      params.require(:description).permit(:Title, :Content, :Order)
+      params.require(:description).permit(:Title, :Content, :Order, {:description_attributes => []})
 
       params.require(:description).permit({:description_attributes => []})
    
