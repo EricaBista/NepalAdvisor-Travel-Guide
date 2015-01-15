@@ -31,6 +31,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     
+     params[:description].each_value { |desc| @item.descriptions.build(desc) }
+
   @description = @item.descriptions.build(description_params)
   @image = @item.images.build(image_params)
 
@@ -97,5 +99,8 @@ class ItemsController < ApplicationController
 
     def description_params
       params.require(:description).permit(:Title, :Content, :Order)
+
+      params.require(:description).permit({:description_attributes => []})
+   
     end
 end

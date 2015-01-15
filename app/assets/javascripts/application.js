@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function() {
+  $('a#add-another').click(function() {
+    $('#description-list li:first').clone().find('input').val('')
+    .end().appendTo('#description-list');
+  });
+
+  $(document).on("click", '.delete-description', function() {
+    if ($('#description-list li').length > 1)
+  		$(this).parent().remove();
+    else
+  		alert('You need at least one description.')
+  });
+});

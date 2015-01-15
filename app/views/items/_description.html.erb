@@ -1,0 +1,11 @@
+<%= fields_for "description[description_attributes][]", description do |i| %>
+  <li>
+    <%= link_to("Remove", "#delete", :class => "delete-description") %>
+    <%= i.label :Title, "Title" %>
+    <%= i.text_field :Title %>
+    <%= i.label :Content, "Content" %>
+    <%= i.text_field :Content %>
+    <%= i.label :Order, "Order" %>
+    <%= i.text_field :Order %>
+  </li>
+<% end %>
