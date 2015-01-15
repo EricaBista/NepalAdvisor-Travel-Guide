@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for(@item,:html => {:enctype => 'multipart/form-data'}) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -43,7 +43,6 @@
 
       <%=fa.label :Order %>
       <%=fa.text_field :Order %>
-
     
 <% end -%>
 
@@ -61,8 +60,13 @@
 
       <%=fb.label :Order %>
       <%=fb.text_field :Order %>
-     
-      <%=fb.file_field :image %>
+    
+      <%= fb.file_field :image %>
+      <p>
+        <strong>Image:</strong>
+        <%= image_tag @image.image %>
+      </p>
+
       <% end -%>
 
   

@@ -20,5 +20,44 @@
   <%= @item.category.Name %>
 </p>
 
+<!-- from description table -->
+<h5>.................description................. </h5>
+<p>
+  <strong>Title:</strong>
+  <%= @description.Title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @description.Content %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @description.Order %>
+</p>
+
+<!-- from image table  -->
+<h5>...................Image.................... </h5>
+<p>
+  <strong>Title:</strong>
+  <%= @description.Title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @description.Content %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @description.Order %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @image.image %>
+</p>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

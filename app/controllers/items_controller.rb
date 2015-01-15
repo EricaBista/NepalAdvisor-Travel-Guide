@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = Item.find(params[:id]) 
   end
 
   # GET /items/new
@@ -17,22 +18,25 @@ class ItemsController < ApplicationController
     @item = Item.new
       @description = Description.new
        @image = Image.new
-  
+
   end
 
   # GET /items/1/edit
   def edit
+   @item = Item.find(params[:id])
   end
 
   # POST /items
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    
   @description = @item.descriptions.build(description_params)
   @image = @item.images.build(image_params)
+
    respond_to do |format|
       if @item.save
-
+      
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
@@ -46,6 +50,13 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
+      
+      if @image.update(image_params)
+        format.html { redirect_to @item, notice: 'Image updated'}
+      else
+        format.html { render :edit}
+      end
+
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
@@ -59,6 +70,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
@@ -70,10 +82,12 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+       @image = Image.find_by item:@item 
+       @description = Description.find_by item:@item 
     end
 
     def image_params
-      params.require(:image).permit(:Title, :Content, :Order, :avatar)
+      params.require(:image).permit(:Title, :Content, :Order, :image)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
