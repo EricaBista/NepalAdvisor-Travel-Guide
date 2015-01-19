@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.find(params[:id]) 
+     # @image = Image.find(params[:id]) 
   end
 
   # GET /items/new
@@ -24,24 +25,24 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
    @item = Item.find(params[:id])
+   @description = Description.find_by(item_id=@item.id)
   end
 
   # POST /items
   # POST /items.json
   def create
     @item = Item.new(item_params)
-    
-     params[:description].each_value { |desc| @item.descriptions.build(desc) }
 
-  @description = @item.descriptions.build(description_params)
-  @image = @item.images.build(image_params)
+    params[:description].each_value { |desc| @item.descriptions.build(desc) }
+       #@description = @item.descriptions.build(description_params)
+       @image = @item.images.build(image_params)
 
-   respond_to do |format|
+    respond_to do |format|
       if @item.save
       
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
-      else
+       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -54,18 +55,24 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       
-      if @image.update(image_params)
-        format.html { redirect_to @item, notice: 'Image updated'}
-      else
-        format.html { render :edit}
-      end
-
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
         format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
+
+      if @image.update(image_params)
+        format.html { redirect_to @item, notice: 'Image updated'}
+      else
+        format.html { render :edit}
+      end
+
+      if @description.update_attributes(description_params)
+        format.html { redirect_to @item, notice: 'description updated'}
+      else
+        format.html { render :edit}
       end
     end
   end
@@ -100,8 +107,6 @@ class ItemsController < ApplicationController
 
     def description_params
       params.require(:description).permit(:Title, :Content, :Order, {:description_attributes => []})
-
-      params.require(:description).permit({:description_attributes => []})
-   
     end
+
 end

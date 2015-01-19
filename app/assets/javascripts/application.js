@@ -27,20 +27,19 @@ $(function() {
   		alert('You need at least one description.')
   });
 
-   $("#imgInp").change(function(){
- 
-        readURL(this);
-    });
+   
  });
 
 
- function readURL(input) {
 
+ function readURL(input) {
+alert(1);
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             
             reader.onload = function (e) {
                 $('#blah').attr('src', e.target.result);
+              
             }
             
             reader.readAsDataURL(input.files[0]);
