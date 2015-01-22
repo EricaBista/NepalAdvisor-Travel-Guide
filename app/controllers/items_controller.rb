@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorize, only: [:edit, :update]
   # GET /items
   # GET /items.json
   def index
@@ -35,7 +35,8 @@ class ItemsController < ApplicationController
 
     params[:description].each_value { |desc| @item.descriptions.build(desc) }
        #@description = @item.descriptions.build(description_params)
-       @image = @item.images.build(image_params)
+       # params[:image].each_value { |img| @item.images.build(img) }
+        @image = @item.images.build(image_params)
 
     respond_to do |format|
       if @item.save
@@ -68,8 +69,8 @@ class ItemsController < ApplicationController
       else
         format.html { render :edit}
       end
-
-      if @description.update_attributes(description_params)
+        
+      if @description.update(description_params)
         format.html { redirect_to @item, notice: 'description updated'}
       else
         format.html { render :edit}
@@ -79,6 +80,7 @@ class ItemsController < ApplicationController
 
   # DELETE /items/1
   # DELETE /items/1.json
+
   def destroy
 
     @item.destroy
@@ -106,7 +108,7 @@ class ItemsController < ApplicationController
     end
 
     def description_params
-      params.require(:description).permit(:Title, :Content, :Order, {:description_attributes => []})
+      params.require(:description).permit({:description_attributes => []})
     end
 
 end

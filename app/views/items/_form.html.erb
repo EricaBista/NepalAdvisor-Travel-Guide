@@ -1,4 +1,4 @@
-<%= form_for(@item,:html => {:enctype => 'multipart/form-data'}) do |f| %>
+ <%= form_for(@item,:html => {:enctype => 'multipart/form-data'}) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -11,13 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-<%= f.label :category_id, class: 'field-label' %>
-<div class="field">
-<%= collection_select( :item, :category_id, Category.all, :id, :Name, {}, { :multiple => false } ) %>
-</div>
-</div>
 
+ <!-- drop down of category in item table -->
+  <div class="field">
+ <%= f.label :category_id, class: 'field-label' %>
+ <div class="field">
+ <%= collection_select( :item, :category_id, Category.all, :id, :Name, {}, { :multiple => false } ) %>
+  </div>
+ </div>
+
+ <!-- item table fields -->
   <div class="field">
     <%= f.label :Name %><br>
     <%= f.text_field :Name %>
@@ -31,47 +34,44 @@
     <%= f.number_field :Order %>
   </div>
 
-
-<h4>Description Table</h4>
+ <!-- description table fields in item table -->
+  <h4>Description Table</h4>
   <ul id="description-list">
       
       <%= render partial:'description',object:@description %>
     </ul>
      <%= link_to "Add Another Description", "#add", :id => "add-another" %>
-
-     <br />
-
-     
-
-   <h4>Image Table</h4>
-    <%= fields_for @image, :html => {:multiple => true} do |fb| %>
-      <%=fb.label :Title %>
-      <%=fb.text_field :Title %>
-
-      <%=fb.label :Content %>
-      <%=fb.text_field :Content %>
-
-      <%=fb.label :Order %>
-      <%=fb.text_field :Order %>
     <br />
 
-     <br />
-      <p>
-        <strong>Image:</strong>
-        <input type='file' id="imgInp" name="image[image]" />
-       
-        <%= image_tag @image.image, :id => 'blah' %>
-      </p>
+     
+ <!-- image table field in item table  -->
+       <h4>Image Table</h4>
+        <%= fields_for @image, :html => {:multiple => true} do |fb| %>
+          <%=fb.label :Title %>
+          <%=fb.text_field :Title %>
 
-      <% end -%>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<script>
-$("#imgInp").change(function(){
- 
-        readURL(this);
-    });
-</script>
+          <%=fb.label :Content %>
+          <%=fb.text_field :Content %>
+
+          <%=fb.label :Order %>
+          <%=fb.text_field :Order %>
+            <br />
+
+            <p>
+              <strong>Image:</strong>
+              <input type='file' id="imgInp" name="image[image]" />
+             
+              <%= image_tag @image.image, :id => 'blah' %>
+            </p>
+        <% end -%>
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+        <% end %>
+
+ <script>
+          $("#imgInp").change(function(){
+           
+                  readURL(this);
+              });
+ </script>
