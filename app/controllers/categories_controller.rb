@@ -3,6 +3,42 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   # GET /categories.json
+    def trekking
+     @category = Category.find(1)
+     @items = Item.where :category_id => @category.id 
+     #puts @category.inspect
+    end
+
+     def tourisum
+      @category = Category.find(2)
+      @items = Item.where :category_id => @category.id 
+     end
+
+     def culture
+     @category = Category.find(3)
+     # @items = Item.where :category_id => @category.id
+     end
+
+     def business
+     @category = Category.find(4)
+     # @items = Item.where :category_id => @category.id
+     end
+
+     def legal
+     @category = Category.find(5)
+     # @items = Item.where :category_id => @category.id
+     end
+
+     def visa
+     @category = Category.find(6)
+     # @items = Item.where :category_id => @category.id
+     end
+     
+     
+  
+     
+     
+
   def index
     @categories = Category.all
   end
@@ -60,6 +96,8 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.

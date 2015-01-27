@@ -30,7 +30,8 @@ gem 'spring',        group: :development
 gem 'carrierwave'
 gem 'rmagick'
 gem 'plupload-rails'
-# gem 'activeadmin'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'

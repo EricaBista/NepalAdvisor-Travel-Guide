@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # get 'password_resets/new'
   # get 'sessions/new'
 
@@ -18,9 +20,18 @@ Rails.application.routes.draw do
 
     get "sign_up" => "users#new", :as => "sign_up"
     post "sessions_create" => "sessions#create"
-    root :to => 'items#index'
+   
     match "log_in" => "items#new", :as => "log_in" , :via => [:get, :post]
     match "logout" => "sessions#destroy", :as => "logout" , :via => [:get, :post]
+    get "trekking" => "categories#trekking"
+    get "tourisum" => "categories#tourisum"
+    get "culture" => "categories#culture"
+    get "business" => "categories#business"
+    get "legal" => "categories#legal"
+    get "visa" => "categories#visa"
+    # get "logo" => "categories#logo"
+    # root :to => 'items#index'
+     root :to => 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,290 @@
+ 
+   <!-- inner banner start from here -->    
+  <div class="banner1">
+    <div class="container">
+    <div class="col col-sm-12"
+    <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2>treaking in Nepal</h2></div>
+    <div class="col-sm-4"></div>
+    </div></div>
+    
+    </div>
+ 
+ 
+ 
+ 
+  <!-- inner banner end here -->      
+ <div class="gap"></div>
+ <!-- main body start from here --> 
+  
+    <div class="container">
+  <div class="row">
+          
+            <div class="col col-sm-9"><!-- content body start from here -->
+              
+         
+          
+              
+              <div class="col-sm-12"> 
+              <div class="row">
+              <img src="assets/bannerads.jpg" class="img-responsive"> 
+              </div> 
+            </div>   
+             
+             
+             
+              <div class="gap"></div>
+              
+             
+             
+             
+             <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitle"> 
+            
+             
+            
+             <%= @category.Description.html_safe %>
+
+             
+          </div>
+          </div><!-- row end -->  
+            </div><!-- col col-sm-12 end --> 
+        
+        
+        
+       <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5>Best place for trekking in Nepal</h5>
+             <div class="border"></div>
+             
+              <div class="row"> <!---------- row start ---------->
+
+                <% @items.each do |i| %>
+                
+                <div class="col-sm-4"><a href="trekkingInner.html"><img class="img-responsive" src=<%= i.images[0].image%> /></a>
+                <div  class="titlePlaceInfo">
+                <span class="mainTitle"><%= i.Name %></span></br>
+                <span class="mainTitleLocation"><%= i.Description %></span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                <% end %>            
+                <!--  <div class="col-sm-4"><a href="trekkingInner.html"><img class="img-responsive" src="assets/trekking/trek1.png"></a>
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Everest Base Camp</span></br>
+                <span class="mainTitleLocation">Khumbu, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>  -->
+                
+                
+               
+                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek2.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Annapurna Base Camp</span></br>
+                <span class="mainTitleLocation">Dhawalagiri, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div> 
+                
+                
+                
+                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek3.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Poon Hill Trek</span></br>
+                <span class="mainTitleLocation">Ghorepani, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div> 
+               
+                
+                </div><!---------- row end --------
+                
+                
+                
+                <div class="row"> <!---------- row start ---------->
+                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek4.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">LANGTANG TREK</span></br>
+                <span class="mainTitleLocation">Langtang, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div> 
+                
+                
+               
+                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek5.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Annapurna Circuit</span></br>
+                <span class="mainTitleLocation">Dhawalagiri, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                
+                
+                <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek6.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Manaslu Base Camp</span></br>
+                <span class="mainTitleLocation">Manaslu, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                
+                </div><!---------- row end ---------->
+                
+                
+                
+                <div class="row"> <!---------- row start ---------->
+                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek7.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Upper Mustang</span></br>
+                <span class="mainTitleLocation">Mustang, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                
+               
+                <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek8.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Upper Dolpo</span></br>
+                <span class="mainTitleLocation">Dolpo, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                
+                
+                <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek9.png">
+                <div class="titlePlaceInfo">
+                <span class="mainTitle">Makalu Base Camp</span></br>
+                <span class="mainTitleLocation">Koshi, Nepal</span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div> 
+               
+               
+               
+               
+                
+               </div><!---------- row end ---------->
+                
+                
+           
+             
+          </div>
+          </div><!------------- row end ------------->    
+            </div><!-- col col-sm-12 end ------------->      
+        
+        
+       
+        </div><!-------------------------------- content body end here --------------------------------> 
+        
+        
+        
+        
+        
+        
+         <div class="col col-sm-3"><!-- rightPanel start from here -->
+         <div class="rightPanel">
+                <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads03.jpg">
+                </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads02.jpg">
+                </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads01.jpg">
+                </div>
+                </div>
+                
+               
+               <div class="quickLinks">Quick Links</div>
+               <hr style="margin-top:8px;">
+               <div class="quickLinksMenu">
+               <p >Talk to us
+               </br>
+         <span><a href="#">- Send feedback or report a problem</a></span>
+         </p>
+         
+               <p>For owners
+               </br>
+               <span><a href="#">- Business Listings for hotel marketing</a></span>
+               </br>
+               <span><a href="#">- Visit your Management Center</a></span>
+               </p>
+
+               <p>Advertise with us
+               </br>
+               <span><a href="#">- Find out about advertising or partnering with us</a></span>
+               </p>
+               </div>
+               <hr>
+               
+               <div class="followUs">Follow Us On</div>
+               <hr style="margin-top:8px;">
+               <div class="followIcon">
+               <a href="#"><img src="assets/facebook-img.png"></a>
+               <a href="#"><img src="assets/twitter-img.png"></a>
+               </div>
+               <hr style="margin-top:8px;">
+         </div><!-- rightPanel end here -->
+        
+        
+        
+        
+        
+       
+                       
+
+
+</div>
+</div>   
+   
+ <!------- main body end here --------->     
+   
+   
+   
+   
+   
+   
+   
+   
+   <!-- footer start from here -->
+   <div class="container">
+   <div class="row">
+      
+        <div class="col col-sm-12">
+      <div class="footer">
+        
+   
+      <div class="col col-sm-7 footerNav">
+        <ul>
+      <li><a href="#">About Us</a></li>
+        <li><a href="#">Site Map</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        
+       
+        <p>&copy; 2015 nepaladviser. All rights reserved.</p>
+
+        
+      </div>
+   
+   
+  
+      <div class="col col-sm-5 policyNote">
+        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
+    nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
+        
+        </div>
+        
+        </div>
+      </div>    
+   
+   
+   </div>
+   </div>
+
+

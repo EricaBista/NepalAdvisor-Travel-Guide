@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NepalAdvisor</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<body>
+	<div class="headerNav"><!-- headerNav start from here -->
+ 		
+        <nav class="navbar navbar-inverse navbar-fixed-top"> <!--- nav start from here -->
+      			<div class="container">
+        		<div class="navbar-header">
+        		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+         		</button>
+         		<a class="navbar-brand logo"  href="index.html">
+                <img class="img-responsive" src="assets/logo.png"/></a>
+        		</div>
+        
+        		<div id="navbar" class="collapse navbar-collapse">
+          			<ul class="nav navbar-nav navbar-right">
+            		<li><a href="#">Login</a></li>
+            		<li><a href="#">Join Us</a></li>
+         			</ul>
+        		</div><!--/.nav-collapse -->
+      			</div>
+    	</nav><!--- nav end here -->
+  
+  
+  
+  		<div class="container"> <!-- container start from here -->
+        <div class="row">
+        <h3><u>Why are you interested to visit Nepal?</u></h3>
+  		</div>
+         </div><!-- container end here -->
+ 		
+        
+        <div class="divider"></div>
+        
+        
+        <div class="container">
+        <div class="row">
+        <div class="col col-sm-12 navIcon">
+        <div class="col col-sm-2 navIconButton">
+        <%#= @category.each do |c| %>
+        <%#= c.Name %>
+        <% #end %>
+
+        <%= link_to image_tag("trek-icon.png"), trekking_path %> 
+        
+        <h5>TREKKING</h5>
+        </div>
+        <div class="col col-sm-2 navIconButton">
+        <%= link_to image_tag("tour-icon.png"), tourisum_path %> 
+       <!--  <a href="tourisum.html">
+        <img src="assets/tour-icon.png"/></a> -->
+        <h5>TOURISUM</h5>
+        </div>
+        <div class="col col-sm-2 navIconButton">
+        <%= link_to image_tag("culture-icon.png"), culture_path %> 
+        <!-- <a href="culture.html">
+        <img src="assets/culture-icon.png"/></a> -->
+        <h5>CULTURE</h5>
+        </div>
+        <div class="col col-sm-2 navIconButton">
+        <%= link_to image_tag("business-icon.png"), business_path %>
+        <!-- <a href="business.html">
+        <img src="assets/business-icon.png"/></a> -->
+        <h5>BUSINESS</h5>
+        </div>
+        <div class="col col-sm-2 navIconButton">
+        <%= link_to image_tag("law-icon.png"), legal_path %>
+        <!-- <a href="legal.html">
+        <img src="assets/law-icon.png"/></a> -->
+        <h5>LEGAL</h5>
+        </div>
+        <div class="col col-sm-2 navIconButton">
+        <%= link_to image_tag("visa-icon.png"), visa_path %>
+        <!-- <a href="visa.html">
+        <img src="assets/visa-icon.png"/></a> -->
+        <h5>VISA</h5>
+        </div>
+        </div>
+       </div>
+       </div>
+        
+        
+        <div class="divider"></div>
+        
+        
+        <div class="container"><!-- container start from here -->
+        <h3>Search what would you like know about</h3>
+        
+        <div class="row"><!-- row start from here -->
+       
+        <div class="col-lg-2"></div>
+        <div class=" col-lg-8 well"> 
+                 <form class="form">
+                 <div class="input-group text-center">
+                 <input type="text" class="form-control input-lg" title="" placeholder="Search what would you like to know about Nepal..." style="height:60px;">
+                 <span class="input-group-btn"><button class="btn btn-lg btn-success" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button></span>
+                 </div>
+                 </form>
+        </div><!--/well-->
+                 
+        <div class="col-lg-2"></div>       
+        
+        </div><!-- row end here -->
+        </div><!-- container end here -->  
+        
+	</div><!-- headerNav end here -->
+
+
+	<div class="gap"></div>
+    
+ 
+ 
+ 
+ 
+ <!-- main body start from here -->	
+	
+    <div class="container">
+	<div class="row">
+  			  
+      		  <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
+              
+         
+          
+              <div class="row">
+              <div class="col col-sm-12"> 
+              <img src="assets/bannerads.jpg" class="img-responsive"> 
+              </div> 
+        	  </div>   
+             
+             
+             
+              <div class="gap"></div>
+              
+              
+              
+              
+              
+              <div class="row">
+              <div class="col col-sm-12">
+              <h5>Most popular places in Nepal</h5>
+              
+              <ul id="myTab" class="nav nav-tabs">
+   			<li class="active"><a href="#home" data-toggle="tab">Restaurants</a></li>
+   			<li><a href="#ios" data-toggle="tab">Things To Do</a></li>
+   			</ul>
+              
+              <div id="myTabContent" class="tab-content"><!-- all tab start from here -->
+   			
+            <div class="tab-pane fade in active" id="home"><!-- tab 1 start from here -->
+            <div class="row">
+     		<div class="col col-sm-4 placeInfo">
+            1. Cafe des Arts
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            2.    Rosemary Kitchen & Coffee Shop
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            3.    Revolution Cafe
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
+            </div>
+            </div>
+            
+            
+            <div class="row">
+     		<div class="col col-sm-4 placeInfo">
+            4. Frens Kitchen Restaurant
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            5.  The Old House
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            6.    Zibro - Resto & Bar
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
+            </div>
+            </div>
+            
+            
+            <div class="row">
+     		<div class="col col-sm-4 placeInfo">
+            7. De' Vedas Cafe & Bar
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            8.    Places Restaurant & Bar
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            9.    Gaia Restaurant & Coffee Shop
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
+            </div>
+            </div>
+            
+            <hr>
+            <div class="viewAll"><a href="#">+ view all restaurants</a></div>
+            </div><!--- tab 1 end here -->
+   			
+           
+           
+           
+            <div class="tab-pane fade" id="ios"><!-- tab 2 start from here-->
+            <div class="row">
+     		<div class="col col-sm-4 placeInfo">
+            1. De' Vedas Cafe & Bar
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            2.    Places Restaurant & Bar
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            3.    Gaia Restaurant & Coffee Shop
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
+            </div>
+            </div>
+            
+            
+            <div class="row">
+     		<div class="col col-sm-4 placeInfo">
+            4. Cafe des Arts
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            5.    Rosemary Kitchen & Coffee Shop
+            </br>
+         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
+            </div>
+            
+            <div class="col col-sm-4 placeInfo">
+            6.    Revolution Cafe
+            </br>
+         	<img src="assets/rate-icon.png" />
+          <span>20 Reviews</span>
+            </div>
+            </div>
+            
+            
+            <hr>
+            <div class="viewAll"><a href="#">+ view all things to do</a></div>
+            </div><!--- tab 2 end here -->
+   
+   
+			</div><!-- all tab end here -->
+
+              </div>
+              </div>
+                
+           
+           	 <div class="gap"></div>
+             
+             
+             
+             <div class="row"> 
+             <div class="col col-sm-12">
+             <h5>Hotels in popular destinations:</h5>
+             <div class="border"></div>
+             <div class="hotelsPlace">
+           	 <h6>Kathmandu, Lalitpur & Bhaktapur</h6>
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Kauai Hotels</li>
+            <li>Key Largo Hotels</li>
+            <li>Key West Hotels</li>
+            <li>Kissimmee Hotels</li>
+            <li>Laguna Beach Hotels</li>
+            <li>La Jolla Hotels</li>
+            <li>Las Vegas Hotels</li>
+			</ul>
+            </div>
+            </div>
+            
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Baltimore Hotels</li>
+			<li>Boston Hotels</li>
+			<li>Branson Hotels</li>
+			<li>Brooklyn Hotels</li>
+			<li>Charleston Hotels</li>
+			<li>Chicago Hotels</li>
+			<li>Clearwater Hotels</li>
+            </ul>
+            </div>
+            </div>
+            
+            
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Daytona Beach Hotels</li>
+			<li>Denver Hotels</li>
+            <li>Baltimore Hotels</li>
+            <li>Boston Hotels</li>
+            <li>Branson Hotels</li>
+            <li>Brooklyn Hotels</li>
+            <li>Charleston Hotels</li>
+			</ul>
+            </div>
+            </div>
+            
+            
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Daytona Beach Hotels</li>
+            <li>Denver Hotels</li>
+            <li>Destin Hotels</li>
+            <li>Fort Lauderdale Hotels</li>
+			</ul>
+            </div>
+            </div>
+        
+        
+        	</div>
+        
+        
+        	</div>
+            </div>  
+            
+            
+            <div class="gap"></div>
+            
+            
+            
+            
+            <div class="row"><!-- row start --> 
+            <div class="col col-sm-12"> <!-- col col-sm-12 start --> 
+           
+            <div class="hotelsPlace">
+           	<h6>Pokhara</h6>
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Kauai Hotels</li>
+            <li>Key Largo Hotels</li>
+            <li>Key West Hotels</li>
+            <li>Kissimmee Hotels</li>
+            <li>Laguna Beach Hotels</li>
+            </ul>
+            </div>
+            </div>
+            
+            
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Baltimore Hotels</li>
+			<li>Boston Hotels</li>
+			<li>Branson Hotels</li>
+			<li>Brooklyn Hotels</li>
+			<li>Charleston Hotels</li>
+			</ul>
+            </div>
+            </div>
+            
+            
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+            <li>Daytona Beach Hotels</li>
+			<li>Denver Hotels</li>
+            <li>Baltimore Hotels</li>
+            <li>Boston Hotels</li>
+            <li>Branson Hotels</li>
+            </ul>
+            </div>
+            </div>
+            
+            
+            
+            <div class="col col-sm-3 hotelsInfo">
+            <div class="row">
+            <ul>
+           	<li>Daytona Beach Hotels</li>
+            <li>Denver Hotels</li>
+            <li>Destin Hotels</li>
+            <li>Fort Lauderdale Hotels</li>
+			</ul>
+            </div>
+            </div>
+        
+        
+        
+        	</div>
+        
+        
+        	</div><!-- col col-sm-12 end --> 
+            </div><!-- row end -->  
+        
+        
+        
+        
+        
+        
+       
+      	</div><!-- content body end here --> 
+        
+        
+ 
+
+        
+        
+        
+         <div class="col col-sm-3"><!-- rightPanel start from here -->
+         <div class="rightPanel">
+                <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads03.jpg">
+                </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads02.jpg">
+                </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads01.jpg">
+                </div>
+                </div>
+                
+               
+               <div class="quickLinks">Quick Links</div>
+               <hr style="margin-top:8px;">
+               <div class="quickLinksMenu">
+               <p >Talk to us
+               </br>
+			   <span><a href="#">- Send feedback or report a problem</a></span>
+			   </p>
+			   
+               <p>For owners
+               </br>
+               <span><a href="#">- Business Listings for hotel marketing</a></span>
+               </br>
+               <span><a href="#">- Visit your Management Center</a></span>
+               </p>
+
+               <p>Advertise with us
+               </br>
+               <span><a href="#">- Find out about advertising or partnering with us</a></span>
+               </p>
+               </div>
+               <hr>
+               
+               <div class="followUs">Follow Us On</div>
+               <hr style="margin-top:8px;">
+               <div class="followIcon">
+               <a href="#"><img src="assets/facebook-img.png"></a>
+               <a href="#"><img src="assets/twitter-img.png"></a>
+               </div>
+               <hr style="margin-top:8px;">
+         </div><!-- rightPanel end here -->
+        
+        
+        
+        
+        
+       
+                       
+
+
+</div>
+</div>   
+   
+ <!-- main body end here -->	   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <!-- footer start from here -->
+   <div class="container">
+   <div class="row">
+   		
+        <div class="col col-sm-12">
+   		<div class="footer">
+        
+   
+   		<div class="col col-sm-7 footerNav">
+        <ul>
+   		<li><a href="#">About Us</a></li>
+        <li><a href="#">Site Map</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        
+       
+        <p>&copy; 2015 nepaladviser. All rights reserved.</p>
+
+        
+   		</div>
+   
+   
+  
+   		<div class="col col-sm-5 policyNote">
+        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
+		nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
+        
+        </div>
+        
+        </div>
+   		</div>		
+   
+   
+   </div>
+   </div>
+      <!-- footer start from here -->	
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/ie10-viewport-bug-workaround.js"></script>
+    
+    
+    <!-- script for tab start here-->
+    <script>
+   	$(function(){
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      // Get the name of active tab
+      var activeTab = $(e.target).text(); 
+      // Get the name of previous tab
+      var previousTab = $(e.relatedTarget).text(); 
+      $(".active-tab span").html(activeTab);
+      $(".previous-tab span").html(previousTab);
+   	  });
+	});
+	</script>
+	<!-- script for tab end here -->    
+  
+  
+  </body>
+<%= yield %>
+
+</body>
+</html>
