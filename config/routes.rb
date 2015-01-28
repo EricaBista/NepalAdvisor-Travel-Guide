@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get "sign_up" => "users#new", :as => "sign_up"
     post "sessions_create" => "sessions#create"
    
-    match "log_in" => "items#new", :as => "log_in" , :via => [:get, :post]
+    match "log_in" => "sessions#new", :as => "log_in" , :via => [:get, :post]
     match "logout" => "sessions#destroy", :as => "logout" , :via => [:get, :post]
     get "trekking" => "categories#trekking"
     get "tourisum" => "categories#tourisum"

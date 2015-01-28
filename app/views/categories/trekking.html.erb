@@ -1,5 +1,5 @@
- 
-   <!-- inner banner start from here -->    
+
+  <!-- inner banner start from here -->    
   <div class="banner1">
     <div class="container">
     <div class="col col-sm-12"
@@ -60,110 +60,28 @@
              <h5>Best place for trekking in Nepal</h5>
              <div class="border"></div>
              
-              <div class="row"> <!---------- row start ---------->
-
-                <% @items.each do |i| %>
+             
+             <div class="row"> <!-- row start -->
                 
-                <div class="col-sm-4"><a href="trekkingInner.html"><img class="img-responsive" src=<%= i.images[0].image%> /></a>
+                <% j = 0 %>
+                <% @items.each do |i| %>
+                <%  j +=1 %>
+                
+                <div class="col-sm-4"><a href="trekkingInner.html"><img class="img-responsive" src=<%= i.images[0].image %> /></a>
                 <div  class="titlePlaceInfo">
                 <span class="mainTitle"><%= i.Name %></span></br>
                 <span class="mainTitleLocation"><%= i.Description %></span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                 </div></div>
-                <% end %>            
-                <!--  <div class="col-sm-4"><a href="trekkingInner.html"><img class="img-responsive" src="assets/trekking/trek1.png"></a>
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Everest Base Camp</span></br>
-                <span class="mainTitleLocation">Khumbu, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>  -->
-                
-                
-               
-                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek2.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Annapurna Base Camp</span></br>
-                <span class="mainTitleLocation">Dhawalagiri, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div> 
-                
-                
-                
-                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek3.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Poon Hill Trek</span></br>
-                <span class="mainTitleLocation">Ghorepani, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div> 
-               
-                
-                </div><!---------- row end --------
-                
-                
-                
-                <div class="row"> <!---------- row start ---------->
-                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek4.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">LANGTANG TREK</span></br>
-                <span class="mainTitleLocation">Langtang, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div> 
-                
-                
-               
-                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek5.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Annapurna Circuit</span></br>
-                <span class="mainTitleLocation">Dhawalagiri, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
-                
-                
-                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek6.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Manaslu Base Camp</span></br>
-                <span class="mainTitleLocation">Manaslu, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
-                
-                
-                </div><!---------- row end ---------->
-                
-                
-                
-                <div class="row"> <!---------- row start ---------->
-                 <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek7.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Upper Mustang</span></br>
-                <span class="mainTitleLocation">Mustang, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
-                
-                
-               
-                <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek8.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Upper Dolpo</span></br>
-                <span class="mainTitleLocation">Dolpo, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
-                
-                
-                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/trekking/trek9.png">
-                <div class="titlePlaceInfo">
-                <span class="mainTitle">Makalu Base Camp</span></br>
-                <span class="mainTitleLocation">Koshi, Nepal</span></br>
-                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div> 
-               
-               
-               
+                <% if j%3==0 %> 
+                </div>
+                <div class="row">
+                <% end %>
+
+                <% end %>
                
                 
                </div><!---------- row end ---------->
-                
                 
            
              
@@ -173,10 +91,7 @@
         
         
        
-        </div><!-------------------------------- content body end here --------------------------------> 
-        
-        
-        
+        </div><!-- content body end here --> 
         
         
         
@@ -228,26 +143,15 @@
                </div>
                <hr style="margin-top:8px;">
          </div><!-- rightPanel end here -->
-        
-        
-        
-        
-        
-       
-                       
-
+  
 
 </div>
 </div>   
    
- <!------- main body end here --------->     
+ <!-- main body end here -->     
    
    
-   
-   
-   
-   
-   
+ 
    
    <!-- footer start from here -->
    <div class="container">

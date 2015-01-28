@@ -17,7 +17,9 @@
                     
                         <div class="col col-sm-6">
                         <div class="logo2">
-                        <a href="index.html"><img class="img-responsive" src="assets/logo.png"></a>
+                        <%= link_to image_tag("logo.png"), root_path %> 
+                        <!-- <a href="index.html"> -->
+                        <!-- <img class="img-responsive" src="assets/logo.png"> -->
                         </div>
                         </div> 
                     
@@ -26,8 +28,10 @@
                         <div class="col col-sm-3">
                         <div class="logNJoin">
                             <ul class="navbar-right">
-                        <li><a href="#">Login</a></li>
-                            <li><a href="#">Join Us</a></li>
+                        <!-- <li><a href="#">Login</a></li> -->
+                        <li><%= link_to "Login", log_in_path %></li>
+
+                        <li><%= link_to "Join Us", sign_up_path %></li>
                             </ul>
                             </div>
                         </div>
@@ -72,12 +76,13 @@
                 <div id="navbar" class="collapse navbar-collapse nav2">
                   <ul class="nav navbar-nav">
                         <li>Why are you interested to visit Nepal?:</li>
-                  <li><a href="trekking.html">Trekking</a></li>
-                        <li><a href="tourisum.html">Tourisum</a></li>
-                      <li><a href="culture.html">Culture</a></li>
-                      <li><a href="business.html">Business</a></li>
-                      <li><a href="legal.html">Legal</a></li>
-                      <li><a href="visa.html">Visa</a></li>
+                        <li> <%= link_to "Trekking", trekking_path %> </li>
+                        <li> <%= link_to "Tourism", tourisum_path %> </li>
+                        <li> <%= link_to "Culture", culture_path %> </li>
+                        <li> <%= link_to "Business", business_path %> </li>
+                        <li> <%= link_to "Legal", legal_path %> </li>
+                        <li> <%= link_to "Visa", visa_path %> </li>
+                       
                 </ul>
                         
                        

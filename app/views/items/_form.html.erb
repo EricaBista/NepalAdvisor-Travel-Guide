@@ -1,3 +1,6 @@
+<br />
+<br />
+
  <%= form_for(@item,:html => {:enctype => 'multipart/form-data'}) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -47,6 +50,7 @@
  <!-- image table field in item table  -->
        <h4>Image Table</h4>
         <%= fields_for @image, :html => {:multiple => true} do |fb| %>
+
           <%=fb.label :Title %>
           <%=fb.text_field :Title %>
 
@@ -60,7 +64,7 @@
             <p>
               <strong>Image:</strong>
               <input type='file' id="imgInp" name="image[image]" />
-             
+              
               <%= image_tag @image.image, :id => 'blah' %>
             </p>
         <% end -%>
