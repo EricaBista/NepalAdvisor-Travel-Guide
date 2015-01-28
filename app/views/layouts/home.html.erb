@@ -518,7 +518,7 @@
    
    
    <!-- footer start from here -->
-   <div class="container">
+   <!-- <div class="container">
    <div class="row">
    		
         <div class="col col-sm-12">
@@ -554,7 +554,45 @@
    
    </div>
    </div>
-      <!-- footer start from here -->	
+
+     <!-- footer start from here -->
+   <div class="container">
+   <div class="row">
+        
+        <div class="col col-sm-12">
+        <div class="footer">
+        
+   
+        <div class="col col-sm-7 footerNav">
+        <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Site Map</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        
+       
+        <p>&copy; 2015 nepaladviser. All rights reserved.</p>
+
+        
+        </div>
+   
+   
+  
+        <div class="col col-sm-5 policyNote">
+        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
+        nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
+        
+        </div>
+        
+        </div>
+        </div>      
+   
+   
+   </div>
+   </div>
+      <!------------------------------------------------------------------- footer start from here -------------------------------------------------------------------> 
    
    
    
@@ -567,16 +605,18 @@
    
    
    
-    <!-- Bootstrap core JavaScript -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/ie10-viewport-bug-workaround.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     
     
     <!-- script for tab start here-->
     <script>
-   	$(function(){
+    $(function(){
       $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       // Get the name of active tab
       var activeTab = $(e.target).text(); 
@@ -584,14 +624,11 @@
       var previousTab = $(e.relatedTarget).text(); 
       $(".active-tab span").html(activeTab);
       $(".previous-tab span").html(previousTab);
-   	  });
-	});
-	</script>
-	<!-- script for tab end here -->    
+      });
+    });
+    </script>
+    <!-- script for tab end here-->    
   
   
   </body>
-<%= yield %>
-
-</body>
-</html>
+</html> 

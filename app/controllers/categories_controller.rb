@@ -34,10 +34,7 @@ class CategoriesController < ApplicationController
      # @items = Item.where :category_id => @category.id
      end
      
-     
   
-     
-     
 
   def index
     @categories = Category.all

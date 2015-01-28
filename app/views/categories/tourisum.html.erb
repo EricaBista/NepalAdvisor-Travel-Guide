@@ -71,7 +71,7 @@
                 <%  j +=1 %>
 
               <!---------- row start ---------->
-                <div class="col-sm-4"><a href="tourisumInner.html"><img class="img-responsive" src=<%= i.images[0].image %>></a>
+                <div class="col-sm-4"><%= link_to image_tag(i.images[0].image,:class =>"img-responsive"), item_path(i) %>
                 <div class="titlePlaceInfo">
                 <span class="mainTitle"><%= i.Name %></span></br>
                 <span class="mainTitleLocation"><%= i.Description %></span></br>
@@ -91,12 +91,12 @@
                 
                 
                 
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum3.png">
+               <!--  <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum3.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">Patan durbar square</span></br>
                 <span class="mainTitleLocation">Lalitpur, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                 
                 
                 </div><!---------- row end ---------->
@@ -113,7 +113,7 @@
                 
                 
                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum5.png">
+                <!-- <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum5.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">pashupatinath</span></br>
                 <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
@@ -127,14 +127,16 @@
                 <span class="mainTitle">boudhanath Stupa</span></br>
                 <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                
                 
                 </div><!---------- row end ---------->
                 
                 
                 
-                <div class="row"> <!---------- row start ---------->
+                 
+                <!---------- row start ---------->
+                <div class="row">
                 <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum7.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">bhaktapur durbar square</span></br>
@@ -144,7 +146,7 @@
                 
                 
                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum8.png">
+               <!--  <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum8.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">Shanti Stupa</span></br>
                 <span class="mainTitleLocation">Pokhara, Nepal</span></br>
@@ -158,7 +160,7 @@
                 <span class="mainTitle">budhanilkantha</span></br>
                 <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                
                 
                 </div><!---------- row end ---------->
@@ -174,7 +176,7 @@
                 
                 
                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum11.png">
+               <!--  <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum11.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">changunarayan temple</span></br>
                 <span class="mainTitleLocation">changunarayan, Nepal</span></br>
@@ -188,7 +190,7 @@
                 <span class="mainTitle">chitwan</span></br>
                 <span class="mainTitleLocation">chitwan, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                
                 
                 </div><!---------- row end ---------->
@@ -204,7 +206,7 @@
                 
                 
                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum14.png">
+                <!-- <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum14.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">narayanhiti museum</span></br>
                 <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
@@ -218,7 +220,7 @@
                 <span class="mainTitle">HanumanDhoka Museum</span></br>
                 <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                
                 
                 </div><!---------- row end ---------->
@@ -310,42 +312,4 @@
    
    
    
-   <!-- footer start from here -->
-   <div class="container">
-   <div class="row">
-      
-        <div class="col col-sm-12">
-      <div class="footer">
-        
-   
-      <div class="col col-sm-7 footerNav">
-        <ul>
-      <li><a href="#">About Us</a></li>
-        <li><a href="#">Site Map</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        </ul>
-        
-       
-        <p>&copy; 2015 nepaladviser. All rights reserved.</p>
-
-        
-      </div>
-   
-   
   
-      <div class="col col-sm-5 policyNote">
-        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
-    nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
-        
-        </div>
-        
-        </div>
-      </div>    
-   
-   
-   </div>
-   </div>
-
-

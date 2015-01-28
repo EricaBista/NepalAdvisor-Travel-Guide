@@ -29,8 +29,8 @@ Rails.application.routes.draw do
     get "business" => "categories#business"
     get "legal" => "categories#legal"
     get "visa" => "categories#visa"
-    # get "logo" => "categories#logo"
-    # root :to => 'items#index'
+   
+
      root :to => 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

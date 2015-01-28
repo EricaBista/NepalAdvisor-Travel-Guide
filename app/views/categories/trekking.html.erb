@@ -67,7 +67,7 @@
                 <% @items.each do |i| %>
                 <%  j +=1 %>
                 
-                <div class="col-sm-4"><a href="trekkingInner.html"><img class="img-responsive" src=<%= i.images[0].image %> /></a>
+                <div class="col-sm-4"><%= link_to image_tag(i.images[0].image,:class =>"img-responsive"), item_path(i) %></a>
                 <div  class="titlePlaceInfo">
                 <span class="mainTitle"><%= i.Name %></span></br>
                 <span class="mainTitleLocation"><%= i.Description %></span></br>
@@ -153,42 +153,4 @@
    
  
    
-   <!-- footer start from here -->
-   <div class="container">
-   <div class="row">
-      
-        <div class="col col-sm-12">
-      <div class="footer">
-        
    
-      <div class="col col-sm-7 footerNav">
-        <ul>
-      <li><a href="#">About Us</a></li>
-        <li><a href="#">Site Map</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        </ul>
-        
-       
-        <p>&copy; 2015 nepaladviser. All rights reserved.</p>
-
-        
-      </div>
-   
-   
-  
-      <div class="col col-sm-5 policyNote">
-        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
-    nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
-        
-        </div>
-        
-        </div>
-      </div>    
-   
-   
-   </div>
-   </div>
-
-
