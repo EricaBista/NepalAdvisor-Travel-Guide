@@ -94,7 +94,7 @@ h5
 .headerNav
 {
 	text-align:center;
-	background: image-url("assets/advisor-bg.jpg") no-repeat center center scroll;
+	background: url(../assets/advisor-bg.jpg) no-repeat center center scroll;
 	color: #fff;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
