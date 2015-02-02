@@ -96,6 +96,7 @@ h5
 	text-align:center;
 	/*background: url(../assets/advisor-bg.jpg) no-repeat center center scroll;*/
 	/*background-image: image-url("../assets/advisor-bg.jpg");*/
+	
 	background-image: asset-url("../assets/advisor-bg.jpg", image)
 	color: #fff;
 	-webkit-background-size: cover;
