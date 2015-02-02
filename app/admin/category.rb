@@ -13,6 +13,5 @@ ActiveAdmin.register Category do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
-
+filter :category, :as => :select, :collection => proc {Category.all}
 end
