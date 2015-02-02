@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  # before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize, only: [:edit, :update]
   # GET /items
   # GET /items.json
   def index
@@ -17,8 +17,8 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-      @description = Description.new
-       @image = Image.new
+    @description = Description.new
+    @image = Image.new
 
   end
 

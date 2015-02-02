@@ -1,7 +1,461 @@
-<br />
-<br />
-<br />
-<br />
+<div class="col col-sm-12 innerNav">
+          <nav class="navbar navbar-inverse navbar-fixed-top"> <!--- nav start from here -->
+                <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                </div>
+        
+                <div id="navbar" class="collapse navbar-collapse nav2">
+                  <ul class="nav navbar-nav">
+                        <li>Why are you interested to visit Nepal?:</li>
+                  
+                       <li> <%= link_to "Trekking", trekking_path %> </li>
+                        <li> <%= link_to "Tourism", tourism_path %> </li>
+                        <li> <%= link_to "Culture", culture_path %> </li>
+                        <li> <%= link_to "Business", business_path %> </li>
+                        <li> <%= link_to "Legal", legal_path %> </li>
+                        <li> <%= link_to "Visa", visa_path %> </li>
+                </ul>
+                        
+                       
+                      
+                </div><!--/.nav-collapse -->
+                </div>
+          </nav><!--- nav end here -->
+   
+   
+   
+  </div>
+   
+   
+   
+   
+   <!------ inner banner start from here ---->    
+  <div class="banner1">
+    <div class="container">
+    <div class="col col-sm-12"
+    <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2><%= @item.category.Name %> in Nepal</h2></div>
+    <div class="col-sm-4"></div>
+    </div></div>
+    
+    </div>
+ 
+ 
+ 
+ 
+  <!---------------- inner banner end here ------------------------------------>      
+ <div class="gap"></div>
+ <!------- main body start from here ----------> 
+  
+    <div class="container">
+  <div class="row">
+          
+            <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
+              
+         
+          
+              
+              <div class="col-sm-12"> 
+              <div class="row">
+              <img src="../assets/bannerads3.jpg" class="img-responsive"> 
+              </div> 
+            </div>   
+             
+             
+             
+              <div class="gap"></div>
+              
+             
+             
+             
+             <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitle"> 
+             
+             
+             <h5><%= @item.Name%> <small><%= @item.Description %></small></h5>
+             
+             <div class="border"></div>
+             <div class="gap"></div>
+
+             
+             
+                             <div class="row">
+                             
+                             <div class="col-sm-4">
+                             
+                             <%= image_tag(@item.images[0].image,  :class =>"mg-responsive mainImg")%>
+                                             <div class="row">
+                                             <div class="thumImg">
+                                             <% @item.images.each do |i| %>
+                                             <div class="col col-sm-4 thumIcon"><%= image_tag(i.image,  :class =>"img-responsive")%></div>
+                                             <% end %>
+                                             
+                                             </div>
+                                             </div>
+                                             
+                                             
+                             <div class="viewAllImg"><a href="#">+ view Gallery</a></div>
+                             </div>
+                             
+                             
+                             <div class="col-sm-1"></div>
+                             
+                             <div class="col-sm-7">
+                             <img src="assets/weather.png" class="img-responsive">
+                             <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: Legal 
+                             
+                             <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                             </div>
+                            
+                            </div>
+            
+             </div>
+             
+             <div class="divider"></div>
+          </div><!------------ row end ------------>  
+            </div><!---------- col col-sm-12 end ----------> 
+            
+            
+            
+            
+            <div class="col col-sm-12 shortInfo">
+            <div class="row">
+            <p><i>Great trekking terrain! You’ll stand face-to-face with the world’s highest mountain – Mountain Everest (8,850m), and see multiple other majestic peaks. You’ll also meet the Sherpa people, renowned for the climbing skills. In short, fantastic trekking experience.</i></p>
+            </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+       <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5>Highlights</h5>
+             <div class="border"></div>
+             <div class="col col-sm-12 lawInfo">
+             <ul>
+             <li><a href="#">Sed ut perspiciatis unde omnis iste natus error sit</a> </li>
+             <li><a href="#">Voluptatem accusantium doloremque laudantium</a></li>
+             <li><a href="#">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </a></li>
+             <li><a href="#">Quasi architecto beatae vitae dicta sunt explicabo</a></li>
+             <li><a href="#">Enim ipsam voluptatem quia voluptas sit aspernatur aut odit</a></li> 
+             <li><a href="#">Aut fugit, sed quia consequuntur magni dolores eos qui ratione</a> </li>
+             <li><a href="#">Voluptatem sequi nesciunt. Neque porro quisquam est</a></li>
+             </ul>
+            
+             </div> 
+            </div>
+          </div><!------------- row end ------------->    
+            </div><!------------ col col-sm-12 end ------------>   
+            
+            
+            
+            
+            <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5>Trek Facts</h5>
+             <div class="border"></div>
+             <div class="col col-sm-12 lawInfo">
+             <ul>
+             <li><a href="#">Sed ut perspiciatis unde omnis iste natus error sit</a> </li>
+             <li><a href="#">Voluptatem accusantium doloremque laudantium</a></li>
+             <li><a href="#">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </a></li>
+             <li><a href="#">Quasi architecto beatae vitae dicta sunt explicabo</a></li>
+             <li><a href="#">Enim ipsam voluptatem quia voluptas sit aspernatur aut odit</a></li> 
+             <li><a href="#">Aut fugit, sed quia consequuntur magni dolores eos qui ratione</a> </li>
+             <li><a href="#">Voluptatem sequi nesciunt. Neque porro quisquam est</a></li>
+             </ul>
+            
+             </div> 
+            </div>
+          </div><!------------- row end ------------->    
+            </div><!------------ col col-sm-12 end ------------>      
+            
+          
+            
+            
+            <div class="col-sm-12">
+            <div class="row">
+            <div class="likeReply">
+            <div class="col col-sm-7">
+            Was this review helpful?: <span style="padding-left:10px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
+            </div>
+            
+            
+            <div class="col col-sm-5 shareIcon">
+            Share:
+            <img src="assets/fa.jpg" class="img-responsive" >
+            <img src="assets/twitter.jpg" class="img-responsive" >
+            <img src="assets/g+.jpg" class="img-responsive" >
+            <img src="assets/pin.jpg" class="img-responsive">
+            <img src="assets/in.jpg" class="img-responsive">
+            
+            </div>
+            
+            </div>
+          </div>
+            </div>
+        
+          
+            
+             <div class="col-sm-12">
+             <div class="row">
+             <div class="youMayPageTitleTab"> 
+             <h5>You May Also Like</h5>
+             <div class="border"></div>
+             
+              
+                
+                
+                
+                <div class="row"> <!---------- row start ---------->
+                <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek4.png">
+                <div class="youMayPlaceInfo">
+                <span class="youMayMainTitle">LANGTANG TREK</span></br>
+                <span class="youMayMainTitleLocation">Langtang, Nepal</span></br>
+                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                
+               
+                <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek5.png">
+                <div class="youMayPlaceInfo">
+                <span class="youMayMainTitle">Annapurna Circuit</span></br>
+                <span class="youMayMainTitleLocation">Dhawalagiri, Nepal</span></br>
+                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                
+                
+                <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek6.png">
+                <div class="youMayPlaceInfo">
+                <span class="youMayMainTitle">Manaslu Base Camp</span></br>
+                <span class="youMayMainTitleLocation">Manaslu, Nepal</span></br>
+                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+               
+               
+               
+               
+               <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek7.png">
+                <div class="youMayPlaceInfo">
+                <span class="youMayMainTitle">Upper Mustang</span></br>
+                <span class="youMayMainTitleLocation">Mustang, Nepal</span></br>
+                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                
+                </div><!---------- row end ---------->
+                
+            
+          </div>
+          </div><!------------- row end ------------->    
+            </div><!------------ col col-sm-12 end ------------>      
+        
+            
+            
+            
+        
+        
+        
+        <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5>Reviews on Visa processing</h5>
+             <div class="border"></div>
+             <h4><small>Write your Reviews / Comments:</small></h4>
+             <div class="col col-sm-8 reviewForm">
+             
+             <form>
+         <div class="form-group">
+         Title of your review:
+         <input type="" class="form-control" id="reviewTitle">
+         </div>
+             
+         <div class="form-group">
+             Your review:
+         <textarea class="form-control" rows="3"></textarea>
+         </div>
+         
+             <button type="submit" class="btn btn-success">Submit your reviews</button>
+       </form>
+             </div> 
+          </div>
+          </div><!------------- row end ------------->    
+            </div><!------------ col col-sm-12 end ------------> 
+            
+            
+            
+             <div class="col-sm-12">
+             <div class="row">
+             
+             <div class="gap"></div>
+             <div class="gap"></div>
+             <div class="border"></div>
+             
+             <div class="review">
+             <div class="col col-sm-2">
+             <div class="row">
+             <img src="assets/man.png" class="img-responsive">
+              <div class="reviewerName">Jhon Cena </div>
+             </div>
+             </div>
+             
+             
+             <div class="col col-sm-10">
+             <div class="row">
+             
+             <div class="reviewTitle">“Quasi artfchecto beatae”</div>
+             <span class="reviewDate"><h5> <small> December 31, 2014</small></h5></span>
+             
+             <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim          ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,               consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+            
+       
+             <div class="likeNReply">
+             <img src="assets/like.jpg"><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
+             </div>
+             
+             
+             
+                              
+                                                
+                                                     <div class="comment">
+                                                     <div class="col col-sm-2">
+                                                     <div class="row">
+                                                     <img src="assets/girl.jpg" class="img-responsive">
+                                                      <div class="reviewerName">Pholmati Devi </div>
+                                                     </div>
+                                                     </div>
+                                                     
+                                                     
+                                                     <div class="col col-sm-10">
+                                                     <div class="row">
+                                                     
+                                                     <div class="reviewTitle">@Jhon Cena</div>
+                                                     <span class="reviewDate"><h5> <small> December 31, 2014</small></h5></span>
+                                                     
+                                                     <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae                              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui ,                              consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+                                                    
+                                               
+                                                     <div class="likeNReply">
+                                                     <img src="assets/like.jpg"><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply                                     </span>
+                                                     </div>
+                                                    
+                                                     
+             
+                      
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+             </div>
+             </div><!----------- col col-sm-10 end ---------->  
+            
+            </div><!---------- review end ----------> 
+            
+           
+                      
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+             </div>
+             </div><!----------- col col-sm-10 end ------------>  
+            
+            </div><!---------- review end -------->  
+          </div><!------------ row end ------------>    
+            </div><!------------ col col-sm-12 end ------------> 
+            
+            
+            
+            
+             
+</div><!------------------------------- content body end here --------------------------------> 
+        
+        
+        
+        
+        
+        
+         <div class="col col-sm-3"><!-------------------------------- rightPanel start from here -------------------------------->
+         <div class="rightPanel">
+                <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads03.jpg">
+                </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads02.jpg">
+                </div>
+                
+                <div class="adsBanner">
+                <img class="img-responsive" src="assets/ads01.jpg">
+                </div>
+                </div>
+                
+               
+               <div class="quickLinks">Quick Links</div>
+               <hr style="margin-top:8px;">
+               <div class="quickLinksMenu">
+               <p >Talk to us
+               </br>
+         <span><a href="#">- Send feedback or report a problem</a></span>
+         </p>
+         
+               <p>For owners
+               </br>
+               <span><a href="#">- Business Listings for hotel marketing</a></span>
+               </br>
+               <span><a href="#">- Visit your Management Center</a></span>
+               </p>
+
+               <p>Advertise with us
+               </br>
+               <span><a href="#">- Find out about advertising or partnering with us</a></span>
+               </p>
+               </div>
+               <hr>
+               
+               <div class="followUs">Follow Us On</div>
+               <hr style="margin-top:8px;">
+               <div class="followIcon">
+               <a href="#"><img src="assets/facebook-img.png"></a>
+               <a href="#"><img src="assets/twitter-img.png"></a>
+               </div>
+               <hr style="margin-top:8px;">
+         </div><!-------------------------------- rightPanel end here -------------------------------->
+        
+        
+        
+        
+        
+       
+                       
+
+
+</div>
+</div>   
+   
+ <!------------------------------------------------------------------ main body end here ---------------------------------------------------------------->     
+   
 
 <p id="notice"><%= notice %></p>
 

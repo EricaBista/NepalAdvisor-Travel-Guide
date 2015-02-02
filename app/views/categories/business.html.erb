@@ -72,28 +72,22 @@
              
              
              
-        		<div class="col col-sm-12 navIcon">
-        		
-                	<div class="col col-sm-2 navIconButton">
-                    <a href="businessInner.html"><img class="img-responsive" src="assets/IT-img.png"/></a>
-                    </div>
-                    <div class="col col-sm-2 navIconButton">
-                    <a href="businessInner.html"><img class="img-responsive" src="assets/Travel-img.png"/></a>
-                    </div>
-                    <div class="col col-sm-2 navIconButton">
-                    <a href="#"><img class="img-responsive" src="assets/hotel-img.png"/></a>
-                    </div>
-                    <div class="col col-sm-2 navIconButton">
-                    <a href="businessInner.html"><img class="img-responsive" src="assets/mall-img.png"/></a>
-                    </div>
-                    <div class="col col-sm-2 navIconButton">
-                    <a href="businessInner.html"><img class="img-responsive" src="assets/bank-img.png"/></a>
-                    </div>
-                    <div class="col col-sm-2 navIconButton">
-                    <a href="businessInner.html"><img class="img-responsive" src="assets/cafe-img.png"/></a>
-                    </div>
-                
+        		  <div class="row"> 
+              <% j = 0 %>
+                <% @items.each do |i| %>
+                <%  j +=1 %>
+              <!---------- row start ---------->
+                <div class="col-sm-4"><%= link_to image_tag(i.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(i) %>
+                <div class="titlePlaceInfo">
+                <span class="mainTitle"><%= i.Name %></span></br>
+                <span class="mainTitleLocation"><%= i.Description %></span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                <% if j%3==0 %>
                 </div>
+                <% end %>
+
+                <% end %>
        
               
            	</div>

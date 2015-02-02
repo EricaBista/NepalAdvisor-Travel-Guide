@@ -16,12 +16,12 @@ class CategoriesController < ApplicationController
 
      def culture
      @category = Category.find(3)
-     # @items = Item.where :category_id => @category.id
+      @items = Item.where :category_id => @category.id
      end
 
      def business
      @category = Category.find(4)
-     # @items = Item.where :category_id => @category.id
+      @items = Item.where :category_id => @category.id
      end
 
      def legal

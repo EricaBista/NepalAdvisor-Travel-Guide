@@ -1,8 +1,4 @@
 
-   
-   
-   
-   
    <!-- inner banner start from here -->		
  	<div class="banner6">
     <div class="container">
@@ -52,9 +48,7 @@
 
              <%= @category.Description.html_safe %>
             
-            <!-- <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim 				 			ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,  				 			adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 	 			ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
             
-             <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim 				 			ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,  				 			adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 	 			ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui .</p> -->
             
             
              
@@ -70,31 +64,39 @@
              <h5>Browse By</h5>
              <div class="border"></div>
              
-            	<div class="row"> <!---------- row start ---------->
-                <div class="col-sm-4"><a href="tourisumInner.html"><img class="img-responsive" src="assets/tourisum/tourisum1.png"></a>
+            	<div class="row"> 
+              <% j = 0 %>
+                <% @items.each do |i| %>
+                <%  j +=1 %>
+              <!---------- row start ---------->
+                <div class="col-sm-4"><%= link_to image_tag(i.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(i) %>
                 <div class="titlePlaceInfo">
-                <span class="mainTitle">kathmandu durbar square</span></br>
-                <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
+                <span class="mainTitle"><%= i.Name %></span></br>
+                <span class="mainTitleLocation"><%= i.Description %></span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                 </div></div>
-               	
+                <% if j%3==0 %>
+               	</div>
+                <% end %>
+
+                <% end %>
                 
                
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum2.png">
+               <!--  <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum2.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">Swayambhunath Stupa</span></br>
                 <span class="mainTitleLocation">Kathmandu, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                	
                 
                 
-                <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum3.png">
+                <!-- <div class="col-sm-4"><img class="img-responsive" src="assets/tourisum/tourisum3.png">
                 <div class="titlePlaceInfo">
                 <span class="mainTitle">Patan durbar square</span></br>
                 <span class="mainTitleLocation">Lalitpur, Nepal</span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                </div></div> -->
                
                 
                 </div><!---------- row end ---------->

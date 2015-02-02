@@ -27,6 +27,7 @@
         		<div id="navbar" class="collapse navbar-collapse">
           			<ul class="nav navbar-nav navbar-right">
                     <li><%= link_to "Login", log_in_path %></li>
+                     <li><%#= link_to "LogOut", logout_path %></li>
             		<li><%= link_to "Join Us", sign_up_path %></li>
          			</ul>
         		</div><!--/.nav-collapse -->
@@ -58,10 +59,10 @@
         <h5>TREKKING</h5>
         </div>
         <div class="col col-sm-2 navIconButton">
-        <%= link_to image_tag("tour-icon.png"), tourisum_path %> 
+        <%= link_to image_tag("tour-icon.png"), tourism_path %> 
        <!--  <a href="tourisum.html">
         <img src="assets/tour-icon.png"/></a> -->
-        <h5>TOURISUM</h5>
+        <h5>TOURISM</h5>
         </div>
         <div class="col col-sm-2 navIconButton">
         <%= link_to image_tag("culture-icon.png"), culture_path %> 
@@ -517,43 +518,7 @@
    
    
    
-   <!-- footer start from here -->
-   <!-- <div class="container">
-   <div class="row">
-   		
-        <div class="col col-sm-12">
-   		<div class="footer">
-        
-   
-   		<div class="col col-sm-7 footerNav">
-        <ul>
-   		<li><a href="#">About Us</a></li>
-        <li><a href="#">Site Map</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        </ul>
-        
-       
-        <p>&copy; 2015 nepaladviser. All rights reserved.</p>
 
-        
-   		</div>
-   
-   
-  
-   		<div class="col col-sm-5 policyNote">
-        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
-		nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
-        
-        </div>
-        
-        </div>
-   		</div>		
-   
-   
-   </div>
-   </div>
 
      <!-- footer start from here -->
    <div class="container">
@@ -570,6 +535,7 @@
         <li><a href="#">Help Center</a></li>
         <li><a href="#">Terms of Use</a></li>
         <li><a href="#">Privacy Policy</a></li>
+
         </ul>
         
        
