@@ -1,0 +1,29 @@
+<h1>Listing things_to_dos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @things_to_dos.each do |things_to_do| %>
+      <tr>
+        <td><%= things_to_do.Name %></td>
+        <td><%= things_to_do.Title %></td>
+        <td><%= things_to_do.Content %></td>
+        <td><%= link_to 'Show', things_to_do %></td>
+        <td><%= link_to 'Edit', edit_things_to_do_path(things_to_do) %></td>
+        <td><%= link_to 'Destroy', things_to_do, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Things to do', new_things_to_do_path %>

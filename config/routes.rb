@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  resources :things_to_dos
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  resources :restaurants
+
+  resources :destinations
   # get 'password_resets/new'
   # get 'sessions/new'
-
   resources :password_resets
  
   resources :sessions
@@ -29,7 +34,8 @@ Rails.application.routes.draw do
     get "business" => "categories#business"
     get "legal" => "categories#legal"
     get "visa" => "categories#visa"
-   
+    
+    #get 'categories/trekking/:id', :controller => "categories", :action => "trekking", :as =>'show1'
 
      root :to => 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
