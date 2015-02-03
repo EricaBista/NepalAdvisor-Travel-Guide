@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Slug: MyString
+  Title: MyString
+  Content: MyString
+  Order: 1
+  Home_page: false
+
+two:
+  Slug: MyString
+  Title: MyString
+  Content: MyString
+  Order: 1
+  Home_page: false
