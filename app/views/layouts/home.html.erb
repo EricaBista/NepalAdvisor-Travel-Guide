@@ -161,67 +161,17 @@
    			
             <div class="tab-pane fade in active" id="home"><!-- tab 1 start from here -->
             <div class="row">
-     		<div class="col col-sm-4 placeInfo">
-            1. Cafe des Arts
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
-            </div>
-            
+     		
+            <% i=1 %>
+
+            <% @restaurants.each do |r| %>
             <div class="col col-sm-4 placeInfo">
-            2.    Rosemary Kitchen & Coffee Shop
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            3.    Revolution Cafe
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
-            </div>
-            </div>
-            
-            
-            <div class="row">
-     		<div class="col col-sm-4 placeInfo">
-            4. Frens Kitchen Restaurant
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            5.  The Old House
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            6.    Zibro - Resto & Bar
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
-            </div>
-            </div>
-            
-            
-            <div class="row">
-     		<div class="col col-sm-4 placeInfo">
-            7. De' Vedas Cafe & Bar
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            8.    Places Restaurant & Bar
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            9.    Gaia Restaurant & Coffee Shop
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
-            </div>
-            </div>
-            
+           <%= i %>.<%= r.Name %>
+           </br>
+            <img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div> <% i+= 1 %>
+            <% end %>       
+            </div> 
             <hr>
             <div class="viewAll"><a href="#">+ view all restaurants</a></div>
             </div><!--- tab 1 end here -->
@@ -231,48 +181,17 @@
            
             <div class="tab-pane fade" id="ios"><!-- tab 2 start from here-->
             <div class="row">
+
+            <% j=1 %>
+
+            <% @things_to_do.each do |t| %>
      		<div class="col col-sm-4 placeInfo">
-            1. De' Vedas Cafe & Bar
+            <%= j %>.<%=t.Name %>
             </br>
          	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
+            </div><%j+=1 %>
+            <% end %>
             </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            2.    Places Restaurant & Bar
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            3.    Gaia Restaurant & Coffee Shop
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>20 Reviews</span>
-            </div>
-            </div>
-            
-            
-            <div class="row">
-     		<div class="col col-sm-4 placeInfo">
-            4. Cafe des Arts
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            5.    Rosemary Kitchen & Coffee Shop
-            </br>
-         	<img src="assets/rate-icon.png" /> <span>320 Reviews</span>
-            </div>
-            
-            <div class="col col-sm-4 placeInfo">
-            6.    Revolution Cafe
-            </br>
-         	<img src="assets/rate-icon.png" />
-          <span>20 Reviews</span>
-            </div>
-            </div>
-            
-            
             <hr>
             <div class="viewAll"><a href="#">+ view all things to do</a></div>
             </div><!--- tab 2 end here -->
@@ -297,63 +216,16 @@
             
             <div class="col col-sm-3 hotelsInfo">
             <div class="row">
+            
             <ul>
-            <li>Kauai Hotels</li>
-            <li>Key Largo Hotels</li>
-            <li>Key West Hotels</li>
-            <li>Kissimmee Hotels</li>
-            <li>Laguna Beach Hotels</li>
-            <li>La Jolla Hotels</li>
-            <li>Las Vegas Hotels</li>
-			</ul>
+            
+            <%  @destinations.each do |d| %>
+            <li><%= d.Name %></br></li>
+            <% end %>
+			</ul> 
             </div>
             </div>
-            
-            
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
-            <ul>
-            <li>Baltimore Hotels</li>
-			<li>Boston Hotels</li>
-			<li>Branson Hotels</li>
-			<li>Brooklyn Hotels</li>
-			<li>Charleston Hotels</li>
-			<li>Chicago Hotels</li>
-			<li>Clearwater Hotels</li>
-            </ul>
-            </div>
-            </div>
-            
-            
-            
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
-            <ul>
-            <li>Daytona Beach Hotels</li>
-			<li>Denver Hotels</li>
-            <li>Baltimore Hotels</li>
-            <li>Boston Hotels</li>
-            <li>Branson Hotels</li>
-            <li>Brooklyn Hotels</li>
-            <li>Charleston Hotels</li>
-			</ul>
-            </div>
-            </div>
-            
-            
-            
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
-            <ul>
-            <li>Daytona Beach Hotels</li>
-            <li>Denver Hotels</li>
-            <li>Destin Hotels</li>
-            <li>Fort Lauderdale Hotels</li>
-			</ul>
-            </div>
-            </div>
-        
-        
+     
         	</div>
         
         
@@ -375,56 +247,14 @@
             <div class="col col-sm-3 hotelsInfo">
             <div class="row">
             <ul>
-            <li>Kauai Hotels</li>
-            <li>Key Largo Hotels</li>
-            <li>Key West Hotels</li>
-            <li>Kissimmee Hotels</li>
-            <li>Laguna Beach Hotels</li>
-            </ul>
+            
+            <%  @destinations.each do |d| %>
+            <li><%= d.Name %></br></li>
+            <% end %>
+            </ul> 
             </div>
             </div>
-            
-            
-            
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
-            <ul>
-            <li>Baltimore Hotels</li>
-			<li>Boston Hotels</li>
-			<li>Branson Hotels</li>
-			<li>Brooklyn Hotels</li>
-			<li>Charleston Hotels</li>
-			</ul>
-            </div>
-            </div>
-            
-            
-            
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
-            <ul>
-            <li>Daytona Beach Hotels</li>
-			<li>Denver Hotels</li>
-            <li>Baltimore Hotels</li>
-            <li>Boston Hotels</li>
-            <li>Branson Hotels</li>
-            </ul>
-            </div>
-            </div>
-            
-            
-            
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
-            <ul>
-           	<li>Daytona Beach Hotels</li>
-            <li>Denver Hotels</li>
-            <li>Destin Hotels</li>
-            <li>Fort Lauderdale Hotels</li>
-			</ul>
-            </div>
-            </div>
-        
+       
         
         
         	</div>
@@ -434,18 +264,8 @@
             </div><!-- row end -->  
         
         
-        
-        
-        
-        
-       
       	</div><!-- content body end here --> 
-        
-        
- 
-
-        
-        
+    
         
          <div class="col col-sm-3"><!-- rightPanel start from here -->
          <div class="rightPanel">
