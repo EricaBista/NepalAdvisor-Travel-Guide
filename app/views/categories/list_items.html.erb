@@ -1,0 +1,156 @@
+
+  <!-- inner banner start from here -->    
+  <div class="banner1">
+    <div class="container">
+    <div class="col col-sm-12"
+    <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2><%= @category.Name %> in Nepal</h2></div>
+    <div class="col-sm-4"></div>
+    </div></div>
+    
+    </div>
+ 
+ 
+ 
+ 
+  <!-- inner banner end here -->      
+ <div class="gap"></div>
+ <!-- main body start from here --> 
+  
+    <div class="container">
+  <div class="row">
+          
+            <div class="col col-sm-9"><!-- content body start from here -->
+              
+         
+          
+              
+              <div class="col-sm-12"> 
+              <div class="row">
+                <%= image_tag "bannerads.jpg", :class=>"img-responsive" %>
+              </div> 
+            </div>   
+             
+             
+             
+              <div class="gap"></div>
+              
+             
+             
+             
+             <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitle"> 
+            
+             
+            
+             <%= @category.Description.html_safe %>
+
+             
+          </div>
+          </div><!-- row end -->  
+            </div><!-- col col-sm-12 end --> 
+        
+        
+        
+       <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5>Best place for trekking in Nepal</h5>
+             <div class="border"></div>
+             
+             
+             <div class="row"> <!-- row start -->
+                
+                <% j = 0 %>
+                <% @items.each do |i| %>
+                <%  j +=1 %>
+                
+                <div class="col-sm-4"><%= link_to image_tag(i.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(i) %>
+                <div  class="titlePlaceInfo">
+                <span class="mainTitle"><%= i.Name %></span></br>
+                <span class="mainTitleLocation"><%= i.Description %></span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                <% if j%3==0 %> 
+                </div>
+                <div class="row">
+                <% end %>
+
+                <% end %>
+               
+                
+               </div><!---------- row end ---------->
+                
+           
+             
+          </div>
+          </div><!------------- row end ------------->    
+            </div><!-- col col-sm-12 end ------------>      
+        
+        
+       
+        </div><!-- content body end here --> 
+        
+        
+        
+         <div class="col col-sm-3"><!-- rightPanel start from here -->
+         <div class="rightPanel">
+                <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
+                
+                <div class="adsBanner">
+                  <%= image_tag "ads03.jpg", :class=>"img-responsive" %>
+                </div>
+                
+                <div class="adsBanner">
+                  <%= image_tag "ads02.jpg", :class=>"img-responsive" %>
+                </div>
+                
+                <div class="adsBanner">
+                  <%= image_tag "ads01.jpg", :class=>"img-responsive" %>
+                </div>
+                </div>
+                
+               
+               <div class="quickLinks">Quick Links</div>
+               <hr style="margin-top:8px;">
+               <div class="quickLinksMenu">
+               <p >Talk to us
+               </br>
+         <span><a href="#">- Send feedback or report a problem</a></span>
+         </p>
+         
+               <p>For owners
+               </br>
+               <span><a href="#">- Business Listings for hotel marketing</a></span>
+               </br>
+               <span><a href="#">- Visit your Management Center</a></span>
+               </p>
+
+               <p>Advertise with us
+               </br>
+               <span><a href="#">- Find out about advertising or partnering with us</a></span>
+               </p>
+               </div>
+               <hr>
+               
+               <div class="followUs">Follow Us On</div>
+               <hr style="margin-top:8px;">
+               <div class="followIcon">
+               <a href="http://facebook.com" target="_blank"><%= image_tag "facebook-img.png", :class=>"img-responsive" %></a>
+               <a href="http://twitter.com" target="_blank"><%= image_tag "twitter-img.png", :class=>"img-responsive" %></a>
+               </div>
+               <hr style="margin-top:8px;">
+         </div><!-- rightPanel end here -->
+  
+
+</div>
+</div>   
+   
+ <!-- main body end here -->     
+   
+   
+ 
+   
+   
