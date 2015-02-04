@@ -103,12 +103,16 @@
        
         <div class="col-lg-2"></div>
         <div class=" col-lg-8 well"> 
-                 <form class="form">
+                 <%= form_tag('/search') do %>
                  <div class="input-group text-center">
-                 <input type="text" class="form-control input-lg" title="" placeholder="Search what would you like to know about Nepal..." style="height:60px;">
-                 <span class="input-group-btn"><button class="btn btn-lg btn-success" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button></span>
+                 <!-- <input type="text" class="form-control input-lg" title="" placeholder="Search what would you like to know about Nepal..." style="height:60px;"> -->
+                 <%= text_field_tag 'q','', :class=>'form-control input-lg',:placeholder=>'Search what would you like to know about Nepal...',:style=>'height:60px' %>
+                 <span class="input-group-btn">
+                    <%#= submit_tag '<i class="fa fa-paper-plane fa-2x"></i>' %>
+                      <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button> 
+                </span>
                  </div>
-                 </form>
+                 <% end %>
         </div><!--/well-->
                  
         <div class="col-lg-2"></div>       

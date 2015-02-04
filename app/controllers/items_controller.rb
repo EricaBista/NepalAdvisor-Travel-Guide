@@ -28,6 +28,8 @@ class ItemsController < ApplicationController
    @description = Description.find_by(item_id=@item.id)
   end
 
+
+
   # POST /items
   # POST /items.json
   def create
@@ -88,6 +90,11 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+   def search
+      @q=params[:q]
+      @items = Item.item_search(params[:q])
   end
 
   private
