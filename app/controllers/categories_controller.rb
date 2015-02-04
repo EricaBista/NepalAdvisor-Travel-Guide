@@ -3,12 +3,6 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   # GET /categories.json
-
-
-# def trekking
-#   @category = Category.find(params[:id])
-#      @items = Item.where :category_id => @category.id 
-# end
     
     def list_items
       @category = Category.find_by_slug!(params[:slug])
