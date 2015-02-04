@@ -10,6 +10,10 @@ class CategoriesController < ApplicationController
 #      @items = Item.where :category_id => @category.id 
 # end
     
+    def list_items
+      @category = Category.find_by_slug!(params[:slug])
+      @items = Item.where :category_id => @category.id 
+    end
 
     def trekking
      @category = Category.find(1)
@@ -112,6 +116,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:Name, :Description, :Order)
+      params.require(:category).permit(:Name, :Description, :Order, :icon)
     end
 end

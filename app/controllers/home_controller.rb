@@ -4,6 +4,6 @@ class HomeController < ApplicationController
 	@restaurants = Restaurant.all
 	@destinations = Destination.all
 	@things_to_do = ThingsToDo.all
-	# @category = Category.all
+	@categories = Category.all
 	end
 end
