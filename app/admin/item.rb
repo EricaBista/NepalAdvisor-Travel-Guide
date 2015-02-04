@@ -4,7 +4,7 @@ ActiveAdmin.register Item do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order ],images_attributes: [ :id, :Title, :Content, :Order, :image ]
+   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy => true],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy => true]
   #
   # or
   #
@@ -36,6 +36,7 @@ ActiveAdmin.register Item do
       f.input :Name
       f.input :Description
       f.input :Order
+
      end 
 
      
@@ -45,7 +46,10 @@ ActiveAdmin.register Item do
           b.input :Title
            b.input :Content
            b.input :Order
-          b.input :image
+          # b.input :image 
+          b.input :image, :as => :file, :hint => image_tag(b.object.image.url(:thumb))
+
+          b.input :_destroy, :as => :boolean
         end
       end
 
@@ -54,6 +58,10 @@ ActiveAdmin.register Item do
           d.input :Title
            d.input :Content
            d.input :Order
+           d.input :_destroy, :as=>:boolean, :required => false, :label=>'Remove'
+           # d.button do
+           #  link_to "Delete", admin_items_path(d.object), method: "delete", class: "button" unless d.object.new_record?
+           # end
         end
       end
 
