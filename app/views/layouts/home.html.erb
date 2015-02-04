@@ -49,45 +49,22 @@
         <div class="container">
         <div class="row">
         <div class="col col-sm-12 navIcon">
-        <div class="col col-sm-2 navIconButton">
-        <%#= @category.each do |c| %>
-        <%#= c.Name %>
-        <% #end %>
-
-        <%= link_to image_tag("trek-icon.png"), trekking_path %> 
         
-        <h5>TREKKING</h5>
-        </div>
-        <div class="col col-sm-2 navIconButton">
-        <%= link_to image_tag("tour-icon.png"), tourism_path %> 
-       <!--  <a href="tourisum.html">
-        <img src="assets/tour-icon.png"/></a> -->
-        <h5>TOURISM</h5>
-        </div>
-        <div class="col col-sm-2 navIconButton">
-        <%= link_to image_tag("culture-icon.png"), culture_path %> 
-        <!-- <a href="culture.html">
-        <img src="assets/culture-icon.png"/></a> -->
-        <h5>CULTURE</h5>
-        </div>
-        <div class="col col-sm-2 navIconButton">
-        <%= link_to image_tag("business-icon.png"), business_path %>
-        <!-- <a href="business.html">
-        <img src="assets/business-icon.png"/></a> -->
-        <h5>BUSINESS</h5>
-        </div>
-        <div class="col col-sm-2 navIconButton">
-        <%= link_to image_tag("law-icon.png"), legal_path %>
-        <!-- <a href="legal.html">
-        <img src="assets/law-icon.png"/></a> -->
-        <h5>LEGAL</h5>
-        </div>
-        <div class="col col-sm-2 navIconButton">
-        <%= link_to image_tag("visa-icon.png"), visa_path %>
-        <!-- <a href="visa.html">
-        <img src="assets/visa-icon.png"/></a> -->
-        <h5>VISA</h5>
-        </div>
+        <% @categories.each do |category| %>
+
+          <div class="col col-sm-2 navIconButton">
+            
+
+            <%= link_to image_tag(category.icon),list_items_show_path(category.slug)%>
+            <h5><%= category.Name %></h5>
+          </div>
+        <% end %>
+
+        
+        
+        
+      
+       
         </div>
        </div>
        </div>
@@ -103,12 +80,16 @@
        
         <div class="col-lg-2"></div>
         <div class=" col-lg-8 well"> 
-                 <form class="form">
+                 <%= form_tag('/search') do %>
                  <div class="input-group text-center">
-                 <input type="text" class="form-control input-lg" title="" placeholder="Search what would you like to know about Nepal..." style="height:60px;">
-                 <span class="input-group-btn"><button class="btn btn-lg btn-success" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button></span>
+                 <!-- <input type="text" class="form-control input-lg" title="" placeholder="Search what would you like to know about Nepal..." style="height:60px;"> -->
+                 <%= text_field_tag 'q','', :class=>'form-control input-lg',:placeholder=>'Search what would you like to know about Nepal...',:style=>'height:60px' %>
+                 <span class="input-group-btn">
+                    <%#= submit_tag '<i class="fa fa-paper-plane fa-2x"></i>' %>
+                      <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-paper-plane fa-2x"></i></button> 
+                </span>
                  </div>
-                 </form>
+                 <% end %>
         </div><!--/well-->
                  
         <div class="col-lg-2"></div>       
