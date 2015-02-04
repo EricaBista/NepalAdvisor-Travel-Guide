@@ -75,18 +75,13 @@
         
                 <div id="navbar" class="collapse navbar-collapse nav2">
                   <ul class="nav navbar-nav">
-                        <li>Why are you interested to visit Nepal?:</li>
-                        <li> <%= link_to "Trekking", trekking_path %> </li>
-                        <li> <%= link_to "Tourism", tourism_path %> </li>
-                        <li> <%= link_to "Culture", culture_path %> </li>
-                        <li> <%= link_to "Business", business_path %> </li>
-                        <li> <%= link_to "Legal", legal_path %> </li>
-                        <li> <%= link_to "Visa", visa_path %> </li>
-                       
+                  <li>Why are you interested to visit Nepal?:</li>
+                  <% @categories.each do |category| %>
+                  <li><%= link_to category.Name,list_items_show_path(category.slug)%>
+            </li><% end %>
+                   
                 </ul>
-                        
-                       
-                      
+                 
                 </div><!--/.nav-collapse -->
                 </div>
           </nav><!--- nav end here -->
