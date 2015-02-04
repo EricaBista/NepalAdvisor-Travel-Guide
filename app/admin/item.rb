@@ -4,7 +4,7 @@ ActiveAdmin.register Item do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Order, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order ],images_attributes: [ :id, :Title, :Content, :Order, :image ]
+   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order ],images_attributes: [ :id, :Title, :Content, :Order, :image ]
   #
   # or
   #
@@ -62,22 +62,78 @@ ActiveAdmin.register Item do
      f.actions 
    end
 
-  #  show do
-  #   attributes_table :categroy, :Name, :Description, :Order
-  # end
+   show do
+    attributes_table :categroy, :Name, :Description, :Order
+  end
 
 
-  show do
+  show do |item|
   attributes_table do
     row :Name
     row :Description
-    row :Order
 
     row :category do |c|
         link_to c.category.Name, [ :admin, c ]
       end
     
   end
+
+   if item.descriptions and item.descriptions.count > 0
+            div :class => "panel_contents" do
+              div :class => "attributes_table" do
+                table do
+                  tr do
+                    th do
+                      "Descriptions"
+                    end
+                    th do
+                    end
+                  end
+                  tbody do
+                    item.descriptions.each do |d|
+                      tr do
+                        td do
+                         h4 d.Title 
+                         
+                        end
+                        td do 
+                           d.Content
+                         end 
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          else
+            h3 "No description available"
+          end
+
+      if item.images and item.images.count > 0
+            div :class => "panel_contents" do
+              div :class => "attributes_table" do
+                table do
+                  tr do
+                    th do
+                      "Images"
+                    end
+                  end
+                  tbody do
+                    item.images.each do |d|
+                      tr do
+                        td do
+                          image_tag d.image_url(:thumb)
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          else
+            h3 "No Image available"
+          end
+
 end
 
 
