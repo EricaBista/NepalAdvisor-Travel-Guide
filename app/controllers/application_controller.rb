@@ -3,8 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
  layout :layout
-
+ before_filter :set_menu
+ 
    def layout
+   
+    puts @categories.inspect 
     if controller_name == "home_controller"
     layout 'home'
   end
@@ -17,5 +20,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   def authorize
   	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
+  end
+  def set_menu
+      @categories = Category.all
   end
 end
