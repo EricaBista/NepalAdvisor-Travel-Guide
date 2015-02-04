@@ -36,7 +36,10 @@ Rails.application.routes.draw do
     get "business" => "categories#business"
     get "legal" => "categories#legal"
     get "visa" => "categories#visa"
-    
+    ## Search Route
+  post '/search' => 'items#search'
+  get 'details/:slug', :controller => "categories", :action => "list_items", :as =>'list_items_show'
+  
     #get 'categories/trekking/:id', :controller => "categories", :action => "trekking", :as =>'show1'
 
      root :to => 'home#index'
