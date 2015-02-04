@@ -147,7 +147,7 @@
 
             <% @restaurants.each do |r| %>
             <div class="col col-sm-4 placeInfo">
-           <%= i %>.<%= r.Name %>
+           <%= i %>.<%= link_to r.Name, restaurant_path(r) %>
            </br>
             <img src="assets/rate-icon.png" /> <span>260 Reviews</span>
             </div> <% i+= 1 %>
@@ -167,7 +167,7 @@
 
             <% @things_to_do.each do |t| %>
      		<div class="col col-sm-4 placeInfo">
-            <%= j %>.<%=t.Name %>
+            <%= j %>.<%= link_to t.Name, things_to_do_path(t) %>
             </br>
          	<img src="assets/rate-icon.png" /> <span>260 Reviews</span>
             </div><%j+=1 %>
@@ -201,7 +201,7 @@
             <ul>
             
             <%  @destinations.each do |d| %>
-            <li><%= d.Name %></br></li>
+            <li><%=link_to d.Name, destination_path(d) %></br></li>
             <% end %>
 			</ul> 
             </div>
