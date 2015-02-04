@@ -62,15 +62,16 @@ ActiveAdmin.register Item do
      f.actions 
    end
 
-   show do
-    attributes_table :categroy, :Name, :Description, :Order
-  end
+  #  show do
+  #   attributes_table :categroy, :Name, :Description, :Order
+  # end
 
 
   show do
   attributes_table do
     row :Name
     row :Description
+    row :Order
 
     row :category do |c|
         link_to c.category.Name, [ :admin, c ]
