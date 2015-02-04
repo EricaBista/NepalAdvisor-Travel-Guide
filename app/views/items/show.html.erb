@@ -88,11 +88,15 @@
                              
                              <div class="col-sm-4">
                              
-                             <%= image_tag(@item.images[0].image,  :class =>"mg-responsive mainImg")%>
+                             <%= image_tag(@item.images[0].image,  :class =>"mg-responsive mainImg", :id => "zoom_03")%>
                                              <div class="row">
                                              <div class="thumImg">
                                              <% @item.images.each do |i| %>
-                                             <div class="col col-sm-4 thumIcon"><%= image_tag(i.image,  :class =>"img-responsive")%></div>
+                                             <div class="col col-sm-4 thumIcon">
+                                            
+
+
+                                             <%= image_tag(i.image,  :class =>"img-responsive")%></div>
                                              <% end %>
                                              
                                              </div>
@@ -439,13 +443,6 @@
                </div>
                <hr style="margin-top:8px;">
          </div><!-------------------------------- rightPanel end here -------------------------------->
-        
-        
-        
-        
-        
-       
-                       
 
 
 </div>
@@ -519,4 +516,12 @@
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
 
+ <script type="text/javascript"> 
+ $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+  $("#zoom_03").bind("click", function(e) { 
   
+  var ez = $('#zoom_03').data('elevateZoom');   
+   $.fancybox(ez.getGalleryList()); 
+   return false; }); 
+  </script>
+
