@@ -1,5 +1,7 @@
 
-   <!------ inner banner start from here ---->    
+   <!------ inner banner start from here ----> 
+
+   
   <div class="banner1">
     <div class="container">
     <div class="col col-sm-12"
@@ -83,7 +85,8 @@
                              <div class="col-sm-1"></div>
                              
                              <div class="col-sm-7">
-                             <img src="assets/weather.png" class="img-responsive">
+                             <div id="weather"></div>
+                             
                              <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
                              
                              <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
@@ -103,26 +106,21 @@
             <div class="col col-sm-12 shortInfo">
             <div class="row">
             
-            <p><i><%= @item.category.Description %></i></p>
+            <p><i><%= @item.Description %></i></p>
             </div>
             </div>
             
-        
+       <% @item.descriptions.each do |a| %>
             
        <div class="col-sm-12">
              <div class="row">
              <div class="pageTitleTab"> 
-             <h5>Highlights</h5>
+             <h5><%= a.Title%></h5>
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
              <ul>
-             <li><a href="#">Sed ut perspiciatis unde omnis iste natus error sit</a> </li>
-             <li><a href="#">Voluptatem accusantium doloremque laudantium</a></li>
-             <li><a href="#">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </a></li>
-             <li><a href="#">Quasi architecto beatae vitae dicta sunt explicabo</a></li>
-             <li><a href="#">Enim ipsam voluptatem quia voluptas sit aspernatur aut odit</a></li> 
-             <li><a href="#">Aut fugit, sed quia consequuntur magni dolores eos qui ratione</a> </li>
-             <li><a href="#">Voluptatem sequi nesciunt. Neque porro quisquam est</a></li>
+             <li><%= a.Content %> </li>
+             
              </ul>
             
              </div> 
@@ -130,29 +128,10 @@
           </div><!------------- row end ------------->    
             </div><!------------ col col-sm-12 end ------------>   
             
+          <% end %>  
             
             
-            
-            <div class="col-sm-12">
-             <div class="row">
-             <div class="pageTitleTab"> 
-             <h5>Trek Facts</h5>
-             <div class="border"></div>
-             <div class="col col-sm-12 lawInfo">
-             <ul>
-             <li><a href="#">Sed ut perspiciatis unde omnis iste natus error sit</a> </li>
-             <li><a href="#">Voluptatem accusantium doloremque laudantium</a></li>
-             <li><a href="#">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis </a></li>
-             <li><a href="#">Quasi architecto beatae vitae dicta sunt explicabo</a></li>
-             <li><a href="#">Enim ipsam voluptatem quia voluptas sit aspernatur aut odit</a></li> 
-             <li><a href="#">Aut fugit, sed quia consequuntur magni dolores eos qui ratione</a> </li>
-             <li><a href="#">Voluptatem sequi nesciunt. Neque porro quisquam est</a></li>
-             </ul>
-            
-             </div> 
-            </div>
-          </div><!------------- row end ------------->    
-            </div><!------------ col col-sm-12 end ------------>      
+               
             
           
             
@@ -185,6 +164,7 @@
              <div class="row">
              <div class="youMayPageTitleTab"> 
              <h5>You May Also Like</h5>
+
              <div class="border"></div>
              
               
@@ -421,70 +401,7 @@
  <!------------------------------------------------------------------ main body end here ---------------------------------------------------------------->     
    
 
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.Name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.Description %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @item.Order %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @item.category.Name %>
-</p>
-
-<!-- from description table -->
-<h5>.................description................. </h5>
-<p>
-  <strong>Title:</strong>
-  <%= @description.Title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @description.Content %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @description.Order %>
-</p>
-
-<!-- from image table  -->
-<h5>...................Image.................... </h5>
-<p>
-  <strong>Title:</strong>
-  <%= @image.Title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @image.Content %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @image.Order %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @image.image_url(:thumb) %>
-</p>
-
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
 
  <script type="text/javascript"> 
  $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
