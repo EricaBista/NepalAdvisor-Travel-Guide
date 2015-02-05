@@ -4,7 +4,7 @@ ActiveAdmin.register Item do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy => true],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy => true]
+   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy]
   #
   # or
   #
@@ -41,7 +41,7 @@ ActiveAdmin.register Item do
 
      
 
-      f.inputs do
+      f.inputs "Images" do
         f.has_many :images, new_record: 'Images' do |b|
           b.input :Title
            b.input :Content
@@ -53,7 +53,7 @@ ActiveAdmin.register Item do
         end
       end
 
-        f.inputs do
+        f.inputs "Descriptions" do
         f.has_many :descriptions, new_record: 'Descriptions' do |d|
           d.input :Title
            d.input :Content
@@ -64,16 +64,10 @@ ActiveAdmin.register Item do
            # end
         end
       end
-
-
-     
      f.actions 
    end
 
-   show do
-    attributes_table :categroy, :Name, :Description, :Order
-  end
-
+  
 
   show do |item|
   attributes_table do

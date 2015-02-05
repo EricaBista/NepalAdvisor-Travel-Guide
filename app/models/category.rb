@@ -6,8 +6,8 @@ class Category < ActiveRecord::Base
 	before_create :create_slug
 
 	  # def to_param
-	  #   slug
-	  # end
+	  #    slug
+	  #  end
 
 	  def create_slug
 	    self.slug = self.Name.parameterize
