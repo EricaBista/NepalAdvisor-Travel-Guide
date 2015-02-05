@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
   def set_menu
 
-      @menus ||= Category.all
+      @menus ||= Category.all.order(:Order)
 
       # @categories ||= Category.all
   end
