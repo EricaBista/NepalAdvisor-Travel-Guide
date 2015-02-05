@@ -117,7 +117,7 @@
                              
                              <div class="col-sm-7">
                              <img src="assets/weather.png" class="img-responsive">
-                             <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: Legal 
+                             <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
                              
                              <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                              </div>
@@ -135,7 +135,7 @@
             
             <div class="col col-sm-12 shortInfo">
             <div class="row">
-            <p><i>Great trekking terrain! You’ll stand face-to-face with the world’s highest mountain – Mountain Everest (8,850m), and see multiple other majestic peaks. You’ll also meet the Sherpa people, renowned for the climbing skills. In short, fantastic trekking experience.</i></p>
+            <p><i><%= @item.category.Description %></i></p>
             </div>
             </div>
             
