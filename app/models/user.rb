@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	before_create { generate_token(:token) }
 	validates_uniqueness_of :email
 	validates_confirmation_of :password
+  has_many :reviews
 	
 	def generate_token(column)
 		begin 

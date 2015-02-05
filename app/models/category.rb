@@ -1,9 +1,12 @@
 class Category < ActiveRecord::Base
 	validates :Name, presence: true
 	validates :Description, presence: true
+	validates :slug, uniqueness: true
 	has_many :items
 
-	before_create :create_slug
+	before_save :create_slug
+
+	
 
 	  # def to_param
 	  #    slug
