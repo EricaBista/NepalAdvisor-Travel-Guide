@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
  
    def layout
    
-    puts @categories.inspect 
     if controller_name == "home_controller"
     layout 'home'
   end
@@ -22,6 +21,6 @@ class ApplicationController < ActionController::Base
   	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
   end
   def set_menu
-      @categories = Category.all
+      @categories ||= Category.all
   end
 end
