@@ -5,9 +5,10 @@ class Item < ActiveRecord::Base
 	has_many :images
 	belongs_to :category
 
+	accepts_nested_attributes_for :images, :allow_destroy => true
+	accepts_nested_attributes_for :descriptions, :allow_destroy => true
 
-	accepts_nested_attributes_for :images
-	accepts_nested_attributes_for :descriptions
+	
 
 	scope :item_search, -> (query) { 
 	 		joins("LEFT JOIN `descriptions` ON descriptions.item_id = items.id")
