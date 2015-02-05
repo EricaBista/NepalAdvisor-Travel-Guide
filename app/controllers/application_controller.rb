@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
   end
   def set_menu
-      @categories ||= Category.all
+      @menus ||= Category.all
   end
 end

@@ -76,7 +76,7 @@
                 <div id="navbar" class="collapse navbar-collapse nav2">
                   <ul class="nav navbar-nav">
                   <li>Why are you interested to visit Nepal?:</li>
-                  <% @categories.each do |category| %>
+                  <% @menus.each do |category| %>
                   <li><%= link_to category.Name,list_items_show_path(category.slug)%>
             </li><% end %>
                    
