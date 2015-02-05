@@ -1,33 +1,4 @@
-<div class="col col-sm-12 innerNav">
-          <nav class="navbar navbar-inverse navbar-fixed-top"> <!--- nav start from here -->
-                <div class="container">
-                <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                </div>
-        
-                <div id="navbar" class="collapse navbar-collapse nav2">
-                  <ul class="nav navbar-nav">
-                        <li>Why are you interested to visit Nepal?:</li>
-                  
-                  <% @categories.each do |category| %>
-                  <li><%= link_to category.Name,list_items_show_path(category.slug)%>
-                  </li><% end %>
-                  </ul>
-                        
-                       
-                      
-                </div><!--/.nav-collapse -->
-                </div>
-          </nav><!--- nav end here -->
-   
-   
-   
-  </div>
+
    
    
    
@@ -135,15 +106,12 @@
             
             <div class="col col-sm-12 shortInfo">
             <div class="row">
+
             <p><i><%= @item.category.Description %></i></p>
             </div>
             </div>
             
-            
-            
-            
-            
-            
+        
             
        <div class="col-sm-12">
              <div class="row">
