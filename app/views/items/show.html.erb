@@ -1,5 +1,7 @@
 
-   <!------ inner banner start from here ---->    
+   <!------ inner banner start from here ----> 
+
+   
   <div class="banner1">
     <div class="container">
     <div class="col col-sm-12"
@@ -83,7 +85,8 @@
                              <div class="col-sm-1"></div>
                              
                              <div class="col-sm-7">
-                             <img src="assets/weather.png" class="img-responsive">
+                             <div id="weather"></div>
+                             
                              <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
                              
                              <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
@@ -161,6 +164,7 @@
              <div class="row">
              <div class="youMayPageTitleTab"> 
              <h5>You May Also Like</h5>
+
              <div class="border"></div>
              
               
@@ -397,70 +401,7 @@
  <!------------------------------------------------------------------ main body end here ---------------------------------------------------------------->     
    
 
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.Name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.Description %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @item.Order %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @item.category.Name %>
-</p>
-
-<!-- from description table -->
-<h5>.................description................. </h5>
-<p>
-  <strong>Title:</strong>
-  <%= @description.Title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @description.Content %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @description.Order %>
-</p>
-
-<!-- from image table  -->
-<h5>...................Image.................... </h5>
-<p>
-  <strong>Title:</strong>
-  <%= @image.Title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @image.Content %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @image.Order %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @image.image_url(:thumb) %>
-</p>
-
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
 
  <script type="text/javascript"> 
  $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
