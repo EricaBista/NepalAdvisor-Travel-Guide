@@ -7,10 +7,11 @@ class ApplicationController < ActionController::Base
  
    def layout
    
+
     if controller_name == "home_controller"
     layout 'home'
+    end
   end
-   end
 
   private
   def current_user
@@ -21,6 +22,9 @@ class ApplicationController < ActionController::Base
   	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
   end
   def set_menu
+
       @menus ||= Category.all
+
+      # @categories ||= Category.all
   end
 end
