@@ -42,7 +42,7 @@ ActiveAdmin.register Item do
 
      
 
-      f.inputs do
+      f.inputs "Images" do
         f.has_many :images, new_record: 'Images' do |b|
           b.input :Title
            b.input :Content
@@ -54,7 +54,7 @@ ActiveAdmin.register Item do
         end
       end
 
-        f.inputs do
+        f.inputs "Descriptions" do
         f.has_many :descriptions, new_record: 'Descriptions' do |d|
           d.input :Title
            d.input :Content
@@ -65,16 +65,10 @@ ActiveAdmin.register Item do
            # end
         end
       end
-
-
-     
      f.actions 
    end
 
-   show do
-    attributes_table :categroy, :Name, :Description, :Order
-  end
-
+  
 
   show do |item|
   attributes_table do
