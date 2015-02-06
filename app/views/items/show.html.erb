@@ -145,11 +145,13 @@
             
             <div class="col col-sm-5 shareIcon">
             Share:
-            <img src="assets/fa.jpg" class="img-responsive" >
-            <img src="assets/twitter.jpg" class="img-responsive" >
-            <img src="assets/g+.jpg" class="img-responsive" >
-            <img src="assets/pin.jpg" class="img-responsive">
-            <img src="assets/in.jpg" class="img-responsive">
+             <%= image_tag('fa.jpg',:class =>"img-responsive")%>
+             <%= image_tag('twitter.jpg',:class =>"img-responsive")%>
+             <%= image_tag('g+.jpg',:class =>"img-responsive")%>
+             <%= image_tag('pin.jpg',:class =>"img-responsive")%>
+             <%= image_tag('in.jpg',:class =>"img-responsive")%>
+
+            
             
             </div>
             
@@ -238,7 +240,8 @@
              <div class="review">
              <div class="col col-sm-2">
              <div class="row">
-             <img src="assets/man.png" class="img-responsive">
+             <%= image_tag('man.png',:class =>"img-responsive")%>
+             
               <div class="reviewerName">John Cena </div>
              </div>
              </div>
@@ -254,7 +257,7 @@
             
        
              <div class="likeNReply">
-             <img src="assets/like.jpg"><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
+             <%= image_tag('like.jpg',:class =>"img-responsive")%><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
              </div>
              
              
@@ -264,7 +267,7 @@
                                                      <div class="comment">
                                                      <div class="col col-sm-2">
                                                      <div class="row">
-                                                     <img src="assets/girl.jpg" class="img-responsive">
+                                                     <%= image_tag('girl.jpg',:class =>"img-responsive")%>
                                                       <div class="reviewerName">Pholmati Devi </div>
                                                      </div>
                                                      </div>
@@ -280,7 +283,7 @@
                                                     
                                                
                                                      <div class="likeNReply">
-                                                     <img src="assets/like.jpg"><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply                                     </span>
+                                                     <%= image_tag('like.jpg',:class =>"img-responsive")%><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply                                     </span>
                                                      </div>
                                                     
                                                      
@@ -330,15 +333,16 @@
                 <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
                 
                 <div class="adsBanner">
-                <img class="img-responsive" src="assets/ads03.jpg">
+                <%= image_tag('ads03.jpg',:class =>"img-responsive")%>
+               
                 </div>
                 
                 <div class="adsBanner">
-                <img class="img-responsive" src="assets/ads02.jpg">
+               <%= image_tag('ads02.jpg',:class =>"img-responsive")%>
                 </div>
                 
                 <div class="adsBanner">
-                <img class="img-responsive" src="assets/ads01.jpg">
+                <%= image_tag('ads01.jpg',:class =>"img-responsive")%>
                 </div>
                 </div>
                 
@@ -368,8 +372,8 @@
                <div class="followUs">Follow Us On</div>
                <hr style="margin-top:8px;">
                <div class="followIcon">
-               <a href="#"><img src="assets/facebook-img.png"></a>
-               <a href="#"><img src="assets/twitter-img.png"></a>
+               <a href="#"><%= image_tag('facebook-img.png',:class =>"img-responsive")%>
+               <a href="#"><%= image_tag('twitter-img.png',:class =>"img-responsive")%>
                </div>
                <hr style="margin-top:8px;">
          </div><!-------------------------------- rightPanel end here -------------------------------->
