@@ -46,7 +46,7 @@
              <div class="pageTitle"> 
              
              
-             <h5><%= @item.Name%> <small><%= @item.Description %></small></h5>
+             <h5><%= @item.Name%> <small><%= @item.short_tag.html_safe %></small></h5>
              
              <div class="border"></div>
              <div class="gap"></div>
@@ -60,7 +60,7 @@
 
                              
 
-                             <%= image_tag(@item.images[0].image,  :class =>"mg-responsive mainImg", :id => "zoom_03")%>
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive mainImg", :id => "zoom_03")%>
 
                              
 
@@ -71,7 +71,7 @@
                                             
 
 
-                                             <%= image_tag(i.image,  :class =>"img-responsive")%></div>
+                                             <%= image_tag(i.image_url(:small_thumb),  :class =>"img-responsive")%></div>
                                              <% end %>
                                              
                                              </div>
@@ -106,7 +106,7 @@
             <div class="col col-sm-12 shortInfo">
             <div class="row">
             
-            <p><i><%= @item.Description %></i></p>
+            <p><i><%= @item.Description.html_safe %></i></p>
             </div>
             </div>
             
@@ -118,10 +118,10 @@
              <h5><%= a.Title%></h5>
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
-             <ul>
-             <li><%= a.Content %> </li>
              
-             </ul>
+             <li><%= a.Content %></li>
+             
+             
             
              </div> 
             </div>
@@ -164,48 +164,24 @@
              <div class="row">
              <div class="youMayPageTitleTab"> 
              <h5>You May Also Like</h5>
-
+            
              <div class="border"></div>
              
               
                 
                 
                 
-                <div class="row"> <!---------- row start ---------->
+                <div class="row">
+                 <!---------- row start ---------->
+                 <% @items.each do |b| %>
                 <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek4.png">
                 <div class="youMayPlaceInfo">
-                <span class="youMayMainTitle">LANGTANG TREK</span></br>
+                <span class="youMayMainTitle"><%= b.Name %></span></br>
                 <span class="youMayMainTitleLocation">Langtang, Nepal</span></br>
                 <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                 </div></div>
                 
-                
-               
-                <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek5.png">
-                <div class="youMayPlaceInfo">
-                <span class="youMayMainTitle">Annapurna Circuit</span></br>
-                <span class="youMayMainTitleLocation">Dhawalagiri, Nepal</span></br>
-                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
-                
-                
-                
-                <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek6.png">
-                <div class="youMayPlaceInfo">
-                <span class="youMayMainTitle">Manaslu Base Camp</span></br>
-                <span class="youMayMainTitleLocation">Manaslu, Nepal</span></br>
-                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
-               
-               
-               
-               
-               <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek7.png">
-                <div class="youMayPlaceInfo">
-                <span class="youMayMainTitle">Upper Mustang</span></br>
-                <span class="youMayMainTitleLocation">Mustang, Nepal</span></br>
-                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
-                </div></div>
+                <% end %>
                 
                 </div><!---------- row end ---------->
                 
@@ -259,7 +235,7 @@
              <div class="col col-sm-2">
              <div class="row">
              <img src="assets/man.png" class="img-responsive">
-              <div class="reviewerName">Jhon Cena </div>
+              <div class="reviewerName">John Cena </div>
              </div>
              </div>
              
@@ -293,7 +269,7 @@
                                                      <div class="col col-sm-10">
                                                      <div class="row">
                                                      
-                                                     <div class="reviewTitle">@Jhon Cena</div>
+                                                     <div class="reviewTitle">@John Cena</div>
                                                      <span class="reviewDate"><h5> <small> December 31, 2014</small></h5></span>
                                                      
                                                      <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae                              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui ,                              consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
