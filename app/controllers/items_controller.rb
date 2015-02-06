@@ -11,7 +11,7 @@
   # GET /items/1.json
   def show
     @item = Item.find(params[:id]) 
-    @items = Item.where(:category_id => @item.category_id).where("`id`<>"+@item.id.to_s).limit(4).order("RANDOM()")
+    @items = Item.where(:category_id => @item.category_id).where.not(:id => @item.id).limit(4).order("RANDOM()")
      # @image = Image.find(params[:id]) 
   end
 
