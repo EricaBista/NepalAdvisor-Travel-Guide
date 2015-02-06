@@ -3,6 +3,7 @@
 #
 # Examples:
 #
+<<<<<<< HEAD
 #   cities = City.build([{ name: 'Chicago' , { name: 'Copenhagen' ])
 #   Mayor.build(name: 'Emanuel', city: cities.first)
 #  Category.build(Name: 'Trekking', Description: 'vsdvfhjsfdskfdjgfjdgfjdgfdjfgjdhsg', Order: '1, icon: 'trek-icon.png', slug: 'trekking')
@@ -54,7 +55,5 @@ images0.save
 
 descriptions0=item3.descriptions.new(:Name => 'trek', :Content => 'Makalu has two notable subsidiary peaks. Kangchungtse, or Makalu II (7,678 m) lies about 3 km (2 mi) north-northwest of the main summit. Rising about 5 km (3.1 mi) north-northeast of the main summit across a broad plateau, and connected to Kangchungtse by a narrow, 7,200 m saddle, is Chomo Lonzo (7,804 m).', :Order =>7)
 descriptions0.save
-
-
 
 
