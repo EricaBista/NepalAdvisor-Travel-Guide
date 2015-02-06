@@ -41,6 +41,8 @@ Rails.application.routes.draw do
    
     ## Search Route
   post '/search' => 'items#search'
+  get '/seed' => 'items#seed'
+
   get 'details/:slug', :controller => "categories", :action => "list_items", :as =>'list_items_show'
   
     #get 'categories/trekking/:id', :controller => "categories", :action => "trekking", :as =>'show1'
