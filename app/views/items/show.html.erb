@@ -30,7 +30,8 @@
               
               <div class="col-sm-12"> 
               <div class="row">
-              <img src="../assets/bannerads3.jpg" class="img-responsive"> 
+              
+              <%= image_tag('bannerads3.jpg',:class =>"img-responsive")%>
               </div> 
             </div>   
              
@@ -60,7 +61,7 @@
 
                              
 
-                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive mainImg", :id => "zoom_03")%>
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive mainImg", :id => "zoom_03") if @item.images[0].present? %>
 
                              
 
@@ -76,9 +77,9 @@
                                              
                                              </div>
                                              </div>
+                                             <div class="viewAllImg"><a href="#">+ view Gallery</a></div>
                                              
-                                             
-                             <div class="viewAllImg"><a href="#">+ view Gallery</a></div>
+                             
                              </div>
                              
                              
@@ -119,7 +120,7 @@
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
              
-             <li><%= a.Content %></li>
+             <li><%= a.Content.html_safe %></li>
              
              
             
@@ -174,10 +175,15 @@
                 <div class="row">
                  <!---------- row start ---------->
                  <% @items.each do |b| %>
-                <div class="col-sm-3"><img class="img-responsive" src="assets/trekking/trek4.png">
+                <div class="col-sm-3">
+                <% if b.images[0].present? %>
+                <%= link_to image_tag(b.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(b)   %>
+               <% else %>
+               <%= link_to image_tag("nowall.jpg", :class=>"img-responsive"), item_path(b) %>
+               <% end %>
                 <div class="youMayPlaceInfo">
                 <span class="youMayMainTitle"><%= b.Name %></span></br>
-                <span class="youMayMainTitleLocation">Langtang, Nepal</span></br>
+                <span class="youMayMainTitleLocation"><%= b.short_tag%></span></br>
                 <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                 </div></div>
                 

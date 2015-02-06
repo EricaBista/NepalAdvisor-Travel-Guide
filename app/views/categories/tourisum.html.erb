@@ -43,7 +43,7 @@
              <div class="col-sm-12">
              <div class="row">
              <div class="pageTitle"> 
-              <!-- <h5>Tourisum in Nepal</h5> -->
+               <!-- <h5>Tourisum in Nepal</h5> -->
              <!-- <div class="border"></div>  -->
              
              <%= @category.Description.html_safe %>
@@ -74,7 +74,7 @@
                 <div class="col-sm-4"><%= link_to image_tag(i.images[0].image,:class =>"img-responsive"), item_path(i) %>
                 <div class="titlePlaceInfo">
                 <span class="mainTitle"><%= i.Name %></span></br>
-                <span class="mainTitleLocation"><%= i.Description %></span></br>
+                <span class="mainTitleLocation"><%= i.short_tag.html_safe %></span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                 </div></div>
                 <% if j%3==0 %>
