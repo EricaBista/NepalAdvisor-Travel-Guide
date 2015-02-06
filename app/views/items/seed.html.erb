@@ -1,0 +1,19 @@
+<% i=0
+                 
+               @c.each do |e|  %>
+                category<%= i %>=Category.create(:Name => '#{<%= e.Name %>}', :Description => '#{<%= e.Description %>}', :icon => '#{<%= e.icon %>}', :slug => '#{<%= e.slug %>}, , :Order => '#{<%= e.Order %>}') <br/><br/><br/>
+                    <% j=0 %>
+                    <% e.items.each do |f| %>
+
+                        item<%= j %>=category<%= i %>.items.create(:Name => '#{<%= e.Name %>}', :Description => '#{<%= e.Description %>}', :Order => '#{<%= e.Order %>}') <br/><br/>
+                        <% k=0 %>
+                        <% f.images.each do |g| %>
+                        images<%= k %>=item<%= j %>.images.create(:Name => '#{<%= g.Title %>}', :Content => '#{<%= g.Content %>}', :Order => '#{<%= g.Order %>}', :image =>'#{<%= g.image %>}') <br/>
+                        <% k +=1 end %>
+                        <% l=0 %>
+                        <% f.descriptions.each do |h| %>
+                        descriptions<%= l %>=item<%= j %>.descriptions.create(:Name => '#{<%= h.Title %>}', :Content => '#{<%= h.Content %>}', :Order => '#{<%= h.Order %>}') <br/>
+                        <% l +=1 end %>
+
+                    <% j+=1 end %>
+              <% i+=1 end %>
