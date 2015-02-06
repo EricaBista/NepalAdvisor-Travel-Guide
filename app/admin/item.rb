@@ -4,7 +4,7 @@ ActiveAdmin.register Item do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy]
+   permit_params :list, :of, :attributes, :on, :model, :Name, :short_tag, :Description, :Order, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy]
   #
   # or
   #
@@ -34,6 +34,7 @@ ActiveAdmin.register Item do
       # add your other inputs
       f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
       f.input :Name
+      f.input :short_tag
       f.input :Description
       f.input :Order
 
@@ -78,8 +79,9 @@ ActiveAdmin.register Item do
   show do |item|
   attributes_table do
     row :Name
+    row :short_tag
     row :Description
-
+    row :Order
     row :category do |c|
         link_to c.category.Name, [ :admin, c ]
       end
