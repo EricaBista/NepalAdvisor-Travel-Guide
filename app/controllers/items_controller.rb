@@ -95,6 +95,11 @@
    def search
       @q=params[:q]
       @items = Item.item_search(params[:q])
+
+  end
+
+  def seed
+    @c=Category.all
   end
 
   private

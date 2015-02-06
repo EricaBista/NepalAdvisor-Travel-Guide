@@ -68,7 +68,7 @@
                 <%  j +=1 
 
                   if i.images[0].present?
-                    image=i.images[0]
+                    image=i.images[0].image_url(:thumb)
                   else
                     image='no-pic.png'
                   end
@@ -85,6 +85,9 @@
                 <div class="row">
                 <% end %>
 
+                <% end %>
+                <% if j==0 then %>
+                  <h3>No Results Found</h3>
                 <% end %>
                
                 
