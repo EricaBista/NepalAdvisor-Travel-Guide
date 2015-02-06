@@ -67,10 +67,17 @@
                 <% @items.each do |i| %>
                 <%  j +=1 %>
                 
-                <div class="col-sm-4"><%= link_to image_tag(i.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(i) %>
+                <div class="col-sm-4">
+
+                <% if i.images[0].present? %>
+                <%= link_to image_tag(i.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(i)   %>
+               <% else %>
+               <%= link_to image_tag("nowall.jpg", :class=>"img-responsive"), item_path(i) %>
+               <% end %>
+
                 <div  class="titlePlaceInfo">
                 <span class="mainTitle"><%= i.Name %></span></br>
-                <span class="mainTitleLocation"><%= i.Description %></span></br>
+                <span class="mainTitleLocation"><%= i.short_tag.html_safe %></span></br>
                 <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
                 </div></div>
                 <% if j%3==0 %> 
@@ -81,13 +88,13 @@
                 <% end %>
                
                 
-               </div><!---------- row end ---------->
+               </div><!-- row end ---------->
                 
            
              
           </div>
-          </div><!------------- row end ------------->    
-            </div><!-- col col-sm-12 end ------------>      
+          </div><!-- row end -->    
+            </div><!-- col col-sm-12 end -->      
         
         
        

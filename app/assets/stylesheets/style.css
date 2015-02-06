@@ -9,63 +9,6 @@ h5
 	font-weight:bold;
 	color:#4e4e4e;
 }
-/*--------------------------------------topHead-------------------------------------*/
-
-.topHead
-{
-	background:#000;
-	top:0px;
-	left: 0;
-    position: fixed !important;
-    right: 0;
-    z-index: 1330;
-	
-}
-.logo2 img{ padding:5px 0px;}
-.logNJoin { color:#ccc !important; }
-.logNJoin li { list-style:none; display:inline; padding-left:8px !important; position:relative; top:13px; padding-right:20px; font-size:13px;}
-.logNJoin li a{ color:#ccc !important; background:none !important; text-decoration:none; }
-.logNJoin li a:hover{ color:#fff !important; background:none !important; text-decoration:none; }
-
-.btn-success2
-{ 
-	height:30px; width:20px;
-	background:#62b10e !important;
-	
-}
-.searchBox
-{
-	padding:5px !important;
-	border:none !important;
-	margin-top:4px;
-
-}
-.btn-success2 .fa{color:#fff; position:relative; top:-8px; }
-
-
-
-/*--------------------------------------topHead-------------------------------------*/
-.innerNav .navbar-inverse 
-{
-    background:#77af31 !important;
-    border-color: none !important;
-	
-	
-}
-.innerNav .navbar-nav li { list-style:none; display:inline-block; color:#fff !important; font-size:12px; text-transform:uppercase; position:relative; top:26px; padding-right:15px; font-weight:bold;}
-.innerNav .navbar-nav a{color:#fff !important; font-size:12px; text-transform:uppercase; position:relative; top:-16px; padding-right:8px; font-weight:bold;}
-.innerNav .navbar-fixed-top 
-{
-    border-width: 0 ;
-    top: 30px;
-}
-.innerNav .navbar-fixed-top, .navbar-fixed-bottom 
-{
-    left: 0;
-    position: fixed !important;
-    right: 0;
-    z-index: 1200;
-}
 
 
 
@@ -94,10 +37,7 @@ h5
 .headerNav
 {
 	text-align:center;
-	/*background: url(../assets/advisor-bg.jpg) no-repeat center center scroll;*/
-	/*background-image: image-url("../assets/advisor-bg.jpg");*/
-	
-	background-image: asset-url("../assets/advisor-bg.jpg", image)
+	background: url(../img/advisor-bg.jpg) no-repeat center center scroll;
 	color: #fff;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -136,7 +76,7 @@ h5
 }
 .btn-default,.well 
 {
-  background:url(../assets/search-bg.png) repeat;
+  background:url(../img/search-bg.png) repeat;
   margin-top:30px;
 }
 .btn-success
@@ -150,6 +90,241 @@ h5
 	border:none !important;
 }
 /*===================================================================headerNav css end========================================================================================*/
+/*=============================================================== innerNavHead Start=================================================================*/
+.innerNavHead
+{
+	top:0px;
+	left: 0;
+    position: fixed !important;
+    right: 0;
+    z-index: 1330;
+}
+
+.innerNavHead ul, ol {
+	padding: 0px;
+	margin: auto;
+	list-style: none;
+}
+legend {
+	display: none;
+}
+/* Header */
+.logo {
+	float: left;
+}
+.header-container {
+	background: #000;
+}
+.header-top {
+	border-bottom: 1px dotted #2f7ace;
+	padding: 0px 0px 6px 0px;
+}
+.header .logo {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 7px;
+    padding-bottom: 0;
+    text-align: left;
+    vertical-align: middle;
+}
+.header .logo a img {
+	cursor: pointer
+}
+
+/* Nav */
+
+nav {
+	position: relative;
+	z-index: 999;
+	background: #77af31;
+}
+
+
+
+#nav > li > a {
+	color: #fff;
+	display: block;
+	float: left;
+	font-size: 11px;
+	line-height: 14px;
+	padding: 10px 16px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight:bold;
+	
+}
+
+
+/* Mob Menu */
+#mobile-menu {
+	display: none;
+	width: 100%;
+	text-align: left;
+	float: left;
+}
+#mobile-menu .toggle {
+	float: left;
+	width: 30px;
+	height: 35px;
+	cursor: pointer;
+	transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+	text-align: left;
+	margin-left: 1px;
+}
+#mobile-menu .toggle:before {
+	content: "\f0c9";
+	font-family: FontAwesome;
+	font-size: 24px;
+	color: #fff;
+	margin: 10px 0;
+	line-height: 44px;
+}
+#mobile-menu ul {
+	margin: auto;
+	padding: 0px;
+	list-style: none;
+}
+#mobile-menu ul.navmenu ul.submenu {
+	margin-top:-3px;
+	background: #fff;
+	width: 99.8%;
+	border-bottom: 5px solid #77af31;
+}
+#mobile-menu ul.navmenu .menutop {
+	display: inline-block;
+	overflow: hidden;
+}
+#mobile-menu ul.navmenu .menutop h2 {
+	float: left;
+	margin: 0;
+	font-weight: bold;
+	color: #fff;
+	padding: 14px 0px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	margin-left: -5px;
+	margin-top: 1px;
+}
+ul.topnav {
+	padding: 0 5px;
+	margin: 0;
+	font-size: 1em;
+	line-height: 0.5em;
+	list-style: none;
+}
+ul.topnav li {
+	border-bottom: 1px solid #ddd;
+	float: none;
+	margin: 0 15px;
+	position: relative;
+}
+ul.topnav li.last {
+	position: relative;
+	float: none;
+	border-bottom: none;
+}
+ul.topnav li a {
+	line-height: 10px;
+	font-size: 13px;
+	padding: 15px 0px;
+	font-weight: normal;
+	color: #333;
+	display: block;
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	width: 80%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+
+@media only screen and (max-width: 991px) {
+
+#nav {
+	display: none;
+}
+nav {
+	height: 44px;
+}
+#mobile-menu {
+	display: block;
+}
+
+.header .logo img {
+	width: 80%;
+}
+
+
+
+}
+.loginNJoinus {text-align:right; font-size:11px; top:16px;}
+.loginNJoinus li {list-style:none; display:inline;}
+.loginNJoinus li:last-child {padding-left:10px; }
+.loginNJoinus a { color:#FFFFFF; }
+.searchBox{ position: relative; top: 10px; float:right;}
+.searchButton { height:27px !important; background:#77af31; border-radius:0px;}
+.searchBar .fa { color:#fff !important; position:relative; top:-3px;}
+
+@media only screen and (min-width: 463px) and (max-width: 991px) 
+{
+.searchBox{ position: relative;
+	top: 30px;
+	z-index: 1020;
+	float: right;
+	height: 5px;}
+	
+
+}
+@media only screen and (min-width: 448px) and (max-width: 462px) 
+{
+.searchBox{ position: relative;
+	top: 32px;
+	z-index: 1020;
+	float: right;
+	height: 5px;}
+}
+@media only screen and (max-width: 447px) 
+{
+	.searchBox{ 
+	position: relative;
+	top: 14px;
+	z-index: 1020;
+	float: right;
+	height: 5px; 
+	}
+	
+}
+@media only screen and (min-width: 390px) and (max-width: 991px) 
+{
+	.searchBar { width:250px;}
+}
+@media only screen and (min-width: 300px) and (max-width: 389px) 
+{
+	.searchBar{ width:200px}
+}
+@media only screen and (min-width: 448px) and (max-width: 500px) 
+{
+	.searchBox {
+	position: relative;
+	top: 13px;
+	z-index: 1020;
+	float: right;
+	height: 5px;
+}
+}
+@media only screen and (max-width: 991px) 
+{
+.searchButton { background:#558518; border-radius:0px; border:none !important;}
+.searchBar .fa { color:#fff !important; position:relative; top:-3px;}
+}
+
+@media only screen and (max-width: 326px) 
+{
+.loginNJoinus{ font-size:9.8px;}
+}
+/*================================================================ innerNavHead End ==========================================================*/
+
 
 /*===================================================================banner css start========================================================================================*/
 .banner1 h2{ border:3px solid #fff; padding: 15px 15px 15px 15px; text-transform:uppercase; position:relative; top:50px; }
@@ -160,7 +335,7 @@ h5
 .banner6 h2{ border:3px solid #fff; padding: 15px 15px 15px 15px; text-transform:uppercase; position:relative; top:50px;}
 .banner1
 {
-	background:url(../assets/banner/banner1.jpg) no-repeat center center ;
+	background:url(../img/banner/banner1.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -172,7 +347,7 @@ h5
 }
 .banner2
 {
-	background:url(../assets/banner/banner2.jpg) no-repeat center center ;
+	background:url(../img/banner/banner2.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -184,7 +359,7 @@ h5
 }
 .banner3
 {
-	background:url(../assets/banner/banner3.jpg) no-repeat center center ;
+	background:url(../img/banner/banner3.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -196,7 +371,7 @@ h5
 }
 .banner4
 {
-	background:url(../assets/banner/banner4.jpg) no-repeat center center ;
+	background:url(../img/banner/banner4.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -204,12 +379,11 @@ h5
 	-o-background-size: cover;
 	height:198px;
 	margin-top:82px;
-	width:100%;
 
 }
 .banner5
 {
-	background:url(../assets/banner/banner5.jpg) no-repeat center center ;
+	background:url(../img/banner/banner5.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -221,7 +395,7 @@ h5
 }
 .banner6
 {
-	background:url(../assets/banner/banner6.jpg) no-repeat center center ;
+	background:url(../img/banner/banner6.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -296,7 +470,7 @@ h5
 
 .border { height:1px; background:#CCC; margin-top:-6px;}
 .hotelsPlace{ color:#57841f; padding-top:10px;}
-.hotelsPlace li{ color:#666666; font-size:11px; list-style-image:url(../assets/list-style.png); padding-top:10px; margin-left: -28px;}
+.hotelsPlace li{ color:#666666; font-size:11px; list-style-image:url(../img/list-style.png); padding-top:10px; margin-left: -28px;}
 
 /*------------------------------------------------- Trekking page -------------------------------------------------*/
 .pageTitle h5{ padding-top:35px;}
@@ -312,7 +486,7 @@ h5
 
 /*------------------------------------------------- Trekking page -------------------------------------------------*/
 
-.lawInfo li{ color:#666666; font-size:11.5px; list-style-image:url(../assets/list-style2.png); padding-top:10px; margin-left: -38px;}
+.lawInfo li{ color:#666666; font-size:11.5px; list-style-image:url(../img/list-style2.png); padding-top:10px; margin-left: -38px;}
 .lawInfo li a{ color:#666666; text-decoration:none;}
 .lawInfo li a:hover{ color:#666666; text-decoration:underline;}
 /*------------------------------------------------- legal page -------------------------------------------------*/
@@ -605,3 +779,15 @@ and (max-width : 767px)
 .mainImg { width:100%;}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
