@@ -99,7 +99,7 @@
         
         <!--End mobile-menu -->
         <ul id="nav">
-          <li><a href="index.html"><span>WHY ARE YOU INTERESTED TO VISIT NEPAL?:</span> </a></li>
+          <li><a href="<%= root_path %>"><span>WHY ARE YOU INTERESTED TO VISIT NEPAL?:</span> </a></li>
           <% @menus.each do |category| %>
                   <li><%= link_to category.Name,list_items_show_path(category.slug)%></li>
                   <% end %>
