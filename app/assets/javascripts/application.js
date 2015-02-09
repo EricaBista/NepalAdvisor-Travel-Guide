@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
 //= require weather.js
 //= require jquery.simpleWeather.js
+//= require_tree .
 $(function() {
   $('a#add-another').click(function() {
     $('#description-list li:first').clone().find('input').val('')
