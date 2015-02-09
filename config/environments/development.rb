@@ -34,6 +34,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
   ENV['PATH'] = "/usr/local/bin:#{ENV['PATH']}"
 
+  Rails.application.config.assets.precompile += %w( style.css )
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

@@ -37,7 +37,7 @@ h5
 .headerNav
 {
 	text-align:center;
-	background: url(../assets/advisor-bg.jpg) no-repeat center center scroll;
+	background: url(../img/advisor-bg.jpg) no-repeat center center scroll;
 	color: #fff;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -76,7 +76,7 @@ h5
 }
 .btn-default,.well 
 {
-  background:url(../assets/search-bg.png) repeat;
+  background:url(../img/search-bg.png) repeat;
   margin-top:30px;
 }
 .btn-success
@@ -336,7 +336,7 @@ nav {
 .banner6 h2{ border:3px solid #fff; padding: 15px 15px 15px 15px; text-transform:uppercase; position:relative; top:50px;}
 .banner1
 {
-	background:url(../assets/banner/banner1.jpg) no-repeat center center ;
+	background:url(../img/banner/banner1.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -348,7 +348,7 @@ nav {
 }
 .banner2
 {
-	background:url(../assets/banner/banner2.jpg) no-repeat center center ;
+	background:url(../img/banner/banner2.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -360,7 +360,7 @@ nav {
 }
 .banner3
 {
-	background:url(../assets/banner/banner3.jpg) no-repeat center center ;
+	background:url(../img/banner/banner3.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -372,7 +372,7 @@ nav {
 }
 .banner4
 {
-	background:url(../assets/banner/banner4.jpg) no-repeat center center ;
+	background:url(../img/banner/banner4.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -384,7 +384,7 @@ nav {
 }
 .banner5
 {
-	background:url(../assets/banner/banner5.jpg) no-repeat center center ;
+	background:url(../img/banner/banner5.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -396,7 +396,7 @@ nav {
 }
 .banner6
 {
-	background:url(../assets/banner/banner6.jpg) no-repeat center center ;
+	background:url(../img/banner/banner6.jpg) no-repeat center center ;
 	text-align:center;
 	color: #fff;
 	-webkit-background-size: cover;
@@ -471,7 +471,7 @@ nav {
 
 .border { height:1px; background:#CCC; margin-top:-6px;}
 .hotelsPlace{ color:#57841f; padding-top:10px;}
-.hotelsPlace li{ color:#666666; font-size:11px; list-style-image:url(../assets/list-style.png); padding-top:10px; margin-left: -28px;}
+.hotelsPlace li{ color:#666666; font-size:11px; list-style-image:url(../img/list-style.png); padding-top:10px; margin-left: -28px;}
 
 /*------------------------------------------------- Trekking page -------------------------------------------------*/
 .pageTitle h5{ padding-top:35px;}
@@ -487,7 +487,7 @@ nav {
 
 /*------------------------------------------------- Trekking page -------------------------------------------------*/
 
-.lawInfo li{ color:#666666; font-size:11.5px; list-style-image:url(../assets/list-style2.png); padding-top:10px; margin-left: -38px;}
+.lawInfo li{ color:#666666; font-size:11.5px; list-style-image:url(../img/list-style2.png); padding-top:10px; margin-left: -38px;}
 .lawInfo li a{ color:#666666; text-decoration:none;}
 .lawInfo li a:hover{ color:#666666; text-decoration:underline;}
 /*------------------------------------------------- legal page -------------------------------------------------*/

@@ -1,19 +1,22 @@
+<br/><br/><br/><br/><br/><br/><br/><br/>
 <% i=0
                  
                @c.each do |e|  %>
-                category<%= i %>=Category.create(:Name => '#{<%= e.Name %>}', :Description => '#{<%= e.Description %>}', :icon => '#{<%= e.icon %>}', :slug => '#{<%= e.slug %>}, , :Order => '#{<%= e.Order %>}') <br/><br/><br/>
+                category<%= i %>=Category.new(:Name => '#{<%= e.Name %>}', :Description => '#{<%= (CGI.escapeHTML(e.Description)) %>}', :icon => '#{<%= e.icon %>}', :slug => '#{<%= e.slug %>}', , :Order => '#{<%= e.Order %>}') <br/><br/><br/>
                     <% j=0 %>
                     <% e.items.each do |f| %>
 
-                        item<%= j %>=category<%= i %>.items.create(:Name => '#{<%= e.Name %>}', :Description => '#{<%= e.Description %>}', :Order => '#{<%= e.Order %>}') <br/><br/>
+                        item<%= j %>=category<%= i %>.items.new(:Name => '#{<%= (CGI.escapeHTML(e.Name)) %>}', :Description => '#{<%= (CGI.escapeHTML(e.Description)) %>}', :Order => '#{<%= e.Order %>}', :short_tag =>'#{<%= raw(CGI.escapeHTML(f.short_tag)) %>}') <br/><br/>
                         <% k=0 %>
                         <% f.images.each do |g| %>
-                        images<%= k %>=item<%= j %>.images.create(:Name => '#{<%= g.Title %>}', :Content => '#{<%= g.Content %>}', :Order => '#{<%= g.Order %>}', :image =>'#{<%= g.image %>}') <br/>
+                        images<%= k %>=item<%= j %>.images.build(:Name => '#{<%= g.Title %>}', :Content => '#{<%= (CGI.escapeHTML(g.Content)) %>}', :Order => '#{<%= g.Order %>}', :image =>'#{<%= g.image %>}') <br/>
                         <% k +=1 end %>
                         <% l=0 %>
                         <% f.descriptions.each do |h| %>
-                        descriptions<%= l %>=item<%= j %>.descriptions.create(:Name => '#{<%= h.Title %>}', :Content => '#{<%= h.Content %>}', :Order => '#{<%= h.Order %>}') <br/>
+                        descriptions<%= l %>=item<%= j %>.descriptions.build(:Name => '#{<%= h.Title %>}', :Content => '#{<%= (CGI.escapeHTML(h.Content)) %>}', :Order => '#{<%= h.Order %>}') <br/>
                         <% l +=1 end %>
 
                     <% j+=1 end %>
+
+                    category<%= i%>.save
               <% i+=1 end %>
