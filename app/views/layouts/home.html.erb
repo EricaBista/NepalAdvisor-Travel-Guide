@@ -281,27 +281,12 @@
                </div>
                <hr style="margin-top:8px;">
          </div><!-- rightPanel end here -->
-        
-        
-        
-        
-        
-       
-                       
-
+    
 
 </div>
 </div>   
    
  <!-- main body end here -->	   
-   
-   
-   
-   
-   
-   
-   
-   
    
    
 
@@ -316,11 +301,10 @@
    
         <div class="col col-sm-7 footerNav">
         <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Site Map</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy Policy</a></li>
+        <% @footer_menus.each do |f| %>
+        <li><%= link_to f.Title, cms_path(f.Slug) %></li>
+        <% end %>
+       
 
         </ul>
         
