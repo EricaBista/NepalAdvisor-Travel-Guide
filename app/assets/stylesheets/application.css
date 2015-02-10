@@ -13,12 +13,12 @@
  
  *= require_self
  */
-@font-face{
-  font-family: 'Font-Awesome';
-  src: asset-url('font-awesome.eot');
-  src: asset-url('font-awesome.eot?#iefix') format('embedded-opentype'),  
-  asset-url('font-awesome.svg') format('svg'),  
-  asset-url('font-awesome.woff') format('woff');
+ @font-face {
+  font-family: 'FontAwesome';
+  src: url('/assets/fontawesome-webfont.eot');
+  src: url('/assets/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fontawesome-webfont.woff') format('woff'),
+    url('/assets/fontawesome-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
