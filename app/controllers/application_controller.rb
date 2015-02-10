@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
   def set_menu
       @menus ||= Category.all.order(:Order)
-       @footer_menus ||= Contact.where(:home_page => true).order(:Order)
+       @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
       # @categories ||= Category.all
   end
 end
