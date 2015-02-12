@@ -43,8 +43,12 @@
         
         <div class="col col-md-4 loginNJoinus">
         <ul>
+        <% if(@current_user) %>
+        <li><%= link_to "LogOut", logout_path %></li>
+        <% else %>
         <li><%= link_to "Login", log_in_path %></li>
         <li><%= link_to "Join Us", sign_up_path %></li>
+        <% end %>
         </ul>
         </div>
         

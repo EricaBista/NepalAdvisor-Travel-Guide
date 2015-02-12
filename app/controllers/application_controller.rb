@@ -23,6 +23,9 @@ class ApplicationController < ActionController::Base
       @menus ||= Category.all.order(:Order)
        @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
        @quicklinks ||= Contact.find_by_Slug("quick-links")
+       @current_user ||= session[:user_id] 
+       #puts @current_user.inspect
+
       # @categories ||= Category.all
   end
 end
