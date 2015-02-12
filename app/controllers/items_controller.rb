@@ -13,6 +13,7 @@
     @item = Item.find(params[:id]) 
     @items = Item.where(:category_id => @item.category_id).where.not(:id => @item.id).limit(4).order("RANDOM()")
      # @image = Image.find(params[:id]) 
+     @review = Review.new
   end
 
   # GET /items/new

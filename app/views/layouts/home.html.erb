@@ -251,25 +251,10 @@
                 </div>
                 
                
-               <div class="quickLinks">Quick Links</div>
+               <div class="quickLinks"><%= @quicklinks.Title.html_safe.html_safe %></div>
                <hr style="margin-top:8px;">
                <div class="quickLinksMenu">
-               <p >Talk to us
-               </br>
-			   <span><a href="#">- Send feedback or report a problem</a></span>
-			   </p>
-			   
-               <p>For owners
-               </br>
-               <span><a href="#">- Business Listings for hotel marketing</a></span>
-               </br>
-               <span><a href="#">- Visit your Management Center</a></span>
-               </p>
-
-               <p>Advertise with us
-               </br>
-               <span><a href="#">- Find out about advertising or partnering with us</a></span>
-               </p>
+               <%= @quicklinks.Content.html_safe %>
                </div>
                <hr>
                

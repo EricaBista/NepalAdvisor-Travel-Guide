@@ -210,10 +210,12 @@
              <h4><small>Write your Reviews / Comments:</small></h4>
              <div class="col col-sm-8 reviewForm">
              
-             <form>
+             
          <div class="form-group">
          Title of your review:
-         <input type="" class="form-control" id="reviewTitle">
+
+         <%= render :partial => 'reviews/form', :locals => {:item_id => @item.id} %>
+         <input type="" class="form-control" id="reviewTitle"> 
          </div>
              
          <div class="form-group">
@@ -222,7 +224,8 @@
          </div>
          
              <button type="submit" class="btn btn-success">Submit your reviews</button>
-       </form>
+       
+
              </div> 
           </div>
           </div><!------------- row end ------------->    
@@ -238,8 +241,10 @@
              <div class="border"></div>
              
              <div class="review">
+             
+             <% @item.reviews.each do |g| %>
              <div class="col col-sm-2">
-             <div class="row">
+             <div class="row"><%= g.user_id %>
              <%= image_tag('man.png',:class =>"img-responsive")%>
              
               <div class="reviewerName">John Cena </div>
@@ -249,55 +254,27 @@
              
              <div class="col col-sm-10">
              <div class="row">
-             
-             <div class="reviewTitle">“Quasi artfchecto beatae”</div>
+             <div class="reviewTitle"><%= g.title %></div>
              <span class="reviewDate"><h5> <small> December 31, 2014</small></h5></span>
-             
-             <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim          ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,               consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-            
-       
-             <div class="likeNReply">
+             <p><%= g.description%> </p>
+              <div class="likeNReply">
              <%= image_tag('like.jpg',:class =>"img-responsive")%><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
              </div>
+             </div>
+             </div>
+             <% end %>
+             
+             
+             
+            
+       
+            
              
              
              
                               
                                                 
-                                                     <div class="comment">
-                                                     <div class="col col-sm-2">
-                                                     <div class="row">
-                                                     <%= image_tag('girl.jpg',:class =>"img-responsive")%>
-                                                      <div class="reviewerName">Pholmati Devi </div>
-                                                     </div>
-                                                     </div>
                                                      
-                                                     
-                                                     <div class="col col-sm-10">
-                                                     <div class="row">
-                                                     
-                                                     <div class="reviewTitle">@John Cena</div>
-                                                     <span class="reviewDate"><h5> <small> December 31, 2014</small></h5></span>
-                                                     
-                                                     <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae                              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui ,                              consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-                                                    
-                                               
-                                                     <div class="likeNReply">
-                                                     <%= image_tag('like.jpg',:class =>"img-responsive")%><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply                                     </span>
-                                                     </div>
-                                                    
-                                                     
-             
-                      
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-             </div>
-             </div><!----------- col col-sm-10 end ---------->  
             
             </div><!---------- review end ----------> 
             
@@ -310,10 +287,9 @@
                                 
                                 
                                 
-             </div>
-             </div><!----------- col col-sm-10 end ------------>  
             
-            </div><!---------- review end -------->  
+            
+             
           </div><!------------ row end ------------>    
             </div><!------------ col col-sm-12 end ------------> 
             
