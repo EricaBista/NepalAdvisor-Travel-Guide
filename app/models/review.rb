@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
 	 validates :user_id, presence: true
-  belongs_to :user
+  has_many :users
   belongs_to :item
   before_save :add_user_session
 
