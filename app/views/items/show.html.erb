@@ -244,7 +244,7 @@
              <div class="row"><%= g.user_id %>
              <%= image_tag('man.png',:class =>"img-responsive")%>
              
-              <div class="reviewerName"> erica </div>
+              <div class="reviewerName"> <% user=User.find_by_id(g.user_id) %><%= user.email %> </div>
              </div>
              </div>
              
