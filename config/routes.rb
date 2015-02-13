@@ -38,13 +38,14 @@ Rails.application.routes.draw do
     get "business" => "categories#business"
     get "legal" => "categories#legal"
     get "visa" => "categories#visa"
+    
     get 'cms/:slug', :controller => "contacts", :action => "cms", :as => 'cms'
     # get "help_center" => "contacts#help_center", :as => "help_center", :via => [:get, :post]
     # get "terms_of_use" => "contacts#terms_of_use", :as => "terms_of_use", :via => [:get, :post]
     ## Search Route
   post '/search' => 'items#search'
   get '/seed' => 'items#seed'
-
+ 
   get 'details/:slug', :controller => "categories", :action => "list_items", :as =>'list_items_show'
   
   root :to => 'home#index'
