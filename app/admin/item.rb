@@ -17,11 +17,11 @@ ActiveAdmin.register Item do
      column :Name
     column :category do |c|
      
-        link_to c.category.Name
+        c.category.Name
       end
       
 
-    column :Description, as: :html_editor
+    
     column :Order
      column "" do |resource|
       links = ''.html_safe
