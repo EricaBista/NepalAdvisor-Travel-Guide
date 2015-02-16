@@ -58,24 +58,20 @@
 
 
                              
-                            <div class="showimagediv">
-                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive ", :id => "zoom_031") if @item.images[0].present? %>
-                            </div>
-                             
-
+                            <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item">
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive showimagediv", :id => "zoom_031") if @item.images[0].present? %>
+                            </a>
+                           
                                              <div class="row">
-                                             <div class="thumImg">
-                                             <% @item.images.each do |i| %>
-                                             <div class="col col-sm-4 thumIcon">
-                                            
-
-
-                                             <%= image_tag(i.image_url(:small_thumb),  :class =>"img-responsive gallerythumbnail")%></div>
-                                             <% end %>
-                                             
+                                                 <div class="thumImg">
+                                                 <% @item.images.each do |i| %>
+                                                    <div class="col col-sm-4 thumIcon">
+                                                        <%= image_tag(i.image_url(:small_thumb),  :class =>"img-responsive gallerythumbnail", :data=>{ :big => i.image_url(:big_thumb), :full => i.image_url})%>
+                                                    </div>
+                                                 <% end %>
+                                                 </div>
                                              </div>
-                                             </div>
-                                             <div class="viewAllImg"><a href="#">+ view Gallery</a></div>
+                                             <!-- <div class="viewAllImg"><a href="#">+ view Gallery</a></div> -->
                                              
                              
                              </div>
@@ -88,7 +84,7 @@
                              
                              <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
                              
-                             <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                             <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;"><%= @review_count%> reviews</span></span>
                              </div>
                             
                             </div>
@@ -263,11 +259,18 @@
 
   $(document).ready(function() {
     $('.gallerythumbnail').on('click', function() {
-        var img = $('<img />', {src    : this.src,
-                                'class': 'fullImage'
-                  });
+        // var img = $('<img />', {src    : this.src,
+        //                         'class': 'fullImage'
+        //           });
+        var newsrc=$(this).data("big")
+        var fullsrc=$(this).data("full")
 
-        $('.showimagediv').html(img).show();
+        
+        $(".itembigimg").attr('href',fullsrc)
+
+         $(".showimagediv").fadeOut(400, function() {
+           $('.showimagediv').attr('src',newsrc)
+        }).fadeIn(400);
     });
 });
   </script>
