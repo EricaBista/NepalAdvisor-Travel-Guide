@@ -67,11 +67,11 @@
                 <% @items.each do |i| %>
                 <%  j +=1 
 
-                  if i.images[0].present?
-                    image=i.images[0].image_url(:thumb)
-                  else
+                  # if i.images[0].present?
+                  #   image=i.images[0].image_url(:thumb)
+                  # else
                     image='nowall.jpg'
-                  end
+                  # end
                 %>
                 
                 <div class="col-sm-4"><%= link_to image_tag(image,:class =>"img-responsive"), item_path(i) %>
