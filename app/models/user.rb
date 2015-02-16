@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	validates_uniqueness_of :email
 	validates_confirmation_of :password
   has_many :reviews
+  mount_uploader :picture, ImageUploader
 	
 	def generate_token(column)
 		begin 
@@ -31,4 +32,7 @@ end
      		self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
         end
       end
+
+
+    
 end

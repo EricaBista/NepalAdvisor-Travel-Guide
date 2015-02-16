@@ -38,7 +38,9 @@ Rails.application.routes.draw do
     get "business" => "categories#business"
     get "legal" => "categories#legal"
     get "visa" => "categories#visa"
-    
+    get "profile" => "users#profile", :as => "profile"
+     
+   
     get 'cms/:slug', :controller => "contacts", :action => "cms", :as => 'cms'
     # get "help_center" => "contacts#help_center", :as => "help_center", :via => [:get, :post]
     # get "terms_of_use" => "contacts#terms_of_use", :as => "terms_of_use", :via => [:get, :post]

@@ -11,8 +11,12 @@
  * file per style scope.
  *
  
+
+ 
  *= require_self
+ //= require active_admin/editor/wysiwyg
  */
+
  @font-face {
   font-family: 'FontAwesome';
   src: url('/assets/fontawesome-webfont.eot');
