@@ -45,6 +45,9 @@
         <ul>
         <% if(@current_user) %>
         <li><%= link_to "LogOut", logout_path %></li>
+        <li><%= link_to "profile", profile_path %></li>
+        
+        
         <% else %>
         <li><%= link_to "Login", log_in_path %></li>
         <li><%= link_to "Join Us", sign_up_path %></li>

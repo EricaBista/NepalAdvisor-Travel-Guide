@@ -117,10 +117,10 @@
              <h5><%= a.Title%></h5>
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
-             
+             <ul>
              <li><%= a.Content.html_safe %></li>
              
-             
+             </ul>
             
              </div> 
             </div>
@@ -150,11 +150,6 @@
             <%= link_to image_tag('pin.jpg',:class =>"img-responsive"), "http://www.pinterest.com" %>
             <%= link_to image_tag('in.jpg',:class =>"img-responsive"), "http://www.linkedin.com" %>
             <%= link_to image_tag('g+.jpg',:class =>"img-responsive"), "https://plus.google.com" %>
-
-            
-             
-
-            
             
             </div>
             
@@ -244,10 +239,11 @@
              
              <% @item.reviews.each do |g| %>
              <div class="col col-sm-2">
-             <div class="row"><%= g.user_id %>
-             <%= image_tag('man.png',:class =>"img-responsive")%>
-             
-              <div class="reviewerName"> <% user=User.find_by_id(g.user_id) %><%= user.email %> </div>
+             <div class="row">
+             <% user=User.find_by_id(g.user_id) %>
+             <%#= image_tag('man.png',:class =>"img-responsive")%>
+             <%= image_tag(user.picture_url(:avatar), :class => "img-circle img-responsive") %>
+              <div class="reviewerName"> <%= user.full_name %> </div>
              </div>
              </div>
              

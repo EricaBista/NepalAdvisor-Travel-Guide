@@ -14,11 +14,14 @@ ActiveAdmin.register Item do
   #   permitted
   # end
   index do 
-    column :Name
+     column :Name
     column :category do |c|
+     
         link_to c.category.Name
       end
-    column :Description
+      
+
+    column :Description, as: :html_editor
     column :Order
      column "" do |resource|
       links = ''.html_safe
@@ -30,12 +33,12 @@ ActiveAdmin.register Item do
   end
 
   form do |f|
-    f.inputs "Item" do
+      f.inputs "Item" do
       # add your other inputs
       f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
       f.input :Name
       f.input :short_tag
-      f.input :Description
+      f.input :Description, as: :html_editor
       f.input :Order
 
      end 
@@ -45,7 +48,7 @@ ActiveAdmin.register Item do
       f.inputs "Images" do
         f.has_many :images, new_record: 'Images' do |b|
           b.input :Title
-           b.input :Content
+           b.input :Content, as: :html_editor
            b.input :Order
           # b.input :image 
           b.input :image, :as => :file, :hint => image_tag(b.object.image.url(:thumb))
@@ -57,7 +60,7 @@ ActiveAdmin.register Item do
         f.inputs "Descriptions" do
         f.has_many :descriptions, new_record: 'Descriptions' do |d|
           d.input :Title
-           d.input :Content
+           d.input :Content, as: :html_editor
            d.input :Order
            d.input :_destroy, :as=>:boolean, :required => false, :label=>'Remove'
            # d.button do
@@ -72,9 +75,10 @@ ActiveAdmin.register Item do
 
   show do |item|
   attributes_table do
+
     row :Name
     row :short_tag
-    row :Description
+    row :Description, as: :html_editor
     row :Order
     row :category do |c|
         link_to c.category.Name, [ :admin, c ]
