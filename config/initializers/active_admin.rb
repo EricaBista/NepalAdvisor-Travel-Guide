@@ -17,6 +17,8 @@ ActiveAdmin.setup do |config|
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
   # config.site_title_image = "logo.png"
+# config.authorization_adapter = ActiveAdmin::CanCanAdapter
+# config.on_unauthorized_access = :access_denied
 
   # == Default Namespace
   #
@@ -57,7 +59,8 @@ ActiveAdmin.setup do |config|
   config.authentication_method = :authenticate_admin_user!
 
   # == User Authorization
-  #
+  
+
   # Active Admin will automatically call an authorization
   # method in a before filter of all controller actions to
   # ensure that there is a user with proper rights. You can use

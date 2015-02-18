@@ -24,7 +24,6 @@
     @item = Item.new
     @description = Description.new
     @image = Image.new
-
   end
 
   # GET /items/1/edit

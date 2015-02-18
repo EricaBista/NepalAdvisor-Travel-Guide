@@ -4,7 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
  layout :layout
  before_filter :set_menu
- 
+  
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to (super_user? ? franchises_path : root_path), :alert => exception.message
+  # end
+
+  # def current_ability
+  #   @current_ability ||= Ability.new(current_user)
+  # end
+
+  
    def layout
     if controller_name == "home_controller"
     layout 'home'
@@ -24,7 +33,7 @@ class ApplicationController < ActionController::Base
        @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
        @quicklinks ||= Contact.find_by_Slug("quick-links")
        @current_user ||= session[:user_id] 
-       #puts @current_user.inspect
+       
 
       # @categories ||= Category.all
   end
