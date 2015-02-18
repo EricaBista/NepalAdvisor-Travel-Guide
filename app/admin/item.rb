@@ -1,6 +1,16 @@
 ActiveAdmin.register Item do
  
- 
+  # controller do
+  # authorize_resource class: false
+  #   include ActiveAdminCanCan
+
+  #   def create
+  #     params[:item][:franchise_id] = current_user.franchise_id if franchise_user?
+  #     create!
+  #   end
+  # end
+
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -14,6 +24,7 @@ ActiveAdmin.register Item do
   #   permitted
   # end
   index do 
+    
      column :Name
     column :category do |c|
      

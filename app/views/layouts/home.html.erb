@@ -210,17 +210,15 @@
              <h5>Hotels in popular destinations:</h5>
              <div class="border"></div>
              <div class="hotelsPlace">
-           	 <h6>Kathmandu, Lalitpur & Bhaktapur</h6>
+             <% @destinations.each do |l| %>
+           	 <h6><%= l.Name %></h6>
+             </h6><%=link_to l.Title, destination_path(l) %></br>
+             <% end %>
             
             <div class="col col-sm-3 hotelsInfo">
             <div class="row">
             
-            <ul>
             
-            <%  @destinations.each do |d| %>
-            <li><%=link_to d.Name, destination_path(d) %></br></li>
-            <% end %>
-			</ul> 
             </div>
             </div>
      
