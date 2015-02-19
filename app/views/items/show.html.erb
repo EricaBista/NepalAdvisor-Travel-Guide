@@ -137,11 +137,12 @@
             
             <div class="col col-sm-5 shareIcon">
             Share:
-            <%= link_to image_tag('fa.jpg',:class =>"img-responsive"), "http://www.facebook.com" %>
-            <%= link_to image_tag('twitter.jpg',:class =>"img-responsive"), "http://www.twitter.com" %>
-            <%= link_to image_tag('pin.jpg',:class =>"img-responsive"), "http://www.pinterest.com" %>
-            <%= link_to image_tag('in.jpg',:class =>"img-responsive"), "http://www.linkedin.com" %>
-            <%= link_to image_tag('g+.jpg',:class =>"img-responsive"), "https://plus.google.com" %>
+        
+           <%= link_to image_tag('fa.jpg',:class =>"img-responsive"), "http://www.facebook.com/sharer.php?u="+ request.original_url , :target => "_blank"%>
+            <%= link_to image_tag('twitter.jpg',:class =>"img-responsive"), "http://twitter.com/share?url="+ request.original_url , :target => "_blank", :target => "_blank" %>
+            <%= link_to image_tag('g+.jpg',:class =>"img-responsive"), "https://plus.google.com/share?url="+ request.original_url , :target => "_blank" %>
+            <%= link_to image_tag('in.jpg',:class =>"img-responsive"), "http://www.linkedin.com/shareArticle?mini=true&url="+ request.original_url , :target => "_blank" %>
+            <%= link_to image_tag('pin.jpg',:class =>"img-responsive"), "javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" %> 
             
             </div>
             
