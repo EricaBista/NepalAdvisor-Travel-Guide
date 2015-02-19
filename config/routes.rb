@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     get "legal" => "categories#legal"
     get "visa" => "categories#visa"
     get "profile" => "users#profile", :as => "profile"
-     
+   
    
     get 'cms/:slug', :controller => "contacts", :action => "cms", :as => 'cms'
     # get "help_center" => "contacts#help_center", :as => "help_center", :via => [:get, :post]
@@ -51,6 +51,8 @@ Rails.application.routes.draw do
   get 'details/:slug', :controller => "categories", :action => "list_items", :as =>'list_items_show'
   
   root :to => 'home#index'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
