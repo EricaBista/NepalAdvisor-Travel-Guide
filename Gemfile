@@ -38,11 +38,10 @@ gem 'mini_magick'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 gem 'active_admin_editor'
- # gem 'activeadmin-cancan'
+ 
 gem "font-awesome-rails"
-# gem 'cancan', '~> 1.6.10'
-#gem 'gallerize'
-# Use unicorn as the app server
+
+ # Use unicorn as the app server
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'
  
