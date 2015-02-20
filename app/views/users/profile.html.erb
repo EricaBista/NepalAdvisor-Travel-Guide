@@ -53,10 +53,11 @@
              
               <div class="gap"></div>
 
-<h5>Sign up</h5>
+<h5>Profile</h5>
 <div class="border"></div>
 
 <div class="col col-sm-8 reviewForm">
+
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 	<div class="error message">
@@ -69,6 +70,7 @@
 	  </div>
 	  <% end %>
 	  <p>
+	  	<%= image_tag(@user.picture_url(:avatar), :class=>'img-circle img-responsive') if @user.picture.present?%>
 		  <%= f.label :full_name %><br />
 		  <%= f.text_field :full_name %>
 		  </p>
