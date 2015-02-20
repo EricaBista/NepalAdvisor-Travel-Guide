@@ -2,13 +2,7 @@ ActiveAdmin.register Item do
  
   # controller do
   # authorize_resource class: false
-  #   include ActiveAdminCanCan
-
-  #   def create
-  #     params[:item][:franchise_id] = current_user.franchise_id if franchise_user?
-  #     create!
-  #   end
-  # end
+ 
 
 
   # See permitted parameters documentation:
@@ -54,14 +48,12 @@ ActiveAdmin.register Item do
 
      end 
 
-     
-
       f.inputs "Images" do
         f.has_many :images, new_record: 'Images' do |b|
           b.input :Title
            b.input :Content, as: :html_editor
            b.input :Order
-          # b.input :image 
+          
           b.input :image, :as => :file, :hint => image_tag(b.object.image.url(:thumb))
 
           b.input :_destroy, :as => :boolean
@@ -154,7 +146,6 @@ ActiveAdmin.register Item do
           end
 
 end
-
 
 filter :category 
 filter :Name 
