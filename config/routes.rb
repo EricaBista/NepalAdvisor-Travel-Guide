@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
+  #devise_for :admin_users, ActiveAdmin::Devise.config
+ ActiveAdmin.routes(self)
+ devise_for :users 
+  
   resources :reviews
 
   resources :contacts
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   # get 'sessions/new'
   resources :password_resets
  
-  resources :sessions
+  #resources :sessions
 
   resources :users
 
@@ -30,8 +31,8 @@ Rails.application.routes.draw do
     get "sign_up" => "users#new", :as => "sign_up"
     post "sessions_create" => "sessions#create"
    
-    match "log_in" => "sessions#new", :as => "log_in" , :via => [:get, :post]
-    match "logout" => "sessions#destroy", :as => "logout" , :via => [:get, :post]
+     # match "log_in" => "sessions#new", :as => "log_in" , :via => [:get, :post]
+     # match "logout" => "sessions#destroy", :as => "logout" , :via => [:get, :post]
     get "trekking" => "categories#trekking"
     get "tourism" => "categories#tourisum"
     get "culture" => "categories#culture"

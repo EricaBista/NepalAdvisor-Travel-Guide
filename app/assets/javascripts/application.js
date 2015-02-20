@@ -48,3 +48,25 @@ alert(1);
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+function serializeArtworks(){
+  var categories = $.makeArray(
+    $("#categories .category").map(function(){
+      return $(this).data("id");
+    })
+  );
+  return {ids: artworkIds};
+};
+
+$("#index_table_categories tbody").sortable({
+  update: function(){
+    $.ajax({
+      url: "/admin/categories/sort",
+      type: 'post',
+      data: serializeArtworks(),
+      complete: function(){
+        $(".paginated_collection").effect("highlight");
+      }
+    });
+  }
+});

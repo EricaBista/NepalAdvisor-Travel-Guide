@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216133201) do
+ActiveRecord::Schema.define(version: 20150219093207) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -160,6 +160,17 @@ ActiveRecord::Schema.define(version: 20150216133201) do
     t.datetime "password_reset_at"
     t.string   "picture"
     t.string   "full_name"
+    t.string   "encrypted_password"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count"
+    t.datetime "current_sign_in_at"
+    t.string   "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "string"
+    t.string   "last_sign_in_ip"
+    t.string   "role"
   end
 
 end
