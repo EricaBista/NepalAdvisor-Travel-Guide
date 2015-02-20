@@ -12,8 +12,8 @@ ActiveAdmin.register Category do
      column :slug
      # column :icon  
      column "icon" do |category|
-  image_tag category.icon
-end
+      image_tag category.icon_url(:avatar)
+     end
      # column :Description
      column "" do |resource|
       links = ''.html_safe
@@ -34,8 +34,8 @@ end
       f.input :Description, as: :html_editor
       f.input :Order
       # f.input :icon
-      f.input :icon, :as => :file, :hint => image_tag(category.icon)
-      f.input :slug
+      f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
+      # f.input :slug
           
           end
           f.actions 
@@ -48,7 +48,7 @@ end
     row :Order
     row :slug
     row :icon do
-        image_tag category.icon
+        image_tag category.icon_url(:avatar)
       end
     end
     
