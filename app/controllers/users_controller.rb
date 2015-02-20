@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
     before_filter :authenticate_user!
     def profile
       @user = User.find_by_id(current_user)
+=======
+    
+  def profile
+    @user = User.find_by_id(@current_user)
+>>>>>>> origin/master
     end
 
 
