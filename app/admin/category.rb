@@ -10,7 +10,10 @@ ActiveAdmin.register Category do
      column :Name
      column :Order
      column :slug
-     column :icon
+     # column :icon  
+     column "icon" do |category|
+  image_tag category.icon
+end
      # column :Description
      column "" do |resource|
       links = ''.html_safe
@@ -19,22 +22,24 @@ ActiveAdmin.register Category do
       links += link_to I18n.t('active_admin.delete'), resource_path(resource), :method => :delete, :confirm => I18n.t('active_admin.delete_confirmation'), :class => "member_link delete_link"
       links
     end
-    # column :category do |c|
-     
-    #     c.category.Name
+    
        end
   # or
    form do |f|
       f.inputs "Category" do
+
       # add your other inputs
       # f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
       f.input :Name
       f.input :Description, as: :html_editor
       f.input :Order
-      f.input :icon
+      # f.input :icon
+      f.input :icon, :as => :file, :hint => image_tag(category.icon)
       f.input :slug
+          
           end
-     end 
+          f.actions 
+        end
 
   show do |category|
   attributes_table do

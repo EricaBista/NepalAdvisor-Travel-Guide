@@ -53,7 +53,7 @@ ActiveAdmin.register Item do
           b.input :Title
            b.input :Content, as: :html_editor
            b.input :Order
-          # b.input :image 
+          
           b.input :image, :as => :file, :hint => image_tag(b.object.image.url(:thumb))
 
           b.input :_destroy, :as => :boolean

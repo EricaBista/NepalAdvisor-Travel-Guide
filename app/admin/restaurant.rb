@@ -7,7 +7,7 @@ ActiveAdmin.register Restaurant do
    permit_params :list, :of, :attributes, :on, :model, :Name, :Title, :Content
   #
   # or
-  #
+  
   # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
