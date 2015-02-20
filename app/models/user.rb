@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
 # 	before_save :encrypt_password
 # 	before_create { generate_token(:token) }
-# 	validates_uniqueness_of :email
-# 	validates_confirmation_of :password
-#   has_many :reviews
-#   mount_uploader :picture, ImageUploader
+ 	validates_uniqueness_of :email
+ 	validates_confirmation_of :password
+   has_many :reviews
+  mount_uploader :picture, ImageUploader
 	
 # 	def generate_token(column)
 # 		begin 
@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   #attr_accessible :email, :password, :password_confirmation, :remember_me
    before_create :set_default_role
+
 
     def role?(r)
         role.include? r.to_s
