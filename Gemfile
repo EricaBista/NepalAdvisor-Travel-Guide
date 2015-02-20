@@ -41,6 +41,7 @@ gem 'active_admin_editor'
  
 gem "font-awesome-rails"
 
+
  # Use unicorn as the app server
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'

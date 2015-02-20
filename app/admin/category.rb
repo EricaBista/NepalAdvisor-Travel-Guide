@@ -24,7 +24,30 @@ ActiveAdmin.register Category do
     #     c.category.Name
        end
   # or
-  #
+   form do |f|
+      f.inputs "Category" do
+      # add your other inputs
+      # f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
+      f.input :Name
+      f.input :Description, as: :html_editor
+      f.input :Order
+      f.input :icon
+      f.input :slug
+          end
+     end 
+
+  show do |category|
+  attributes_table do
+
+    row :Name
+    row :Order
+    row :slug
+    row :icon do
+        image_tag category.icon
+      end
+    end
+    
+  end
   # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
