@@ -2,13 +2,7 @@ ActiveAdmin.register Item do
  
   # controller do
   # authorize_resource class: false
-  #   include ActiveAdminCanCan
-
-  #   def create
-  #     params[:item][:franchise_id] = current_user.franchise_id if franchise_user?
-  #     create!
-  #   end
-  # end
+ 
 
 
   # See permitted parameters documentation:
@@ -53,8 +47,6 @@ ActiveAdmin.register Item do
       f.input :Order
 
      end 
-
-     
 
       f.inputs "Images" do
         f.has_many :images, new_record: 'Images' do |b|
@@ -154,7 +146,6 @@ ActiveAdmin.register Item do
           end
 
 end
-
 
 filter :category 
 filter :Name 
