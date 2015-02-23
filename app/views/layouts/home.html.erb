@@ -44,9 +44,12 @@
         		<div id="navbar" class="collapse navbar-collapse">
           			<ul class="nav navbar-nav navbar-right">
                   <% if signed_in? %>
-          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "Profile", profile_path %></li>
-          <li><%= link_to "Admin", admin_root_path %></li>
+          <li>&nbsp;</li>
+          <% if can? :update, @category %>
+             <li> <%= link_to "Admin", admin_root_path %></li>
+          <% end %>
+          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "Join Us", new_user_registration_path %></li>
@@ -149,7 +152,8 @@
               
               
               <p><%= notice %></p>
-<p><%= alert %></p>
+              <p><%= alert %></p>
+
               
               
               <div class="row">
