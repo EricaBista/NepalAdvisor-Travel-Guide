@@ -6,12 +6,6 @@ class Category < ActiveRecord::Base
 	mount_uploader :icon, IconUploader
 	before_save :create_slug
 
-	
-
-	  # def to_param
-	  #    slug
-	  #  end
-
 	  def create_slug
 	    self.slug = self.Name.parameterize
 	  end
