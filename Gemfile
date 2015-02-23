@@ -45,6 +45,7 @@ gem "font-awesome-rails"
  # Use unicorn as the app server
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'
+ gem 'cancan'
  
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

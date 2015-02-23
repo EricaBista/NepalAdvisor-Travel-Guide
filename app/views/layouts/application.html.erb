@@ -46,14 +46,16 @@
         
         <div class="col col-md-4 loginNJoinus">
         <ul>
-        <% if(@current_user) %>
-        <li><%= link_to "LogOut", logout_path %></li>
-        <li><%= link_to "profile", profile_path %></li>
         
-        
+         <% if signed_in? %>
+          
+          <li><%= link_to "Profile", profile_path %></li>
+          <li>&nbsp;</li>
+          <li><%= link_to "Admin", admin_root_path %></li>
+          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
         <% else %>
-        <li><%= link_to "Login", log_in_path %></li>
-        <li><%= link_to "Join Us", sign_up_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "Join Us", new_user_registration_path %></li>
         <% end %>
         </ul>
         </div>
