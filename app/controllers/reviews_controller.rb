@@ -6,6 +6,7 @@ def index
 
 @review = Review.new(review_params)
     respond_to do |format|
+      @review.user_id = current_user.id if current_user
       if @review.save 
         format.html { redirect_to item_path(@review.item_id), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
