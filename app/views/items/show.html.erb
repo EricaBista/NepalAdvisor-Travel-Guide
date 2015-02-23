@@ -87,7 +87,7 @@
                              
                              <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
                              
-                             <br style="margin:10px 0px;">286 LIKES / <span style="color:#5f9a16;"><%= @review_count%> reviews</span></span>
+                             <br style="margin:10px 0px;"><%= @like_count%> LIKES / <span style="color:#5f9a16;"><%= @review_count%> reviews</span></span>
                              </div>
                             
                             </div>
@@ -131,7 +131,15 @@
             <div class="row">
             <div class="likeReply">
             <div class="col col-sm-7">
-            Was this review helpful?: <span style="padding-left:10px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
+            Was this review helpful?: <span style="padding-left:10px;">
+            
+                      <% if  like = current_user.likes.find_by_item_id(@item.id) %>
+            <%= link_to "UnLike", like , :method => :delete %>
+            
+          <% else %>
+            <%= link_to "Like", likes_path(:like => { :item_id => @item.id }), :method => :post %>
+          <% end %>
+            </span> / <span style="color:#5f9a16;">Reply</span>
             </div>
             
             
