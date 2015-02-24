@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   # 	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
   # end
    def set_menu
-       @menus ||= Category.all.order(:Order)
+       @menus ||= Category.where(:is_menu => true).order(:Order)
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
         @quicklinks ||= Contact.find_by_Slug("quick-links")
         # @current_user ||= session[:user_id] 
