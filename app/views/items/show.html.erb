@@ -59,10 +59,10 @@
                              <div class="col-sm-4">
 
 
-                             
+                            <% if @item.images[0].present? %>
                             <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item">
-                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive showimagediv", :id => "zoom_031") if @item.images[0].present? %>
-                            </a>
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive showimagediv", :id => "zoom_031")  %>
+                            </a><% end %>
                            
                                              <div class="row">
                                                  <div class="thumImg">
@@ -174,7 +174,7 @@
                 <div class="youMayPlaceInfo">
                 <span class="youMayMainTitle"><%= b.Name %></span></br>
                 <span class="youMayMainTitleLocation"><%= b.short_tag%></span></br>
-                <span class="youMayLikesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                <span class="youMayLikesReview"><%= @like_count%> LIKES / <span style="color:#5f9a16;"><%= @review_count%> reviews</span></span>
                 </div></div>
                 
                 <% end %>
