@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Nepal Advisor"
+  config.site_title = "Nepal Adviser"
   
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -233,8 +233,14 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+  config.site_title_link  = "/"
+  config.site_title_image = "logo.png"
+  #config.site_title_image = "http://www.google.com/images/logos/google_logo_41.png"
   config.authentication_method = :authenticate_active_admin_user!
   config.current_user_method   = :current_user
   config.logout_link_path      = :destroy_user_session_path
   config.logout_link_method    = :delete
+  config.comments = :false
+  config.show_comments_in_menu = false
+  config.register_stylesheet 'active_admin_custom.css'
 end

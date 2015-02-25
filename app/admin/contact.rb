@@ -24,12 +24,9 @@ ActiveAdmin.register Contact do
   form do |f|
       f.inputs "Contact" do
       # add your other inputs
-      
-       f.input :Slug
       f.input :Title
-      
       f.input :Content, as: :html_editor
-
+      f.input :Home_page
      end 
      f.actions 
       end

@@ -1,3 +1,18 @@
+
+<% if notice.present? %>
+                <div class="alert alert-warning">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Warning!</strong> <%= notice %>
+
+              </div>
+              <% end %>
+              
+               <% if alert.present? %>
+                  <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> <%= alert %>
+              </div>
+              <% end %>
 <%= form_for(@review) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
@@ -19,11 +34,6 @@
     <%= f.label :description %>
     <%= f.text_area :description, :class => "form-control" %>
   </div>
- 
-    
-    <%= f.hidden_field :user_id , :value => current_user.id %>
- 
-  
     <%= f.hidden_field :parent_id, :value => 0  %>
   
     <%= f.hidden_field :item_id, :value => item_id %>

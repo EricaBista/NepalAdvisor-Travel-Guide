@@ -28,7 +28,7 @@ class UsersController < ApplicationController
        # @picture = @user.picture.build(user_params)
       respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to profile_path(@user), notice: 'user was successfully updated.' }
+        format.html { redirect_to profile_path, notice: 'user was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
