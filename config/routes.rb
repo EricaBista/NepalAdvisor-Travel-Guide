@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :advertisements
+
   resources :likes
 
   #devise_for :admin_users, ActiveAdmin::Devise.config
