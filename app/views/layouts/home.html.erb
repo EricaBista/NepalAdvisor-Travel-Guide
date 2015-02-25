@@ -230,20 +230,43 @@
              <div class="col col-sm-12">
              <h5>Hotels in popular destinations:</h5>
              <div class="border"></div>
-             <div class="hotelsPlace">
+             
              <% @destinations.each do |l| %>
+             <div class="hotelsPlace">
+             <% count = 0 %>
+             
            	 <h6><%= l.Name %></h6>
-             </h6><%=link_to l.Title, destination_path(l) %></br>
+                <% l.items.each do |i| %>
+                  <% if count==0 %>
+                    <div class="col col-sm-3 hotelsInfo">
+                      <div class="row">
+                        <ul>
+                  <% end %>
+                  <li> <%= i.Name %></li>
+                  <% count+=1  %>
+                  <% if count==6 || i==l.items.last %>
+                    <% count=0 %>
+                        </ul>
+                      </div>
+                    </div>
+                  <% end %>
+
+
+                 
+                 
+                 
+                   
+                <% end %>
+                </div>
+                <div class= "gap" style="clear:both;"></div>
              <% end %>
             
-            <div class="col col-sm-3 hotelsInfo">
-            <div class="row">
             
             
-            </div>
-            </div>
+            
+            
      
-        	</div>
+        	
         
         
         	</div>

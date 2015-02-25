@@ -16,9 +16,7 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
-    
-
-    
+   
   def profile
     @user = User.find_by_id(current_user)
 
