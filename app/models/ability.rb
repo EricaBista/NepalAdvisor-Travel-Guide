@@ -30,12 +30,18 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
      user ||= User.new # guest user (not logged in)
+
+     puts user.inspect
+
     if user.role? :administrator
         can :manage, :all
     elsif user.role? :editor
        # can :manage, :category, :item
-       can :manage, Category, :all
-       can :manage, Item, :all
+       #can :manage, :all
+      #puts user.role.inspect
+        # can :manage, Item
+        cannot :manage, User
+        #cannot :read, ActiveAdmin::Page, :name => "User"
     else
         can :read, :all
     end

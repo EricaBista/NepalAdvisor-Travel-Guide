@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   get 'details/:slug', :controller => "categories", :action => "list_items", :as =>'list_items_show'
   
   root :to => 'home#index'
+
   resource :user, only: [:edit] do
   collection do
     patch 'update_password'
