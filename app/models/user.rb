@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
 # 	before_save :encrypt_password
 # 	before_create { generate_token(:token) }
- 	validates_uniqueness_of :email
- 	validates_confirmation_of :password
-   has_many :reviews
-  mount_uploader :picture, ImageUploader
-	
+ 	  validates_uniqueness_of :email
+ 	  validates_confirmation_of :password
+    has_many :reviews
+    mount_uploader :picture, ImageUploader
+	  has_many :likes
 # 	def generate_token(column)
 # 		begin 
 # 			self[column] = SecureRandom.urlsafe_base64
