@@ -46,6 +46,7 @@ gem "font-awesome-rails"
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'
  gem 'cancan'
+ gem 'cancancan'
  
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

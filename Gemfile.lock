@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: ed1fbca8c64af827616c58f274d7be256ca513b6
+  revision: 97bf84a405077364dc89bf3ec5ee368f226fe9c2
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -58,6 +58,7 @@ GEM
       thor
     builder (3.2.2)
     cancan (1.6.10)
+    cancancan (1.10.1)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -195,6 +196,7 @@ DEPENDENCIES
   activeadmin!
   bcrypt (~> 3.1.7)
   cancan
+  cancancan
   carrierwave
   coffee-rails (~> 4.0.0)
   devise

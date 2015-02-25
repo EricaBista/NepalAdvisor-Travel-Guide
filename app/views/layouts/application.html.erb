@@ -130,14 +130,24 @@
 </div>
 
 
-   <p><%= notice %></p>
-   <p><%= alert %></p>
-    
+    <% if notice.present? %>
+                <div class="alert alert-warning">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Warning!</strong> <%= notice %>
+
+              </div>
+              <% end %>
+              
+               <% if alert.present? %>
+                  <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> <%= alert %>
+              </div>
+              <% end %>
    
    
    <%= yield %>
-<p><%= notice %></p>
-<p><%= alert %></p>
+<%= session[:previous_url] %>
 
   <div class="col col-sm-3"><!-------------------------------- rightPanel start from here -------------------------------->
          <div class="rightPanel">

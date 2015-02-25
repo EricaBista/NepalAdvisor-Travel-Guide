@@ -150,9 +150,20 @@
              
               <div class="gap"></div>
               
+              <% if notice.present? %>
+                <div class="alert alert-warning">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                   <%= notice %>
+
+              </div>
+              <% end %>
               
-              <p><%= notice %></p>
-              <p><%= alert %></p>
+               <% if alert.present? %>
+                  <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> <%= alert %>
+              </div>
+              <% end %>
 
               
               
