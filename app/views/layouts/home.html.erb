@@ -49,7 +49,7 @@
           <% if can? :update, @category %>
              <li> <%= link_to "Admin", admin_root_path %></li>
           <% end %>
-          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "Join Us", new_user_registration_path %></li>
@@ -135,20 +135,27 @@
       		  <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
               
          
-          
-              <div class="row">
-              <div class="col col-sm-12"> 
-              <img src="assets/bannerads.jpg" class="img-responsive"> 
-              </div> 
-        	  </div>   
+          <%= render "common/horizontal_ads" %>
+              
              
              
              
               <div class="gap"></div>
               
+              <% if notice.present? %>
+                <div class="alert alert-warning">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                   <%= notice %>
+
+              </div>
+              <% end %>
               
-              <p><%= notice %></p>
-              <p><%= alert %></p>
+               <% if alert.present? %>
+                  <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> <%= alert %>
+              </div>
+              <% end %>
 
               
               

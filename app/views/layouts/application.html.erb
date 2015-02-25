@@ -55,8 +55,8 @@
           <% if can? :update, @items %>
               <li><%= link_to "Admin", admin_root_path %></li>
           <% end %>
-          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "Change_password", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          
         <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "Join Us", new_user_registration_path %></li>
@@ -130,14 +130,23 @@
 </div>
 
 
-   <p><%= notice %></p>
-   <p><%= alert %></p>
-    
+    <% if notice.present? %>
+                <div class="alert alert-warning">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Warning!</strong> <%= notice %>
+
+              </div>
+              <% end %>
+              
+               <% if alert.present? %>
+                  <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> <%= alert %>
+              </div>
+              <% end %>
    
    
    <%= yield %>
-<p><%= notice %></p>
-<p><%= alert %></p>
 
   <div class="col col-sm-3"><!-------------------------------- rightPanel start from here -------------------------------->
          <div class="rightPanel">
