@@ -38,6 +38,7 @@ class ApplicationController < ActionController::Base
        @menus ||= Category.where(:is_menu => true).order(:Order)
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
         @quicklinks ||= Contact.find_by_Slug("quick-links")
+        @vertical_advertisement ||= Advertisement.where(:position => "vertical").limit(3).order("RANDOM()")
         # @current_user ||= session[:user_id] 
        
 

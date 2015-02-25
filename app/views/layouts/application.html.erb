@@ -143,18 +143,19 @@
          <div class="rightPanel">
                 <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
                 
+                
+                <% @vertical_advertisement.each do |add| %>
+
                 <div class="adsBanner">
-                <%= image_tag('ads03.jpg',:class =>"img-responsive")%>
+                    <%= image_tag add.image_url(:vertical), :class => "img-responsive"%>
+                  </div>
+                <% end %>
+                <%#= image_tag('ads03.jpg',:class =>"img-responsive")%>
                
-                </div>
+               
                 
-                <div class="adsBanner">
-               <%= image_tag('ads02.jpg',:class =>"img-responsive")%>
-                </div>
                 
-                <div class="adsBanner">
-                <%= image_tag('ads01.jpg',:class =>"img-responsive")%>
-                </div>
+               
                 </div>
                 
                
