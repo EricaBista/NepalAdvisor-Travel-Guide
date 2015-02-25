@@ -43,8 +43,8 @@ config.sort_order = 'position_asc'
       # f.input :icon
       f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
       # f.input :slug
-      f.input :is_menu
-      f.input :is_destination
+      # f.input :is_menu
+      # f.input :is_destination
           
           end
           f.actions 
