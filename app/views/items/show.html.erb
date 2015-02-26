@@ -122,11 +122,11 @@
             <div class="col col-sm-7">
             Was this review helpful?: <span style="padding-left:10px;">
             
-            <% if  like = current_user.likes.find_by_item_id(@item.id) && current_user.present? %>
+            <% if signed_in? && like = current_user.likes.find_by_item_id(@item.id)  %>
             <%= link_to "UnLike", like , :method => :delete %>
             
           <% else %>
-            <%= link_to "Like", likes_path(:like => { :item_id => @item.id }), :method => :post %>
+            <%= link_to "Like",  signed_in? ? likes_path(:like => { :item_id => @item.id }) :new_user_session_path, :method => :post %>
           <% end %>
             </span> / <span style="color:#5f9a16;">Reply</span>
             </div>
@@ -238,10 +238,10 @@
              <div class="col col-sm-10">
              <div class="row">
              <div class="reviewTitle"><%= g.title %></div>
-             <span class="reviewDate"><h5> <small> December 31, 2014</small></h5></span>
+             <span class="reviewDate"><h5> <small> <%= g.created_at.strftime("%B %d, %Y") %></small></h5></span>
              <p><%= g.description%> </p>
-              <div class="likeNReply">
-             <%= image_tag('like.jpg',:class =>"img-responsive")%><span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span>
+              <div class="likeNReply"> &nbsp;
+             <%#= image_tag('like.jpg',:class =>"img-responsive")%><!-- <span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span> -->
              </div>
              </div>
              </div>

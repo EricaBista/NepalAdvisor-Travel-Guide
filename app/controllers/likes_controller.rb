@@ -9,7 +9,7 @@ def index
     respond_to do |format|
       @like.user_id = current_user.id if current_user
       if @like.save 
-        format.html { redirect_to item_path(@like.item_id), notice: 'Review was successfully created.' }
+        format.html { redirect_to item_path(@like.item_id), notice: 'Liked successfully.' }
         format.json { render :show, status: :created, location: @like }
       else
         format.html { redirect_to item_path(@like.item_id) }
