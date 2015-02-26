@@ -122,7 +122,7 @@
             <div class="col col-sm-7">
             Was this review helpful?: <span style="padding-left:10px;">
             
-            <% if  like = current_user.likes.find_by_item_id(@item.id) %>
+            <% if  like = current_user.likes.find_by_item_id(@item.id) && current_user.present? %>
             <%= link_to "UnLike", like , :method => :delete %>
             
           <% else %>
