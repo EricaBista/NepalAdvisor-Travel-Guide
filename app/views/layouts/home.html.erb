@@ -170,42 +170,50 @@
               <div id="myTabContent" class="tab-content"><!-- all tab start from here -->
    			
             <div class="tab-pane fade in active" id="home"><!-- tab 1 start from here -->
-            <div class="row">
+           
      		
             <% i=1 %>
 
-            <% @restaurant.items.limit(9).each do |r| %>
-            <div class="col col-sm-4 placeInfo">
-           <%= i %>.<%= link_to r.Name, item_path(r) %>
-           </br>
-            <img src="assets/rate-icon.png" /> <span><%= r.reviews.count %> Reviews</span>
-            </div> <% i+= 1 %>
-            <% end %>       
+            <% if @restaurant.present? %>
+             <div class="row">
+                <% @restaurant.items.limit(9).each do |r|  %>
+                   <div class="col col-sm-4 placeInfo">
+                      <%= i %>.<%= link_to r.Name, item_path(r) %>
+                      </br>
+                      <img src="assets/rate-icon.png" /> <span><%= r.reviews.count %> Reviews</span>
+                      </div>
+                      <% i+= 1 %>
+                <% end %>       
+
             </div> 
             <hr>
             <div class="viewAll"><%= link_to "+ view all restaurants", list_items_show_path(@restaurant.slug)%></div>
+            <% end %> 
             </div><!--- tab 1 end here -->
    			
            
            
            
             <div class="tab-pane fade" id="ios"><!-- tab 2 start from here-->
-            <div class="row">
+            
 
             <% j=1 %>
-
+          <% if @thingstodo.present? %>
+          <div class="row">
             <% @thingstodo.items.limit(9).each do |t| %>
-     		<div class="col col-sm-4 placeInfo">
-            <%= j %>.<%= link_to t.Name, item_path(t) %>
-            </br>
-         	<img src="assets/rate-icon.png" /> <span><%= t.reviews.count %> Reviews</span>
-            </div><%j+=1 %>
+     		       <div class="col col-sm-4 placeInfo">
+                  <%= j %>.<%= link_to t.Name, item_path(t) %>
+                  </br>
+         	        <img src="assets/rate-icon.png" /> <span><%= t.reviews.count %> Reviews</span>
+                  </div>
+                  <%j+=1 %>
             <% end %>
             </div>
             <hr>
             <div class="viewAll"><%= link_to "+ view all places", list_items_show_path(@thingstodo.slug)%></div>
+              <% end %>
             </div><!--- tab 2 end here -->
-   
+          
    
 			</div><!-- all tab end here -->
 
