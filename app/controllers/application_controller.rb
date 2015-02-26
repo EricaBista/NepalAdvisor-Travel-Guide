@@ -55,7 +55,7 @@ end
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
         @quicklinks ||= Contact.find_by_Slug("quick-links")
         @vertical_advertisement ||= Advertisement.where(:position => "vertical").limit(3).order("RANDOM()")
-         
+         @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").limit(1).order("RANDOM()")
         # @current_user ||= session[:user_id] 
        
 

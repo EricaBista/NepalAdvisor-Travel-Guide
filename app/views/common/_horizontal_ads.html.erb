@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col col-sm-12"> 
   
-  	<%= image_tag('bannerads.jpg',:class =>"img-responsive")%>
+   <% @horizontal_advertisement.each do |ad| %>
+             <%= image_tag ad.image_url(:horizontal), :class => "img-responsive"%><% end %>
   </div> 
 </div>   

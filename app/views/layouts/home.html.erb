@@ -137,8 +137,7 @@
          
           <%= render "common/horizontal_ads" %>
               
-             
-             
+            
              
               <div class="gap"></div>
               
@@ -272,17 +271,13 @@
          <div class="rightPanel">
                 <div class="adsTitle"><i class="fa fa-rocket"></i> Advertisement </div>
                 
+                <% @vertical_advertisement.each do |add| %>
+
                 <div class="adsBanner">
-                <img class="img-responsive" src="assets/ads03.jpg">
-                </div>
-                
-                <div class="adsBanner">
-                <img class="img-responsive" src="assets/ads02.jpg">
-                </div>
-                
-                <div class="adsBanner">
-                <img class="img-responsive" src="assets/ads01.jpg">
-                </div>
+                    <%= image_tag add.image_url(:vertical), :class => "img-responsive"%>
+                  </div>
+                  
+                <% end %>
                 </div>
                 
                
