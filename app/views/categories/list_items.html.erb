@@ -1,7 +1,15 @@
+<%
+if @category.banner?
+  category_banner=@category.banner
+else
+  category_banner='/assets/banner/banner1.jpg'
+end
+%>
+
 <style>
 .banner1
 { 
-  background:url(<%= @category.banner %>) no-repeat center center ;
+  background:url(<%= category_banner %>) no-repeat center center ;
 }
 </style>
   <!-- inner banner start from here -->    
