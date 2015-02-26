@@ -51,11 +51,13 @@ end
   # 	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
   # end
    def set_menu
-       @menus ||= Category.where(:is_menu => true).order(:Order)
+        @menus ||= Category.where(:is_menu => true).order(:Order)
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
         @quicklinks ||= Contact.find_by_Slug("quick-links")
+        @restaurant ||= Category.find_by_slug("restaurants")
+        @thingstodo ||= Category.find_by_slug("thingstodo")
         @vertical_advertisement ||= Advertisement.where(:position => "vertical").limit(3).order("RANDOM()")
-         @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").limit(1).order("RANDOM()")
+        @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").limit(1).order("RANDOM()")
         # @current_user ||= session[:user_id] 
        
 
