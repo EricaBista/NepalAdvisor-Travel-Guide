@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
 	validates :slug, uniqueness: true
 	has_many :items
 	mount_uploader :icon, IconUploader
+	mount_uploader :banner, AddUploader
 	before_save :create_slug
 
 	  def create_slug
