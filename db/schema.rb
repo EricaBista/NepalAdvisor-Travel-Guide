@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225034531) do
+ActiveRecord::Schema.define(version: 20150226035040) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150225034531) do
     t.string   "slug"
     t.boolean  "is_menu"
     t.boolean  "is_destination"
+    t.string   "banner"
   end
 
   create_table "contacts", force: true do |t|
@@ -127,22 +128,6 @@ ActiveRecord::Schema.define(version: 20150225034531) do
 
   add_index "likes", ["item_id"], name: "index_likes_on_item_id"
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
-
-  create_table "redactor_assets", force: true do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
-  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
 
   create_table "restaurants", force: true do |t|
     t.string   "Name"

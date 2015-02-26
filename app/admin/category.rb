@@ -4,7 +4,7 @@ config.sort_order = 'position_asc'
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :icon,  :Order, :is_menu, :is_destination
+   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :icon,  :Order, :is_menu, :is_destination, :banner
  index do 
      
      column :Name do |category|
@@ -12,7 +12,10 @@ config.sort_order = 'position_asc'
       end
      column :Order
      column :slug
-     # column :icon  
+     # column "banner" do |cate|
+     #  image_tag cate.banner_url(:banner)
+     # end
+
      column "icon" do |category|
       image_tag category.icon_url(:avatar)
      end
@@ -42,7 +45,7 @@ config.sort_order = 'position_asc'
       f.input :Order
       # f.input :icon
       f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
-      # f.input :slug
+       f.input :banner, :as => :file, :hint => image_tag(category.banner_url(:banner))
       f.input :is_menu
       f.input :is_destination
           
@@ -56,6 +59,10 @@ config.sort_order = 'position_asc'
     row :Name
     row :Order
     row :slug
+     row :banner do
+      image_tag category.banner_url(:banner)
+    end
+
     row :icon do
         image_tag category.icon_url(:avatar)
       end
