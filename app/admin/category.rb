@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-config.sort_order = 'position_asc'
+#config.sort_order = 'position_asc'
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -44,8 +44,12 @@ config.sort_order = 'position_asc'
       f.input :Description, as: :html_editor
       f.input :Order
       # f.input :icon
-      f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
+      
        f.input :banner, :as => :file, :hint => image_tag(category.banner_url(:banner))
+
+      #f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
+      f.input :icon, :as => :file, :hint => f.category.icon_url.nil? ? f.content_tag(:span, "no icon yet") : image_tag(f.category.icon_url(:avatar))
+      # f.input :slug
       f.input :is_menu
       f.input :is_destination
           
@@ -75,12 +79,12 @@ config.sort_order = 'position_asc'
   #   permitted
   # end
 
-collection_action :sort, :method => :post do
-    params[:ids].each_with_index do |id, index|
-      category = Category.find(id)
-      category.update_attribute(:position, index.to_i+1)
-    end
-    head 200
-  end
+# collection_action :sort, :method => :post do
+#     params[:ids].each_with_index do |id, index|
+#       category = Category.find(id)
+#       category.update_attribute(:position, index.to_i+1)
+#     end
+#     head 200
+#   end
 
 end
