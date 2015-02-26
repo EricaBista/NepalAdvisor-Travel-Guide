@@ -16,7 +16,8 @@
 
 //= require weather.js
 //= require jquery.simpleWeather.js
-//= require_tree .
+
+
 
 
 $(function() {
@@ -70,3 +71,4 @@ $("#index_table_categories tbody").sortable({
     });
   }
 });
+//= require_tree .

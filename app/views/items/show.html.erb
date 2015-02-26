@@ -1,4 +1,10 @@
    <!------ inner banner start from here ----> 
+   <style>
+.banner1
+{ 
+  background:url(<%= @item.category.banner %>) no-repeat center center ;
+}
+</style>
   <div class="banner1">
     <div class="container">
     <div class="col col-sm-12"
@@ -47,12 +53,15 @@
                              <div class="row">
                              
                              <div class="col-sm-4">
-
+                            <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item">
 
                             <% if @item.images[0].present? %>
-                            <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item">
-                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"mg-responsive showimagediv", :id => "zoom_031")  %>
-                            </a><% end %>
+                            
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"img-responsive showimagediv", :id => "zoom_031")  %>
+                             <% else %>
+                              <%= image_tag("nowall.jpg", :class=>"img-responsive") %>
+
+                           <% end %> </a>
                            
                                              <div class="row">
                                                  <div class="thumImg">
