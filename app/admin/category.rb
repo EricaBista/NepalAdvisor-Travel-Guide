@@ -41,7 +41,8 @@ ActiveAdmin.register Category do
       f.input :Description, as: :html_editor
       f.input :Order
       # f.input :icon
-      f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
+      #f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
+      f.input :icon, :as => :file, :hint => f.category.icon_url.nil? ? f.content_tag(:span, "no icon yet") : image_tag(f.category.icon_url(:avatar))
       # f.input :slug
       f.input :is_menu
       f.input :is_destination
