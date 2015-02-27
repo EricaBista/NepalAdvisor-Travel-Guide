@@ -1,5 +1,7 @@
 class Review < ActiveRecord::Base
   validates :user_id, presence: true
+  validates :Title, presence: true
+  validates :Description, presence: true
   has_many :users
   belongs_to :item
   #before_filter :add_user_session

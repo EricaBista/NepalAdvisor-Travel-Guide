@@ -48,21 +48,19 @@
              
              
               <div class="gap"></div>
-
 <h5>Sign up</h5>
 <div class="border"></div>
-
 <div class="col col-sm-8 reviewForm">
 
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 	<div class="error message">
 	<h2>form is invalid</h2>
-	<ul>
-	  <%# @user.errors.full_message.each do |message| %>
-	 <li><%#= message %></li> 
-	  <%# end %>
-	</ul>
+	<!-- <ul>
+	  <% @user.errors.full_message.each do |message| %>
+	 <li><%= message %></li> 
+	  <% end %>
+	</ul> -->
 	  </div>
 	  <% end %>
 	  <div class="form-group">
