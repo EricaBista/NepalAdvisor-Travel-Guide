@@ -100,7 +100,7 @@
    def search
       @q=params[:q]
       @items = Item.item_search(params[:q])
-
+      @categories = Category.category_search(params[:q])
   end
 
   def seed

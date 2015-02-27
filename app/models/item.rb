@@ -10,8 +10,6 @@ class Item < ActiveRecord::Base
 	accepts_nested_attributes_for :descriptions, :allow_destroy => true
 	accepts_nested_attributes_for :reviews, :allow_destroy => true
 
-	
-
 	scope :item_search, -> (query) { 
 	 		joins("LEFT JOIN descriptions ON descriptions.item_id = items.id")
 	 		.joins("LEFT JOIN images ON images.item_id = items.id")
