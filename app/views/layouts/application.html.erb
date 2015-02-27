@@ -70,7 +70,7 @@
                             <%= form_tag('/search', :class=>"searchBar") do %>
                                 <div class="input-group">
                                <!--  <input type="text" class="form-control" placeholder="search..." style="height:27px; border:none;"> -->
-                               <%= text_field_tag 'q','', :class=>'form-control',:placeholder=>'search...',:style=>'height:27px' %>
+                               <%= text_field_tag 'q',@q, :class=>'form-control',:placeholder=>'search...',:style=>'height:27px' %>
                                 <span class="input-group-btn"><button class="btn searchButton" type="submit"><i class="fa fa-paper-plane"></i></button></span>
                                 </div>
                             <% end %>

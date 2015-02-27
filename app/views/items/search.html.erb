@@ -52,8 +52,29 @@
              
              
              <div class="row"> <!-- row start -->
+             <% j = 0 %>
+             <% @categories.each do |m| %>
+                <%  j +=1 %>
+
                 
-                <% j = 0 %>
+                <%    image='nowall.jpg' %>
+                
+                
+                
+                <div class="col-sm-4"><%= link_to image_tag(image,:class =>"img-responsive"), list_items_show_path(m.slug) %>
+                <div  class="titlePlaceInfo">
+                <span class="mainTitle"><%= m.Name %></span></br>
+                <span class="mainTitleLocation"><%#= m.short_tag.html_safe %></span></br>
+                <span class="likesReview">286 LIKES / <span style="color:#5f9a16;">240 reviews</span></span>
+                </div></div>
+                <% if j%3==0 %> 
+                </div>
+                <div class="row">
+                <% end %>
+
+                <% end %>
+                
+                
                 <% @items.each do |i| %>
                 <%  j +=1 %>
 
@@ -76,10 +97,14 @@
                 <% end %>
 
                 <% end %>
+                
+               
+
+              
+                
                 <% if j==0 then %>
                   <h3>No Results Found</h3>
                 <% end %>
-               
                 
                </div><!---------- row end ---------->
                 

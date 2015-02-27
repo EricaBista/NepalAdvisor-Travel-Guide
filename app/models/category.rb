@@ -10,4 +10,8 @@ class Category < ActiveRecord::Base
 	  def create_slug
 	    self.slug = self.Name.parameterize
 	  end
+	  scope :category_search, -> (query) { 
+	 		
+	 		where("\"Name\" like ? OR \"Description\" like ? ","%#{query}%","%#{query}%") }
+
 end
