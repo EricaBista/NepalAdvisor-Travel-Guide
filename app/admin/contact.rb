@@ -28,7 +28,7 @@ ActiveAdmin.register Contact do
       
       f.input :Slug
       f.input :Title
-      f.input :Content, as: :html_editor
+      f.input :Content, :input_html => { :class => "tinymce_editor" }
       f.input :Home_page
      end 
      f.actions 
