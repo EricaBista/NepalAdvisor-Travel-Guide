@@ -19,7 +19,7 @@ ActiveAdmin.register Item do
   # end
   index do 
     
-     column :Name
+     column :Name 
     column :category do |c|
      
         c.category.Name
@@ -43,15 +43,15 @@ ActiveAdmin.register Item do
       f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
       f.input :Name
       f.input :short_tag
-      f.input :Description, as: :html_editor
+      f.input :Description, :input_html => { :class => "tinymce_editor" }
       f.input :Order
 
      end 
 
       f.inputs "Images" do
-        f.has_many :images, new_record: 'Images' do |b|
+        f.has_many :images, new_record: 'Add Images' do |b|
           b.input :Title
-           b.input :Content, as: :html_editor
+           b.input :Content, :input_html => { :class => "tinymce_editor" }
            b.input :Order
           
           b.input :image, :as => :file, :hint => image_tag(b.object.image.url(:thumb))
@@ -61,9 +61,9 @@ ActiveAdmin.register Item do
       end
 
         f.inputs "Descriptions" do
-        f.has_many :descriptions, new_record: 'Descriptions' do |d|
+        f.has_many :descriptions, new_record: 'Add Descriptions' do |d|
           d.input :Title
-           d.input :Content, as: :html_editor
+           d.input :Content, :input_html => { :class => "tinymce_editor" }
            d.input :Order
            d.input :_destroy, :as=>:boolean, :required => false, :label=>'Remove'
            # d.button do
@@ -81,7 +81,7 @@ ActiveAdmin.register Item do
 
     row :Name
     row :short_tag
-    row :Description, as: :html_editor
+    # row :Description, :input_html => { :class => "tinymce_editor" }
     row :Order
     row :category do |c|
         link_to c.category.Name, [ :admin, c ]

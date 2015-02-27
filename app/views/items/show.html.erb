@@ -1,8 +1,15 @@
    <!------ inner banner start from here ----> 
+  <%
+  if @item.category.banner?
+  items_banner=@item.category.banner
+else
+  items_banner='/assets/banner/banner1.jpg'
+end
+%>
    <style>
 .banner1
 { 
-  background:url(<%= @item.category.banner %>) no-repeat center center ;
+  background:url(<%= items_banner %>) no-repeat center center ;
 }
 </style>
   <div class="banner1">
@@ -33,7 +40,7 @@
               <div class="gap"></div>
               
              
-             
+              <%= render "common/alert" %>
              
              <div class="col-sm-12">
              <div class="row">
@@ -53,15 +60,16 @@
                              <div class="row">
                              
                              <div class="col-sm-4">
-                            <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item">
+                             <% if @item.images[0].present? %>
+                            <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item" >
 
-                            <% if @item.images[0].present? %>
                             
-                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"img-responsive showimagediv", :id => "zoom_031")  %>
+                            
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"img-responsive showimagediv", :id => "zoom_031")  %></a>
                              <% else %>
                               <%= image_tag("nowall.jpg", :class=>"img-responsive") %>
 
-                           <% end %> </a>
+                           <% end %> 
                            
                                              <div class="row">
                                                  <div class="thumImg">
@@ -204,6 +212,7 @@
          <!-- Title of your review: -->
 
          <%= render :partial => 'reviews/form', :locals => {:item_id => @item.id} %>
+
         <!--  <input type="" class="form-control" id="reviewTitle">  -->
         
              
