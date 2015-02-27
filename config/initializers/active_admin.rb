@@ -243,4 +243,5 @@ ActiveAdmin.setup do |config|
   config.comments = :false
   config.show_comments_in_menu = false
   config.register_stylesheet 'active_admin_custom.css'
+  config.register_javascript 'tinymce/tinymce.min.js'
 end
