@@ -19,7 +19,7 @@ ActiveAdmin.register Item do
   # end
   index do 
     
-     column :Name 
+     # column :Name 
     column :category do |c|
      
         c.category.Name
