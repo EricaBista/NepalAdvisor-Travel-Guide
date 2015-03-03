@@ -142,7 +142,7 @@
                 <% @vertical_advertisement.each do |add| %>
 
                 <div class="adsBanner">
-                    <%= image_tag add.image_url(:vertical), :class => "img-responsive"%>
+                    <%= link_to image_tag(add.image_url(:vertical), :class => "img-responsive"), advertisement_path(add) %>
                   </div>
                   
                 <% end %>
