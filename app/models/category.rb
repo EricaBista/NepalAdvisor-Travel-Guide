@@ -2,7 +2,7 @@ class Category < ActiveRecord::Base
 	validates :Name, presence: true
 	validates :Description, presence: true
 	validates :slug, uniqueness: true
-	has_many :items
+	has_many :items, :dependent => :destroy
 	mount_uploader :icon, IconUploader
 	mount_uploader :banner, AddUploader
 	before_save :create_slug
