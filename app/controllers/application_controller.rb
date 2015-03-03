@@ -39,6 +39,7 @@ end
         if current_user.role?(:normal)
             flash[:alert] = "You are not authorized to access this resource!"
             redirect_to root_path
+          
         end
     end
 
