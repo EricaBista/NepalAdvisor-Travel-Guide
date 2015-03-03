@@ -37,7 +37,7 @@ class Ability
         can :manage, :all
     elsif user.role? :editor
 
-        can :manage, :category, :item
+        # can :manage, :category, :item
        #can :manage, :all
       #puts user.role.inspect
         # can :manage, Item
