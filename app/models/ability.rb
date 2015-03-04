@@ -36,11 +36,12 @@ class Ability
     if user.role? :administrator
         can :manage, :all
     elsif user.role? :editor
-        # can :manage, :category, :item
-       #can :manage, :all
+         can :read, :Category
+         can :read, :Item
+        cannot :manage, User, :id => user.id
       #puts user.role.inspect
         # can :manage, Item
-        cannot :manage, User
+        
         #cannot :read, ActiveAdmin::Page, :name => "User"
     else
         can :read, :all
