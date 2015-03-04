@@ -31,7 +31,7 @@ class Ability
 
      user ||= User.new # guest user (not logged in)
 
-     puts user.inspect
+     # puts user.inspect
 
     if user.role? :administrator
         can :manage, :all
