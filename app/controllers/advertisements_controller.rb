@@ -1,5 +1,6 @@
 class AdvertisementsController < InheritedResources::Base
 
+
   private
 
     def advertisement_params

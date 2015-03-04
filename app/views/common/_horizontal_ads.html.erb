@@ -3,6 +3,7 @@
   
    <% @horizontal_advertisement.each do |ad| %>
              <%= link_to image_tag(ad.image_url(:horizontal), :class => "img-responsive"), ad.link, :target => "_blank"%>
+             
              <% end %>
   </div> 
 </div>   
