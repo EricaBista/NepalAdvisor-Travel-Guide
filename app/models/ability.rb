@@ -31,20 +31,20 @@ class Ability
 
      user ||= User.new # guest user (not logged in)
 
-     # puts user.inspect
+        # puts user.inspect
 
-    if user.role? :administrator
-        can :manage, :all
-    elsif user.role? :editor
-         can :read, :Category
-         can :read, :Item
-        cannot :manage, User, :id => user.id
-      #puts user.role.inspect
+        if user.role? :administrator
+            can :manage, :all
+            else
+            can :read, :all
+        end
+        if user && user.role? :editor
+            cannot :manage, [User], :id => user.id
+        end
         # can :manage, Item
         
         #cannot :read, ActiveAdmin::Page, :name => "User"
-    else
-        can :read, :all
-    end
+    
+    
   end
 end
