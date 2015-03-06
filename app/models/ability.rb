@@ -38,7 +38,7 @@ class Ability
             else
             can :read, :all
         end
-        if user && user.role? :editor
+        if user.role? :editor
             cannot :manage, [User], :id => user.id
         end
         # can :manage, Item
