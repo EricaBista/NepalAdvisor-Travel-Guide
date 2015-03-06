@@ -55,7 +55,7 @@
  <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 	<div class="error message">
-	<h2>form is invalid</h2>
+	<h2>Invalid Form</h2>
 	 <ul>
 	  <% @user.errors.full_message.each do |message| %>
 	 <li><%= message %></li> 
