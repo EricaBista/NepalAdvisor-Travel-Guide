@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
 # 	before_save :encrypt_password
 # 	before_create { generate_token(:token) }
- 	  validates_uniqueness_of :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
- 	  validates_confirmation_of :password
+ 	  validates_uniqueness_of :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create },
+ 	   format:     { :errors => :messages }, uniqueness: { case_sensitive: false }
+             
+    validates_confirmation_of :password
     has_many :reviews
     mount_uploader :picture, ImageUploader
 	  has_many :likes

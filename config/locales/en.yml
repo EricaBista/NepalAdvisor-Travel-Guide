@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  
+  errors:
+     messages: "User name should be in proper format i.e example@abcd.com"
