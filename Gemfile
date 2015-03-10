@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-
-
+ruby '2.1.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
@@ -44,7 +43,6 @@ gem "font-awesome-rails"
  # Use unicorn as the app server
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'
- gem 'cancan'
  gem 'cancancan'
  
 # Use Capistrano for deployment
