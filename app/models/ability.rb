@@ -11,12 +11,12 @@ class Ability
     #     can :read, :all
     #   end
     #
-    # The first argument to `can` is the action you are giving the user 
+    # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
     # here are :read, :create, :update and :destroy.
     #
-    # The second argument is the resource the user can perform the action on. 
+    # The second argument is the resource the user can perform the action on.
     # If you pass :all it will apply to every resource. Otherwise pass a Ruby
     # class of the resource.
     #
@@ -27,24 +27,28 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details:
-    # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
-     user ||= User.new # guest user (not logged in)
 
         # puts user.inspect
 
         if user.role? :administrator
             can :manage, :all
-            else
+            
+        elsif user.role? :editor
+            can :manage, [User], :id => user.id
+            can :manage, Category
+            can :manage, Item
+            can :read, ActiveAdmin::Page, :name => "Dashboard"
+            #cannot :read, ActiveAdmin::Page, :name => "User"
+           
+        else
             can :read, :all
         end
-        if user.role? :editor
-            cannot :manage, [User], :id => user.id
-        end
         # can :manage, Item
-        
         #cannot :read, ActiveAdmin::Page, :name => "User"
     
     
+
   end
 end

@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation, :remember_me
    before_create :set_default_role
 
+   ROLES = %w(normal moderator editor administrator)
+
 
     def role?(r)
         role.include? r.to_s
