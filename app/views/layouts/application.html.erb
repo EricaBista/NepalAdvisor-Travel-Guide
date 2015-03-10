@@ -55,7 +55,7 @@
           <% if can? :update, @items %>
               <li><%= link_to "Admin", admin_root_path %></li>
           <% end %>
-          <li><%= link_to "LogOut", destroy_user_session_path, method: :get %></li>
+          <li><%= link_to "LogOut", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "Join Us", new_user_registration_path %></li>
