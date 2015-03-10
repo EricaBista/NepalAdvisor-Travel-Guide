@@ -30,8 +30,6 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
 
-        # puts user.inspect
-
         if user.role? :administrator
             can :manage, :all
             
@@ -45,10 +43,6 @@ class Ability
         else
             can :read, :all
         end
-        # can :manage, Item
-        #cannot :read, ActiveAdmin::Page, :name => "User"
-    
-    
-
+  
   end
 end
