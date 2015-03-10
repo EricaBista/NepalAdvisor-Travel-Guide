@@ -31,10 +31,3 @@ function convert_textarea_to_editor(textarea){
     "theme_advanced_buttons1" : "bold, italic, underline, separator, bullist, numlist, separator, outdent, indent, separator, undo, redo, separator, hr, separator, forecolor, backcolor"
   });
 }
-
-
-
-
-    	
-
-
