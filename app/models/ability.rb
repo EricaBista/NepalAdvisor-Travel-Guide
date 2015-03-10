@@ -40,7 +40,7 @@ class Ability
             can :read, ActiveAdmin::Page, :name => "Dashboard"
             #cannot :read, ActiveAdmin::Page, :name => "User"
            
-        else
+         else
             can :read, :all
         end
   
