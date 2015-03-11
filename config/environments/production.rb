@@ -28,7 +28,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
-  config.assets.precompile += %w[tinymce/tinymce.min.js]
+  config.assets.precompile += %w[tinymce/tinymce.min.js tinymce/themes/moredern/theme.min.js]
 
   # Generate digests for assets URLs.
   config.assets.digest = true
