@@ -52,7 +52,7 @@
           
           <li><%= link_to "Profile", profile_path %></li>
           <li>&nbsp;</li>
-          <% if can? :update, @items %>
+          <% if can? :update, @user %>
               <li><%= link_to "Admin", admin_root_path %></li>
           <% end %>
           <li><%= link_to "LogOut", destroy_user_session_path, method: :get %></li>
