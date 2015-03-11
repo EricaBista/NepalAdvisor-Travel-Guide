@@ -46,7 +46,7 @@
                   <% if signed_in? %>
           <li><%= link_to "Profile", profile_path %></li>
           <li>&nbsp;</li>
-          <% if can? :update, Category %>
+          <% if can? :update, @user %>
              <li> <%= link_to "Admin", admin_root_path %></li>
           <% end %>
           <li><%= link_to "Logout", destroy_user_session_path, method: :get %></li>
