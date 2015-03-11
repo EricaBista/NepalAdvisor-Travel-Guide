@@ -1,6 +1,6 @@
 #= require active_admin/base
 #= require tinymce/tinymce.min
-#= require tinymce/plugins/<plugin>/theme.js
+
 $(document).ready ->
   tinyMCE.init
     mode: "textareas"
