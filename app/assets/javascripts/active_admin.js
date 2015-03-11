@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 //= require tinymce/tinymce.min
 //= require active_admin/base
 
+=======
+//= require active_admin/base
+//= require tinymce/tinymce.min
+>>>>>>> origin/master
 $( document ).ready(function() {
   tinymce.init({
     selector: "textarea",
     editor_selector: "tinymce_editor"
  });
+<<<<<<< HEAD
 
 
 })
@@ -16,6 +22,16 @@ $(document).on('nested:fieldAdded:Images', function(event){
      convert_textarea_to_editor(textarea);
 });
 
+=======
+})
+
+$('.has_many_add').on('click',function(event){
+  alert("a")
+    // var field = event.field;
+    // var textarea = field.find("textarea");
+    // convert_textarea_to_editor(textarea);
+});
+>>>>>>> origin/master
 var textarea = $(".bulk .fields textarea");
 
 /*I added this additional check because even if textarea length was zero, tinyMCE init method was converting normal textarea (inspite of using 'mode:specific_textareas') to editor*/
@@ -34,6 +50,7 @@ function convert_textarea_to_editor(textarea){
     "theme_advanced_buttons1" : "bold, italic, underline, separator, bullist, numlist, separator, outdent, indent, separator, undo, redo, separator, hr, separator, forecolor, backcolor"
   });
 }
+<<<<<<< HEAD
 
 
 
@@ -41,3 +58,5 @@ function convert_textarea_to_editor(textarea){
     	
 
 
+=======
+>>>>>>> origin/master

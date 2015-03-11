@@ -49,7 +49,7 @@
           <% if can? :update, @user %>
              <li> <%= link_to "Admin", admin_root_path %></li>
           <% end %>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :get %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "Join Us", new_user_registration_path %></li>
@@ -167,7 +167,7 @@
                       <%= i %>.<%= link_to r.Name, item_path(r) %>
                       </br>
                       <img src="assets/rate-icon.png" /> <span><%= r.reviews.count %> Reviews</span>
-                      </div>
+                    </div>
                       <% i+= 1 %>
                 <% end %>       
 
