@@ -77,3 +77,4 @@ $(function() {
 
  //});
 //= require_tree .
+//= require tinymce
