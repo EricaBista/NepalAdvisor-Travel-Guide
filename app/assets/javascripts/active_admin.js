@@ -3,6 +3,7 @@
 $( document ).ready(function() {
   tinymce.init({
     selector: "textarea",
+    elements: "id_description",
     editor_selector: "tinymce_editor"
  });
 })
