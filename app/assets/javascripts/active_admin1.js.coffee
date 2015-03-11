@@ -4,7 +4,7 @@
 $(document).ready ->
   tinyMCE.init
     mode: "textareas"
-    theme: "modern"
+    theme: "mordern"
     editor_selector: "tinymce_editor"
   	
 
