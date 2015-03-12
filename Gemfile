@@ -43,7 +43,7 @@ gem 'devise'
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'
  gem 'cancancan'
- 
+ gem 'tinymce-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
