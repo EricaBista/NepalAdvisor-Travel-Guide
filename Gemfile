@@ -38,8 +38,7 @@ gem 'mini_magick'
  gem 'bcrypt', '~> 3.1.7'
 #gem 'activeadmin_tinymce' 
 gem "font-awesome-rails"
-
-
+gem 'devise'
  # Use unicorn as the app server
 # gem 'unicorn'
  gem 'rake', '~> 10.4.2'
