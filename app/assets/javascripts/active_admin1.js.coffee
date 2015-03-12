@@ -5,19 +5,13 @@ $(document).ready ->
   tinyMCE.init
     mode: "textareas"
     theme: "modern"
+    elements: "category_Description"
     editor_selector: "tinymce_editor"
-  	
-
 return
-
-
-$(document).on('nested:fieldAdded:.tinymce_editor') ->
-    alert("a")
-
-
 
 
 
     	
-
+$(document).on('nested:fieldAdded:.tinymce_editor') ->
+    alert("a")
 
