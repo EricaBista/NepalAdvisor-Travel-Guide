@@ -10,13 +10,13 @@ ActiveAdmin.register Advertisement do
 
 index do 
     
-    column :text
     column :title
+    column :text
     column :started_date
-     column :ended_date
-      column :clicked
-      column :link
-      column :position
+    column :ended_date
+    column :clicked
+    column :link
+    column :position
       
      column "" do |resource|
       links = ''.html_safe
@@ -32,9 +32,8 @@ index do
    form do |f|
       f.inputs "Advertisement" do
       # add your other inputs
-      
-      f.input :text, :input_html => { :class => "tinymce_editor" }
       f.input :title
+      f.input :text, :input_html => { :class => "tinymce_editor" }
       f.input :description, :input_html => { :class => "tinymce_editor" }
       f.input :image
       f.input :started_date
