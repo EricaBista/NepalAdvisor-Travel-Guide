@@ -6,7 +6,7 @@ $( document ).ready(function() {
     selector: "textarea",
     theme: "modern",
     elements: "id_description",
-    editor_selector: "tinymce_editor"
+    editor_selector: "tinymce"
  });
 })
 

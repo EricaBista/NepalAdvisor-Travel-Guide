@@ -27,8 +27,6 @@ index do
     end
   end
 
-
-
    form do |f|
       f.inputs "Advertisement" do
       # add your other inputs
