@@ -5,9 +5,7 @@ $( document ).ready(function() {
   tinymce.init({
     selector: "textarea",
     theme: "modern",
-
      elements: "id_description",
-
     editor_selector: "tinymce_editor"
  });
 })
