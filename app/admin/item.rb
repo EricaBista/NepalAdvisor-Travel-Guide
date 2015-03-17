@@ -81,10 +81,10 @@ ActiveAdmin.register Item do
 
     row :Name
     row :short_tag
-    # row :Description, :input_html => { :class => "tinymce_editor" }
+    
     row :Order
     row :category do |c|
-        link_to c.category.Name, [ :admin, c ]
+         c.category.Name
       end
     
   end
