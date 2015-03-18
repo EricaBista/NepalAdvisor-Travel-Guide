@@ -49,7 +49,7 @@ ActiveAdmin.register Item do
      end 
 
       f.inputs "Images" do
-        f.has_many :images, new_record: 'Add Images' do |b|
+        f.has_many :images, new_record: 'Add Images', heading: false do |b|
           b.input :Title
            b.input :Content, :input_html => { :class => "tinymce_editor" }
            b.input :Order
@@ -61,7 +61,7 @@ ActiveAdmin.register Item do
       end
 
         f.inputs "Descriptions" do
-        f.has_many :descriptions, new_record: 'Add Descriptions' do |d|
+        f.has_many :descriptions, new_record: 'Add Descriptions', heading: false do |d|
           d.input :Title
            d.input :Content, :input_html => { :class => "tinymce_editor" }
            d.input :Order
