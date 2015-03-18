@@ -97,4 +97,6 @@ ActiveAdmin.register Category do
 #     head 200
 #   end
 
+filter :Name 
+filter :Description
 end
