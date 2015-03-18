@@ -10,6 +10,15 @@ $( document ).ready(function() {
  });
 })
 
+
+$(document).on('nested:fieldAdded', function(event){
+  event.field.find('textarea').tinymce({
+    theme: 'modern'
+  });
+});
+
+
+
 $('.has_many_add').on('click',function(event){
   alert("a")
     // var field = event.field;

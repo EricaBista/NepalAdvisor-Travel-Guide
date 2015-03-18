@@ -19,8 +19,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+# en:
+#   hello: "Hello world"
   
+#   errors:
+#      messages: "User name should be in proper format i.e example@abcd.com"
+en:
   errors:
-     messages: "User name should be in proper format i.e example@abcd.com"
+    messages:
+      blank: "Please fill the %{model}'s %{attribute}"
