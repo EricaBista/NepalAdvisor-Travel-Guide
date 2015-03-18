@@ -52,17 +52,7 @@
 <div class="col col-sm-8 reviewForm">
 
 <%= form_for @user do |f| %>
-	<% if @user.errors.any? %>
-	
-	<div class="alert alert-danger">
-	<h5>Invalid Form</h5>
-	<ul>
-	  <% @user.errors.messages.each do |message| %>
-	 <li><%= message %></li> 
-	  <% end %>
-	</ul>
-	  </div>
-	  <% end %>
+	<%= devise_error_messages! %>
 	  <div class="form-group">
        <%= f.label :email %>
 		  <%= f.text_field :email, :class=>'form-control' %>
