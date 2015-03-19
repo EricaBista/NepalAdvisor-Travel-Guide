@@ -5,6 +5,7 @@ class Item < ActiveRecord::Base
 	has_many :images
 	has_many :reviews
 	belongs_to :category
+	has_many :likes
 
 	accepts_nested_attributes_for :images, :allow_destroy => true
 	accepts_nested_attributes_for :descriptions, :allow_destroy => true

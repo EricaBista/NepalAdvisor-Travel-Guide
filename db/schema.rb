@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303042843) do
+ActiveRecord::Schema.define(version: 20150319075233) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20150303042843) do
     t.boolean  "is_menu"
     t.boolean  "is_destination"
     t.string   "banner"
+    t.string   "heading"
+    t.string   "bannername"
   end
 
   create_table "contacts", force: true do |t|
