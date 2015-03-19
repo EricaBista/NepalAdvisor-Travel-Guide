@@ -151,7 +151,7 @@
                 </div>
                 
                
-               <div class="quickLinks"><%= @quicklinks.Title.html_safe.html_safe %></div>
+               <div class="quickLinks"><%= @quicklinks.Title.html_safe %></div>
                <hr style="margin-top:8px;">
                <div class="quickLinksMenu">
                <%= @quicklinks.Content.html_safe %>
@@ -221,7 +221,7 @@
    
   
       <div class="col col-sm-5 policyNote">
-        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><a href="#">(more)</a></span>
+        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><%=link_to @more.Title.html_safe, cms_path(@more.Slug) %></span>
     nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
         
         </div>

@@ -57,6 +57,7 @@ end
         @menus ||= Category.where(:is_menu => true).order(:Order)
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
         @quicklinks ||= Contact.find_by_Slug("quick-links")
+        @more ||= Contact.find_by_Slug("more")
         @restaurant ||= Category.find_by_slug("restaurants")
         @thingstodo ||= Category.find_by_slug("things-to-do")
         @vertical_advertisement ||= Advertisement.where(:position => "vertical").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).limit(3).order("RANDOM()")
