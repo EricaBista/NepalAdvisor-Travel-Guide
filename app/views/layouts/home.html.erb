@@ -326,9 +326,13 @@
    
   
         <div class="col col-sm-5 policyNote">
-        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore"><% if  @more.Title.present?%><%=link_to @more.Title.html_safe, cms_path(@more.Slug) %><% else %>
+        <p>* nepaladviser is not a booking agent and does not charge any service fees to users of our site... <span class="policyNoteMore">
+        <% if  @more.present?%>
+        <%=link_to @more.Title.html_safe, cms_path(@more.Slug) %>
+        <% else %>
         <a href="#">(more)</a>
-        <% end %></span>
+        <% end %>
+        </span>
         nepaladviser is not responsible for content on external web sites. Taxes, fees not included for deals content.</p>
         
         </div>
