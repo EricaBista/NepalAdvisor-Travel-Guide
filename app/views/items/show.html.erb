@@ -17,7 +17,13 @@ end
     <div class="col col-sm-12"
     <div class="row">
     <div class="col-sm-4"></div>
-    <div class="col-sm-4"><h2><%= @item.category.Name %> in Nepal</h2></div>
+    <div class="col-sm-4">
+    <% if @item.category.bannername.present? %>
+    <h2><%= @item.category.bannername.html_safe %> in Nepal</h2>
+<% else %>
+<h2><%= @item.category.Name.html_safe %> in Nepal</h2>
+   <% end %>
+    </div>
     <div class="col-sm-4"></div>
     </div></div>
     
@@ -181,7 +187,7 @@ end
                 <div class="youMayPlaceInfo">
                 <span class="youMayMainTitle"><%= b.Name %></span></br>
                 <span class="youMayMainTitleLocation"><%= b.short_tag%></span></br>
-                <span class="youMayLikesReview"><%= @like_count%> LIKES / <span style="color:#5f9a16;"><%= @review_count%> Reviews</span></span>
+                <span class="youMayLikesReview"><%= b.likes.count%> LIKES / <span style="color:#5f9a16;"><%= b.reviews.count%> Reviews</span></span>
                 </div></div>
                 
                 <% end %>
