@@ -62,7 +62,12 @@ Rails.application.routes.draw do
 
   end
 end
-
+    get 'advertisements/clicked/:id', :controller => "advertisements", :action => "clicked", :as => 'clicked'
+# resources :advertisments do 
+#     member do
+#       get 'clicked'
+#     end
+# end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
