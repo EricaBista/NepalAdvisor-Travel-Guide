@@ -74,6 +74,7 @@ def after_sign_in_path_for(resource)
   session["user_return_to"] || root_path
 end
 
+
 # Or if you need to blacklist for some reason
 # def after_sign_in_path_for(resource)
 #   blacklist = [new_user_session_path, new_user_registration_path, user_path(current_user.id)] # etc...

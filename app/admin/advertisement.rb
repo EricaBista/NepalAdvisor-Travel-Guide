@@ -4,7 +4,7 @@ ActiveAdmin.register Advertisement do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :text, :description, :title, :image, :started_date, :ended_date, :clicked, :position, :link
+   permit_params :list, :of, :attributes, :on, :model, :text, :description, :title, :image, :started_date, :ended_date, :clicked, :position, :link, :max_clicked
    
   # or
 
@@ -15,6 +15,7 @@ index do
     column :started_date
     column :ended_date
     column :clicked
+    column :max_clicked
     column :link
     column :position
       
@@ -37,6 +38,7 @@ index do
       f.input :started_date
       f.input :ended_date
       f.input :clicked
+      f.input :max_clicked
       f.input :link
       f.input :position
       end

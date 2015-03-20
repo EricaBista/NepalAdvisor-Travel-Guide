@@ -6,4 +6,5 @@ class HomeController < ApplicationController
 	@things_to_do = ThingsToDo.all
 	#@categories = Category.all
 	end
+	
 end
