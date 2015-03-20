@@ -59,9 +59,9 @@ end
         @quicklinks ||= Contact.find_by_Slug("quick-links")
         @more ||= Contact.find_by_Slug("more")
         @restaurant ||= Category.find_by_slug("restaurants")
-        @thingstodo ||= Category.find_by_slug("things-to-do")
-        @vertical_advertisement ||= Advertisement.where(:position => "vertical").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).limit(3).order("RANDOM()")
-        @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).limit(1).order("RANDOM()")
+        @thingstodo ||= Category.find_by_slug("thingstodo")
+        @vertical_advertisement ||= Advertisement.where(:position => "vertical").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).where("clicked <= max_clicked").limit(3).order("RANDOM()")
+        @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).where("clicked <= max_clicked").order("RANDOM()").limit(1)
         # @current_user ||= session[:user_id] 
        
 

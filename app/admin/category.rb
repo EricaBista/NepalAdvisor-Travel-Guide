@@ -4,7 +4,7 @@ ActiveAdmin.register Category do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :icon,  :Order, :is_menu, :is_destination, :banner, :bannername, :heading
+   permit_params :list, :of, :attributes, :on, :model, :Name, :Description, :icon, :slug,  :Order, :is_menu, :is_destination, :banner, :bannername, :heading
  index do 
      
      column :Name do |category|
@@ -54,7 +54,7 @@ ActiveAdmin.register Category do
       # f.input :Description do
       #   input_html => { :class => "tinymce_editor" }
       # end
-
+      f.input :slug
       f.input :Order
       f.input :heading
       f.input :bannername
@@ -64,7 +64,7 @@ ActiveAdmin.register Category do
 
       #f.input :icon, :as => :file, :hint => image_tag(category.icon_url(:avatar))
       f.input :icon, :as => :file, :hint => f.category.icon_url.nil? ? f.content_tag(:span, "no icon yet") : image_tag(f.category.icon_url(:avatar))
-      # f.input :slug
+      
       f.input :is_menu
       f.input :is_destination
           
