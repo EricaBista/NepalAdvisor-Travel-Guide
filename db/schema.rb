@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320070436) do
+ActiveRecord::Schema.define(version: 20150323100715) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -185,6 +185,10 @@ ActiveRecord::Schema.define(version: 20150320070436) do
     t.string   "string"
     t.string   "last_sign_in_ip"
     t.string   "role"
+    t.string   "confirmed_at"
+    t.string   "confirmation_sent_at"
+    t.string   "confirmation_token"
+    t.string   "unconfirmed_email"
   end
 
 end

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+
   protect_from_forgery with: :exception
   layout :layout
   before_filter :set_menu
@@ -43,8 +44,6 @@ end
         end
     end
 
-
-
   private
   # def current_user
   # 	@current_user ||= User.find_by_token!(cookies[:token]) if cookies[:token]
@@ -62,18 +61,13 @@ end
         @thingstodo ||= Category.find_by_slug("thingstodo")
         @vertical_advertisement ||= Advertisement.where(:position => "vertical").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).where("clicked <= max_clicked").limit(3).order("RANDOM()")
         @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").where("started_date <= ? AND ended_date >= ?", Date.today, Date.today).where("clicked <= max_clicked").order("RANDOM()").limit(1)
-        # @current_user ||= session[:user_id] 
-       
-
-       # @categories ||= Category.all
+        
    end
-
 
 # If your model is called User
 def after_sign_in_path_for(resource)
   session["user_return_to"] || root_path
 end
-
 
 # Or if you need to blacklist for some reason
 # def after_sign_in_path_for(resource)
