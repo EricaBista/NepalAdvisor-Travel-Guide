@@ -6,7 +6,6 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.password_reset.subject
   #
-  
 
 def password_reset(user)
   @user = user
