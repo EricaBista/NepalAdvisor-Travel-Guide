@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324032506) do
+ActiveRecord::Schema.define(version: 20150324103338) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -121,7 +121,6 @@ ActiveRecord::Schema.define(version: 20150324032506) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_tag"
-    t.string   "slug"
   end
 
   create_table "likes", force: true do |t|
@@ -133,22 +132,6 @@ ActiveRecord::Schema.define(version: 20150324032506) do
 
   add_index "likes", ["item_id"], name: "index_likes_on_item_id"
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
-
-  create_table "redactor_assets", force: true do |t|
-    t.string   "data_file_name",               null: false
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.integer  "assetable_id"
-    t.string   "assetable_type",    limit: 30
-    t.string   "type",              limit: 30
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
-  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
 
   create_table "restaurants", force: true do |t|
     t.string   "Name"
@@ -166,7 +149,7 @@ ActiveRecord::Schema.define(version: 20150324032506) do
     t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "approved"
+    t.boolean  "approved",    default: false
   end
 
   add_index "reviews", ["item_id"], name: "index_reviews_on_item_id"
@@ -204,8 +187,8 @@ ActiveRecord::Schema.define(version: 20150324032506) do
     t.string   "last_sign_in_ip"
     t.string   "role"
     t.string   "confirmed_at"
-    t.string   "confirmation_token"
     t.string   "confirmation_sent_at"
+    t.string   "confirmation_token"
     t.string   "unconfirmed_email"
   end
 
