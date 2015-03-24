@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   layout :layout
   before_filter :set_menu
   before_filter :configure_permitted_parameters, if: :devise_controller?
-after_filter :store_location
+
+
+before_filter :store_location
 
 def store_location
   # store last url - this is needed for post-login redirect to whatever the user last visited.
@@ -21,6 +23,11 @@ def store_location
     session[:previous_url] = request.fullpath 
   end
 end
+
+def after_sign_in_path_for(resource)
+  session[:previous_url] || root_path
+end
+
 
 
   def configure_permitted_parameters
@@ -64,20 +71,4 @@ end
         
    end
 
-# If your model is called User
-def after_sign_in_path_for(resource)
-  session["user_return_to"] || root_path
-end
-
-# Or if you need to blacklist for some reason
-# def after_sign_in_path_for(resource)
-#   blacklist = [new_user_session_path, new_user_registration_path, user_path(current_user.id)] # etc...
-#   last_url = session["user_return_to"]
-
-#   if blacklist.include?(last_url)
-#     root_path
-#   else
-#     last_url
-#   end
-# end
 end
