@@ -37,11 +37,16 @@ config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
- 
+
   ENV['PATH'] = "/usr/local/bin:#{ENV['PATH']}"
   
   Rails.application.config.assets.precompile += %w( style.css )
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {:address => 'localhost', part: 1025}
+  config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
