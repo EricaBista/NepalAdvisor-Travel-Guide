@@ -81,7 +81,6 @@ ActiveAdmin.register Item do
 
     row :Name
     row :short_tag
-    
     row :Order
     row :category do |c|
          c.category.Name

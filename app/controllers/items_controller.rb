@@ -17,7 +17,7 @@
 
     @review_count=Review.where(:item_id =>@item).count
     @like_count=Like.where(:item_id =>@item).count
-   
+    
   end
 
   # GET /items/new

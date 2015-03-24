@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323100715) do
+ActiveRecord::Schema.define(version: 20150324032506) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20150323100715) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_tag"
+    t.string   "slug"
   end
 
   create_table "likes", force: true do |t|
@@ -149,6 +150,7 @@ ActiveRecord::Schema.define(version: 20150323100715) do
     t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved"
   end
 
   add_index "reviews", ["item_id"], name: "index_reviews_on_item_id"

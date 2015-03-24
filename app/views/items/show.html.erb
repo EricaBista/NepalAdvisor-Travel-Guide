@@ -217,7 +217,7 @@ end
         
          <!-- Title of your review: -->
 
-         <%= render :partial => 'reviews/form', :locals => {:item_id => @item.id} %>
+         <%= render :partial => 'reviews/form', :locals => {:item_id => @item.id}   %>
 
         <!--  <input type="" class="form-control" id="reviewTitle">  -->
         
@@ -243,7 +243,7 @@ end
              
              <div class="review">
              
-             <% @item.reviews.each do |g| %>
+             <% @item.reviews.where(:approved => true).each do |g| %>
              <div class="col col-sm-2">
              <div class="row">
              <% user=User.find_by_id(g.user_id) %>
@@ -260,9 +260,9 @@ end
              
              <div class="col col-sm-10">
              <div class="row">
-             <div class="reviewTitle"><%= g.title %></div>
+             <div class="reviewTitle"><%= g.title.html_safe %></div>
              <span class="reviewDate"><h5> <small> <%= g.created_at.strftime("%B %d, %Y") %></small></h5></span>
-             <p><%= g.description%> </p>
+             <p><%= g.description.html_safe%> </p>
               <div class="likeNReply"> &nbsp;
              <%#= image_tag('like.jpg',:class =>"img-responsive")%><!-- <span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span> -->
              </div>
