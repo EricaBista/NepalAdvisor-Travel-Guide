@@ -31,35 +31,24 @@
   <div class="gap"></div>
     
  
- 
- 
- 
  <!-- main body start from here --> 
   
     <div class="container">
   <div class="row">
           
             <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
-              
-         
+            
           <%= render "common/horizontal_ads" %>
-             
-             
-             
+            
               <div class="gap"></div>
 
 <h5>Change Password</h5>
 <div class="border"></div>
-
 <div class="col col-sm-8 reviewForm">
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-
-    
     <%= f.hidden_field :email%>
-
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
