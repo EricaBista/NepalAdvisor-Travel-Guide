@@ -1,5 +1,7 @@
 class AddConfirmationTokenToUser < ActiveRecord::Migration
   def change
-    add_column :users, :confirmation_token, :string
+    unless column_exists? :users, :confirmation_token
+  		add_column :users, :confirmation_token, :string
+	end
   end
 end
