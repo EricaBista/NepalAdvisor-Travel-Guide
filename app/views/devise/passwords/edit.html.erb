@@ -34,7 +34,7 @@
             <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
          
           <%= render "common/horizontal_ads" %>
-       <%= render "devise/shared/links" %>
+       
               
 <h5>Change your password</h5>
 
@@ -53,6 +53,8 @@
     <%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off", :class=>'form-control' %>
   </div>
+<br/>
+<%= render "devise/shared/conf" %>
 <br/>
   <div class="form-group"><%=submit_tag "Change password", :class => "btn btn-success" %></div>
        
