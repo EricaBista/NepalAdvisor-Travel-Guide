@@ -1,10 +1,6 @@
 ActiveAdmin.register Item do
- 
   # controller do
   # authorize_resource class: false
- 
-
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -17,16 +13,11 @@ ActiveAdmin.register Item do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-  index do 
-    
+  index do    
      column :Name 
-    column :category do |c|
-     
+     column :category do |c|
         c.category.Name
       end
-      
-
-    
     column :Order
      column "" do |resource|
       links = ''.html_safe
@@ -73,8 +64,6 @@ ActiveAdmin.register Item do
       end
      f.actions 
    end
-
-  
 
   show do |item|
   attributes_table do
@@ -143,12 +132,9 @@ ActiveAdmin.register Item do
           else
             h3 "No Image available"
           end
-
 end
-
 filter :category 
 filter :Name 
 filter :Description
 filter :category, as: :select, collection: -> {Category.all.map{|s| [s.Name,s.id]}.uniq},  input_html: { class: 'chosen-input' } #or as you've shown before, using pluck :)
-
 end
