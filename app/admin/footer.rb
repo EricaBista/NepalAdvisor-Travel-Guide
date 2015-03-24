@@ -8,7 +8,7 @@ module ActiveAdmin
 
         div do     
           span "\xC2\xA9".force_encoding('UTF-8')                                                              
-          small link_to "nepaladviser", "http://nepaladviser.com"
+          small link_to "nepaladvisor", "http://nepaladvisor.com"
           span do "#{Date.today.year}"  end                                     
         end
       end
