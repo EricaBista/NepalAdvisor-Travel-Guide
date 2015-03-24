@@ -6,9 +6,7 @@ class ApplicationController < ActionController::Base
   layout :layout
   before_filter :set_menu
   before_filter :configure_permitted_parameters, if: :devise_controller?
-
-
-before_filter :store_location
+  before_filter :store_location
 
 def store_location
   # store last url - this is needed for post-login redirect to whatever the user last visited.

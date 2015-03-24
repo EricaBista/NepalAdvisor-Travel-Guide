@@ -10,10 +10,12 @@ $( document ).ready(function() {
  });
 })
 
-
-$(document).on('nested:fieldAdded', function(event){
-  event.field.find('textarea').tinymce({
-    theme: 'modern'
+  $(document).click('a.button.has_many_add', function(e){
+		   tinymce.init({
+		    selector: "textarea",
+		    theme: "modern",
+		     elements: "id_description",
+		    editor_selector: "tinymce_editor"
+		 });
   });
-});
 
