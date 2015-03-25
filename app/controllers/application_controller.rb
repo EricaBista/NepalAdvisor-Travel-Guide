@@ -68,5 +68,4 @@ end
         @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").where("(started_date <= ? AND ended_date >= ?) OR (clicked <= max_clicked)", Date.today, Date.today).order("RANDOM()").limit(1)
         
    end
-
 end
