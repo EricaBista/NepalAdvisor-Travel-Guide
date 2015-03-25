@@ -4,7 +4,7 @@ ActiveAdmin.register Item do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-   permit_params :list, :of, :attributes, :on, :model, :Name, :short_tag, :Description, :Order, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy]
+   permit_params :list, :of, :attributes, :on, :model, :Name, :slug, :short_tag, :Description, :Order, :category_id, descriptions_attributes: [ :id, :Title, :Content, :Order , :_destroy],images_attributes: [ :id, :Title, :Content, :Order, :image, :_destroy]
   #
   # or
   #
@@ -15,6 +15,7 @@ ActiveAdmin.register Item do
   # end
   index do    
      column :Name 
+     column :slug
      column :category do |c|
         c.category.Name
       end
@@ -33,6 +34,7 @@ ActiveAdmin.register Item do
       # add your other inputs
       f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
       f.input :Name
+      f.input :slug
       f.input :short_tag
       f.input :Description, :input_html => { :class => "tinymce_editor" }
       f.input :Order
@@ -69,6 +71,7 @@ ActiveAdmin.register Item do
   attributes_table do
 
     row :Name
+    row :slug
     row :short_tag
     row :Order
     row :category do |c|
