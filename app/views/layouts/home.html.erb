@@ -164,7 +164,7 @@
              <div class="row">
                 <% @restaurant.items.limit(9).each do |r|  %>
                    <div class="col col-sm-4 placeInfo">
-                      <%= i %>.<%= link_to r.Name, item_path(r) %>
+                      <%= i %>.<%= link_to r.Name, slugged_path(r.slug) %>
                       </br>
                       <img src="assets/rate-icon.png" /> <span><%= r.reviews.count %> Reviews</span>
                     </div>
@@ -188,7 +188,7 @@
           <div class="row">
             <% @thingstodo.items.limit(9).each do |t| %>
      		       <div class="col col-sm-4 placeInfo">
-                  <%= j %>.<%= link_to t.Name, item_path(t) %>
+                  <%= j %>.<%= link_to t.Name, slugged_path(t.slug) %>
                   </br>
          	        <img src="assets/rate-icon.png" /> <span><%= t.reviews.count %> Reviews</span>
                   </div>
