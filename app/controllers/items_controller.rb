@@ -1,16 +1,17 @@
   class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:edit, :update, :destroy]
   before_filter :authorize, only: [:edit, :update]
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
   end
+  
 
   # GET /items/1
   # GET /items/1.json
   def show
-    @item = Item.find(params[:id]) 
+   @item = Item.find_by_slug!(params[:slug])
     @items = Item.where(:category_id => @item.category_id).where.not(:id => @item.id).limit(4).order("RANDOM()")
      # @image = Image.find(params[:id]) 
     @review = Review.new
@@ -121,7 +122,7 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:Name, :Description, :Order, :category_id)
+      params.require(:item).permit(:Name, :Description, :Order, :category_id, :slug)
     end
 
     def description_params

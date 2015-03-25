@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   get '/seed' => 'items#seed'
  
   get 'details/:slug', :controller => "categories", :action => "list_items", :as =>'list_items_show'
-  
+  get 'item/:slug', :controller => "items", :action => "show", :as =>'slugged'
   root :to => 'home#index'
 
   resource :user, only: [:edit] do
