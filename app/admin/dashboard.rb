@@ -10,15 +10,23 @@ ActiveAdmin.register_page "Dashboard" do
         # small I18n.t("active_admin.dashboard_welcome.call_to_action")
     span "Welcome to Nepaladviser Admin"
     end
-      section "Recent Reviews" do  
+      panel "Recent Reviews" do 
       table_for Review.where(:approved => false).limit(5).order("RANDOM()") do  
       column :title  
       column :description 
       column :approved 
-    end  
+ 
+     end
     strong { link_to "View All reviews", admin_reviews_path }  
     end  
-  
+
+    panel "User Logged_in" do  
+      table_for User.where(:role => "normal") do  
+      column :email
+      column :role 
+    end
+      strong { link_to "View All users", admin_users_path }
+    end 
     end
 
     # Here is an example of a simple dashboard with columns and panels.
