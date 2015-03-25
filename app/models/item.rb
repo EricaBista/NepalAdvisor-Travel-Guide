@@ -1,6 +1,8 @@
 class Item < ActiveRecord::Base
 	before_save :create_slug
-	
+	def create_slug
+	    self.slug = self.Name.parameterize
+	  end
 	validates :Name, presence: true
 	validates :Description, presence: true
 	has_many :descriptions
