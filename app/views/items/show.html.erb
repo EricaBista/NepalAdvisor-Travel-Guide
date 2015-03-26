@@ -180,14 +180,14 @@ end
                  <% @items.each do |b| %>
                 <div class="col-sm-3">
                 <% if b.images[0].present? %>
-                <%= link_to image_tag(b.images[0].image_url(:thumb),:class =>"img-responsive"), item_path(b)   %>
+                <%= link_to image_tag(b.images[0].image_url(:thumb),:class =>"img-responsive"), slugged_path(b.slug)   %>
                <% else %>
-               <%= link_to image_tag("nowall.jpg", :class=>"img-responsive"), item_path(b) %>
+               <%= link_to image_tag("nowall.jpg", :class=>"img-responsive"), slugged_path(b.slug) %>
                <% end %>
                 <div class="youMayPlaceInfo">
                 <span class="youMayMainTitle"><%= b.Name %></span></br>
                 <span class="youMayMainTitleLocation"><%= b.short_tag%></span></br>
-                <span class="youMayLikesReview"><%= b.likes.count%> LIKES / <span style="color:#5f9a16;"><%= b.reviews.count%> Reviews</span></span>
+                <span class="youMayLikesReview"><%= b.likes.count%> LIKES / <span style="color:#5f9a16;"><%= b.reviews.where(:approved => true).count %> Reviews</span></span>
                 </div></div>
                 
                 <% end %>
@@ -199,11 +199,6 @@ end
           </div><!------------- row end ------------->    
             </div><!------------ col col-sm-12 end ------------>      
         
-            
-            
-            
-        
-        
         
         <div class="col-sm-12">
              <div class="row">
@@ -212,27 +207,19 @@ end
              <div class="border"></div>
              <h4><small>Write your Reviews / Comments:</small></h4>
              <div class="col col-sm-8 reviewForm">
-             
-             
-        
+          
          <!-- Title of your review: -->
 
          <%= render :partial => 'reviews/form', :locals => {:item_id => @item.id}   %>
 
         <!--  <input type="" class="form-control" id="reviewTitle">  -->
         
-             
-        
-         
              <!-- <button type="submit" class="btn btn-success">Submit yo --><!-- ur reviews</ --><!-- button> -->
-       
 
              </div> 
           </div>
           </div><!------------ row end ------------->    
             </div><!------------ col col-sm-12 end ------------> 
-            
-            
             
              <div class="col-sm-12">
              <div class="row">
@@ -257,12 +244,11 @@ end
              </div>
              </div>
              
-             
              <div class="col col-sm-10">
              <div class="row">
              <div class="reviewTitle"><%= g.title.html_safe %></div>
              <span class="reviewDate"><h5> <small> <%= g.created_at.strftime("%B %d, %Y") %></small></h5></span>
-             <p><%= g.description.html_safe%> </p>
+             <p><%= g.description.html_safe %> </p>
               <div class="likeNReply"> &nbsp;
              <%#= image_tag('like.jpg',:class =>"img-responsive")%><!-- <span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span> -->
              </div>
@@ -275,8 +261,6 @@ end
             </div><!------------ col col-sm-12 end ------------> 
 </div><!------------------------------- content body end here --------------------------------> 
  
-
-
  <script type="text/javascript"> 
  $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
   $("#zoom_03").bind("click", function(e) { 
@@ -284,8 +268,6 @@ end
   var ez = $('#zoom_03').data('elevateZoom');   
    $.fancybox(ez.getGalleryList()); 
    return false; }); 
-
-
 
   $(document).ready(function() {
     $('.gallerythumbnail').on('click', function() {
