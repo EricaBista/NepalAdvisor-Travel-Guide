@@ -11,7 +11,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
       panel "Recent Reviews" do 
         
-      table_for Review.where(:approved => false).limit(5).order("RANDOM()") do  
+      table_for Review.where(:approved => false).limit(3).order("RANDOM()") do  
       column :title  
       column :description 
       column :approved  
@@ -21,7 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
     end 
      column do
     panel "User Logged_in" do  
-      table_for User.where(:role => "normal") do  
+      table_for User.where(:role => "normal").order(:created_at) do  
       column :email
       column :role 
       column :sign_in_count

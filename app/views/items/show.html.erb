@@ -28,10 +28,7 @@ end
     </div></div>
     
     </div>
- 
- 
- 
- 
+
   <!---------------- inner banner end here ------------------------------------>      
  <div class="gap"></div>
  <!------- main body start from here ----------> 
@@ -51,26 +48,18 @@ end
              <div class="col-sm-12">
              <div class="row">
              <div class="pageTitle"> 
-             
-             
-
-
+            
              <h5><%= @item.Name%><small> <%= @item.short_tag.html_safe %></small></h5>
 
-             
              <div class="border"></div>
              <div class="gap"></div>
 
-             
-             
                              <div class="row">
                              
                              <div class="col-sm-4">
                              <% if @item.images[0].present? %>
                             <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item" >
 
-                            
-                            
                              <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"img-responsive showimagediv", :id => "zoom_031")  %></a>
                              <% else %>
                               <%= image_tag("nowall.jpg", :class=>"img-responsive") %>
@@ -91,7 +80,6 @@ end
                              
                              </div>
                              
-                             
                              <div class="col-sm-1"></div>
                              
                              <div class="col-sm-7">
@@ -109,10 +97,7 @@ end
              <div class="divider"></div>
           </div><!------------ row end ------------>  
             </div><!---------- col col-sm-12 end ----------> 
-            
-            
-            
-            
+           
             <div class="col col-sm-12 shortInfo">
             <div class="row">
             
@@ -131,7 +116,6 @@ end
 
              <%= a.Content.html_safe %>
 
-            
              </div> 
             </div>
           </div><!------------- row end ------------->    
