@@ -140,4 +140,15 @@ filter :category
 filter :Name 
 filter :Description
 filter :category, as: :select, collection: -> {Category.all.map{|s| [s.Name,s.id]}.uniq},  input_html: { class: 'chosen-input' } #or as you've shown before, using pluck :)
+
+controller do
+    def scoped_collection
+      # super.where('category_id<13')
+      super
+
+      # Or provide a custom collection similar to the current implementation:
+      # client().account.messages.list.sort_by{ |message| Date.rfc2822(message.date_sent) }.reverse
+    end
+
+  end
 end
