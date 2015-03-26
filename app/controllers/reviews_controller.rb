@@ -9,10 +9,10 @@ def index
     respond_to do |format|
       @review.user_id = current_user.id if current_user
       if @review.save 
-        format.html { redirect_to item_path(@review.item_id), notice: 'Review was successfully created.' }
+        format.html { redirect_to slugged_path(Item.find_by_id(@review.item_id).slug), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { redirect_to item_path(@review.item_id) }
+        format.html { redirect_to slugged_path(Item.find_by_id(@review.item_id).slug) }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end

@@ -162,11 +162,12 @@
 
             <% if @restaurant.present? %>
              <div class="row">
+             
                 <% @restaurant.items.limit(9).each do |r|  %>
                    <div class="col col-sm-4 placeInfo">
                       <%= i %>.<%= link_to r.Name, slugged_path(r.slug) %>
                       </br>
-                      <img src="assets/rate-icon.png" /> <span><%= r.reviews.count %> Reviews</span>
+                      <img src="assets/rate-icon.png" /> <span><%= r.reviews.where(:approved => true).count  %> Reviews</span>
                     </div>
                       <% i+= 1 %>
                 <% end %>       
@@ -190,7 +191,7 @@
      		       <div class="col col-sm-4 placeInfo">
                   <%= j %>.<%= link_to t.Name, slugged_path(t.slug) %>
                   </br>
-         	        <img src="assets/rate-icon.png" /> <span><%= t.reviews.count %> Reviews</span>
+         	        <img src="assets/rate-icon.png" /> <span><%= t.reviews.where(:approved => true).count %> Reviews</span>
                   </div>
                   <%j+=1 %>
             <% end %>
