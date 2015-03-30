@@ -1,4 +1,4 @@
-ActiveAdmin.register Item, :as => 'thingstodo'  do
+ActiveAdmin.register Item, :as => 'thingstodos'  do
 menu :label => "Things to Do"
  # controller do
   # authorize_resource class: false
@@ -33,7 +33,7 @@ menu :label => "Things to Do"
   form do |f|
       f.inputs "Item" do
       # add your other inputs
-      f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
+      f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true, :as => :hidden
       f.input :Name
       f.input :slug
       f.input :short_tag
