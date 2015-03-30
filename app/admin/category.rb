@@ -45,15 +45,8 @@ ActiveAdmin.register Category do
       # f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
       f.input :Name
 
-     # f.input :Description, :input_html => { :class => "tinymce_editor" }
-
-      
-        f.input :Description, :input_html => { :class => "tinymce_editor" }
+      f.input :Description, :input_html => { :class => "tinymce_editor" }
   
-
-      # f.input :Description do
-      #   input_html => { :class => "tinymce_editor" }
-      # end
       f.input :slug
       f.input :Order
       f.input :heading
