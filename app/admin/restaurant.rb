@@ -1,4 +1,4 @@
-ActiveAdmin.register Item, :as => 'Restaurant'  do
+ActiveAdmin.register Item, :as => 'Restaurants'  do
 menu :label => "Restaurant"
  # controller do
   # authorize_resource class: false
@@ -33,7 +33,7 @@ menu :label => "Restaurant"
   form do |f|
       f.inputs "Item" do
       # add your other inputs
-      f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true
+       f.input :category, :collection => Category.all.map{ |category| [category.Name, category.id] },:prompt => true, :as => :hidden
       f.input :Name
       f.input :slug
       f.input :short_tag
