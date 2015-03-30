@@ -216,7 +216,7 @@
                       <div class="row">
                         <ul>
                   <% end %>
-                  <li> <%=link_to i.Name, item_path(i) %></li>
+                  <li> <%=link_to i.Name, slugged_path(i.slug) %></li>
                   <% count+=1  %>
                   <% if count==6 || i==l.items.last %>
                     <% count=0 %>
