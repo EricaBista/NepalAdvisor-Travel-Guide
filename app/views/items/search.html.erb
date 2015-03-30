@@ -85,7 +85,7 @@
                 <%  end %>
                 
                 
-                <div class="col-sm-4"><%= link_to image_tag(image,:class =>"img-responsive"), item_path(i) %>
+                <div class="col-sm-4"><%= link_to image_tag(image,:class =>"img-responsive"),slugged_path(i.slug) %>
                 <div  class="titlePlaceInfo">
                 <span class="mainTitle"><%= i.Name %></span></br>
                 <span class="mainTitleLocation"><%= i.short_tag.html_safe %></span></br>
