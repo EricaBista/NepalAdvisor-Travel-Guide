@@ -77,7 +77,6 @@ ActiveAdmin.register Item do
     row :category do |c|
          c.category.Name
       end
-    
   end
 
    if item.descriptions and item.descriptions.count > 0
