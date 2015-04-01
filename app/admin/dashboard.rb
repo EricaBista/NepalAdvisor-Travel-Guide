@@ -13,7 +13,7 @@ ActiveAdmin.register_page "Dashboard" do
       table_for Review.where(:approved => false).limit(3).order("RANDOM()") do  
       column :title  
       column :description 
-      column :approved
+      column :approved, :as => :check_boxes
    end
  end
     strong { link_to "View All reviews", admin_reviews_path }  
