@@ -13,14 +13,29 @@ ActiveAdmin.register_page "Dashboard" do
       table_for Review.where(:approved => false).limit(3).order("RANDOM()") do  
       column :title  
       column :description 
-      column :approved, :as => :check_boxes
+
+     
+
+      column :approved
+      column "" do |resource|
+      links = ''.html_safe
+      links += link_to "Approve", approve_admin_review_path(resource), :class => "status_tag"
+      
+      links
+    end
+
    end
  end
     strong { link_to "View All reviews", admin_reviews_path }  
     end 
      column do
-    panel "User Logged_in" do  
-      table_for User.where(:role => "normal").order(:created_at) do  
+     panel "New User Signup" do 
+    # section "Users", :priority => 4 do
+    # div do
+    #   render "search_user"
+    # end
+    #end 
+      table_for User.where(:role => "normal").order(created_at: :desc).limit(5) do  
       column :email
       column :role 
       column :sign_in_count
@@ -30,6 +45,11 @@ ActiveAdmin.register_page "Dashboard" do
     end
   end
 end
+
+ 
+
+
+
     # Here is an example of a simple dashboard with columns and panels.
     # columns do
     #   column do
@@ -49,4 +69,10 @@ end
     #   end
     # end
   end # content
+
+
+
+
+
+
 end
