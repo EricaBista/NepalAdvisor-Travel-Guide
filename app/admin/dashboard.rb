@@ -20,7 +20,7 @@ ActiveAdmin.register_page "Dashboard" do
       column "" do |resource|
       links = ''.html_safe
       links += link_to "Approve", approve_admin_review_path(resource), :class => "status_tag"
-      
+      # links += link_to "Delete", delete_admin_review_path(resource)
       links
     end
 
@@ -46,10 +46,6 @@ ActiveAdmin.register_page "Dashboard" do
   end
 end
 
- 
-
-
-
     # Here is an example of a simple dashboard with columns and panels.
     # columns do
     #   column do
@@ -69,10 +65,5 @@ end
     #   end
     # end
   end # content
-
-
-
-
-
 
 end
