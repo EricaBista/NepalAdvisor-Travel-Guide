@@ -13,6 +13,10 @@ ActiveAdmin.register Review do
   #   permitted << :other if resource.something?
   #   permitted
   # end
+
+  member_action :approve, :method=>:get do
+ 
+  end
   index do 
     
      column :title 
@@ -46,6 +50,22 @@ show do |review|
          i.item.Name
       end
     end
+  end
+
+
+  controller do
+    # This code is evaluated within the controller class
+
+      def approve
+        # Instance method
+         review = Review.find(params[:id])
+           respond_to do |format|
+              if review.update(:approved => true)
+                format.html { redirect_to admin_dashboard_path, notice: 'Review was successfully approved.' }
+              end
+          
+            end
+      end
   end
 
 end

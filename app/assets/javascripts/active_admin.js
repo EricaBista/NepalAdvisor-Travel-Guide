@@ -1,4 +1,5 @@
 //= require active_admin/base
+//= require active_admin_sortable
 //= require tinymce/tinymce.min
 
 $( document ).ready(function() {
