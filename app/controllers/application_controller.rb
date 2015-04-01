@@ -62,7 +62,7 @@ end
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)
         @quicklinks ||= Contact.find_by_Slug("quick-links")
         @more ||= Contact.find_by_Slug("more")
-        @restaurant ||= Category.find_by_slug("restaurants")
+        # @restaurant ||= Category.find_by_slug("restaurants")
         @thingstodo ||= Category.find_by_slug("thingstodo")
         @vertical_advertisement ||= Advertisement.where(:position => "vertical").where("(started_date <= ? AND ended_date >= ?) OR (clicked <= max_clicked)", Date.today, Date.today).limit(3).order("RANDOM()")
         @horizontal_advertisement ||= Advertisement.where(:position => "horizontal").where("(started_date <= ? AND ended_date >= ?) OR (clicked <= max_clicked)", Date.today, Date.today).order("RANDOM()").limit(1)
