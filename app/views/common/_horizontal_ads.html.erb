@@ -2,8 +2,11 @@
   <div class="col col-sm-12"> 
   
    <% @horizontal_advertisement.each do |ad| %>
-             <%= link_to image_tag(ad.image_url(:horizontal), :class => "img-responsive"), clicked_path(ad.id), :target => "_blank"%>
-             
+   <% if ad.text.present? %>
+             <%= ad.text.html_safe %>
+           <% else %>
+           <%= link_to image_tag(ad.image_url(:horizontal), :class => "img-responsive"), clicked_path(ad.id), :target => "_blank"%>
+<% end %>
              <% end %>
   </div> 
 </div>   

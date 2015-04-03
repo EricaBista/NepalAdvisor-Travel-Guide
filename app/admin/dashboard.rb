@@ -6,15 +6,15 @@ ActiveAdmin.register_page "Dashboard" do
          #span I18n.t("active_admin.dashboard_welcome.welcome")
         # small I18n.t("active_admin.dashboard_welcome.call_to_action")
         span "Welcome to Nepaladviser Admin Page"
+
     end
+    # render "common/graph"
     columns do
       column do
       panel "Recent Reviews" do 
       table_for Review.where(:approved => false).limit(3).order("RANDOM()") do  
       column :title  
       column :description 
-
-     
 
       column :approved
       column "" do |resource|
