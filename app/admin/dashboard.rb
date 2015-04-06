@@ -6,9 +6,11 @@ ActiveAdmin.register_page "Dashboard" do
          #span I18n.t("active_admin.dashboard_welcome.welcome")
         # small I18n.t("active_admin.dashboard_welcome.call_to_action")
         span "Welcome to Nepaladviser Admin Page"
-
+        users = User.all
+        
+        render :partial =>"common/graph",:locals => { :users => users } 
     end
-    # render "common/graph"
+    
     columns do
       column do
       panel "Recent Reviews" do 
