@@ -1,0 +1,35 @@
+ <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'sign in count'],
+          
+         <% users.each do |v| %>
+         
+          ["<%=  v.created_at.to_s  %>", 100],
+          <%  end %>
+        ]);
+
+        var options = {
+          title: 'Users Details',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <div id="curve_chart" style="width: 500px; height: 200px"></div>
