@@ -6,9 +6,10 @@ ActiveAdmin.register_page "Dashboard" do
          #span I18n.t("active_admin.dashboard_welcome.welcome")
         # small I18n.t("active_admin.dashboard_welcome.call_to_action")
         span "Welcome to Nepaladviser Admin Page"
-        users = User.all
-        
-        render :partial =>"common/graph",:locals => { :users => users } 
+         
+          users = User.group('Date(created_at)').count
+   
+        render :partial =>"common/graph", :locals => { :users => users } 
     end
     
     columns do
@@ -22,13 +23,13 @@ ActiveAdmin.register_page "Dashboard" do
       column "" do |resource|
       links = ''.html_safe
       links += link_to "Approve", approve_admin_review_path(resource), :class => "status_tag"
-      # links += link_to "Delete", delete_admin_review_path(resource)
       links
     end
-
-   end
+  end
+strong { link_to "View All reviews", admin_reviews_path } 
+   
  end
-    strong { link_to "View All reviews", admin_reviews_path }  
+     
     end 
      column do
      panel "New User Signup" do 

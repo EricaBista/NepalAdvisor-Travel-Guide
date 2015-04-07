@@ -26,8 +26,6 @@ def after_sign_in_path_for(resource)
   session[:previous_url] || root_path
 end
 
-
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) { |u| 
       u.permit(:password, :password_confirmation, :current_password) 
