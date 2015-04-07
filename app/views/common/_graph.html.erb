@@ -12,16 +12,16 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Date', 'sign in count'],
+          ['Date', 'sign Up'],
           
-         <% users.each do |v| %>
+         <% users.each do |key, value| %>
          
-          ["<%=  v.created_at.to_s  %>", 100],
-          <%  end %>
+          ["<%= key %>", <%= value %>],
+          <% end %>
         ]);
 
         var options = {
-          title: 'Users Details',
+          title: 'Users Sign Up Details',
           curveType: 'function',
           legend: { position: 'bottom' }
         };

@@ -208,5 +208,4 @@ ActiveRecord::Schema.define(version: 20150325084957) do
     t.string   "confirmation_sent_at"
     t.string   "unconfirmed_email"
   end
-
 end
