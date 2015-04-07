@@ -26,8 +26,7 @@ ActiveAdmin.register_page "Dashboard" do
       links
     end
   end
-strong { link_to "View All reviews", admin_reviews_path } 
-   
+strong { link_to "View All reviews", admin_reviews_path }    
  end
      
     end 
