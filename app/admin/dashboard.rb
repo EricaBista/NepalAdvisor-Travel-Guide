@@ -18,7 +18,6 @@ ActiveAdmin.register_page "Dashboard" do
       table_for Review.where(:approved => false).limit(3).order("RANDOM()") do  
       column :title  
       column :description 
-
       column :approved
       column "" do |resource|
       links = ''.html_safe
@@ -27,16 +26,10 @@ ActiveAdmin.register_page "Dashboard" do
     end
   end
 strong { link_to "View All reviews", admin_reviews_path }    
- end
-     
+ end    
     end 
      column do
      panel "New User Signup" do 
-    # section "Users", :priority => 4 do
-    # div do
-    #   render "search_user"
-    # end
-    #end 
       table_for User.where(:role => "normal").order(created_at: :desc).limit(5) do  
       column :email
       column :role 
