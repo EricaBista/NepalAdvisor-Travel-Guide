@@ -8,8 +8,8 @@ ActiveAdmin.register_page "Dashboard" do
         span "Welcome to Nepaladviser Admin Page"
          
           users = User.group('Date(created_at)').count
-   
-        render :partial =>"common/graph", :locals => { :users => users } 
+           review = Review.where(:approved => true).count
+        render :partial =>"common/graph", :locals => { :users => users, :review => review } 
     end
     
     columns do
@@ -25,12 +25,12 @@ ActiveAdmin.register_page "Dashboard" do
       links
     end
   end
-strong { link_to "View All reviews", admin_reviews_path }    
+     strong { link_to "View All reviews", admin_reviews_path }    
  end    
     end 
      column do
      panel "New User Signup" do 
-      table_for User.where(:role => "normal").order(created_at: :desc).limit(5) do  
+      table_for User.where(:role => "normal").order(created_at: :desc).limit(3) do  
       column :email
       column :role 
       column :sign_in_count
