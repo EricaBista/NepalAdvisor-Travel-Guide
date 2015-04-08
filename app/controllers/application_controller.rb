@@ -48,13 +48,7 @@ end
     end
 
   private
-  # def current_user
-  # 	@current_user ||= User.find_by_token!(cookies[:token]) if cookies[:token]
-  # end
-  # helper_method :current_user
-  # def authorize
-  # 	redirect_to log_in_url, alert: :"Not Authorized" if current_user.nil?
-  # end
+  
    def set_menu
         @menus ||= Category.where(:is_menu => true).order(:Order)
         @footer_menus ||= Contact.where(:Home_page => true).order(:Order)

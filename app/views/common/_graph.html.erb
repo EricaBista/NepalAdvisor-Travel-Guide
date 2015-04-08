@@ -12,12 +12,13 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Date', 'sign Up'],
+          ['Date', 'sign Up', 'Review'],
           
          <% users.each do |key, value| %>
          
-          ["<%= key %>", <%= value %>],
+          ["<%= key %>", <%= value %>, <%= review %>],
           <% end %>
+         
         ]);
 
         var options = {
