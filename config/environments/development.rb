@@ -49,7 +49,7 @@ config.action_mailer.default_url_options = {:host => "localhost:3000"}
     :port => "587",
     :domain => "127.0.0.1",
     :user_name => "ericabista77@gmail.com",
-    :password => "@plijygrdwa107",
+    :password => "",
     :authentication => "plain",
     :enable_starttls_auto => true
   } 
