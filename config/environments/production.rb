@@ -21,7 +21,7 @@ Rails.application.configure do
     :port => "587",
     :domain => "nepaladvisor.herokuapp.com",
     :user_name => "ericabista77@gmail.com",
-    :password => "@plijygrdwa107",
+    :password => "",
     :authentication => "plain",
     :enable_starttls_auto => true
   }
