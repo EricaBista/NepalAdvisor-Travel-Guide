@@ -250,10 +250,12 @@
                 <% @vertical_advertisement.each do |add| %>
 
                 <div class="adsBanner">
-                
+                <% if add.text.present? %>
+                 <%= add.text.html_safe %>
+                 <% else %>
                     <%= link_to image_tag(add.image_url(:vertical), :class => "img-responsive"), clicked_path(add.id), :target => "_blank"%>
                   </div>
-                  
+                   <% end %>
                 <% end %>
                 </div>
                 
