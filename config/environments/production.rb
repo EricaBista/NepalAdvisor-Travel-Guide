@@ -13,15 +13,15 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-config.action_mailer.default_url_options = { host: "nepaladvisor.herokuapp.com"}
+  config.action_mailer.default_url_options = { host: "nepaladvisor.herokuapp.com"}
 
  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => "587",
     :domain => "nepaladvisor.herokuapp.com",
-    :user_name => "users@gmail.com",
-    :password => "123456789",
+    :user_name => "ericabista77@gmail.com",
+    :password => "@plijygrdwa107",
     :authentication => "plain",
     :enable_starttls_auto => true
   }

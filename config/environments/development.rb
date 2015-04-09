@@ -27,17 +27,6 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => "587",
-    :domain => "127.0.0.1",
-    :user_name => "users@gmail.com",
-    :password => "123456789",
-    :authentication => "plain",
-    :enable_starttls_auto => true
-  }
-
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
@@ -47,12 +36,23 @@ config.action_mailer.delivery_method = :smtp
   ENV['PATH'] = "/usr/local/bin:#{ENV['PATH']}"
   
   Rails.application.config.assets.precompile += %w( style.css )
+  config.serve_static_assets = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
 
-  config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.smtp_settings = {:address => 'localhost', part: 1025}
-  config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+config.action_mailer.default_url_options = {:host => "localhost:3000"}
+   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "127.0.0.1",
+    :user_name => "ericabista77@gmail.com",
+    :password => "@plijygrdwa107",
+    :authentication => "plain",
+    :enable_starttls_auto => true
+  } 
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
