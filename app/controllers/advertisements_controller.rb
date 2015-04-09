@@ -2,7 +2,7 @@ class AdvertisementsController < ApplicationController
 
   def clicked 
   @ads = Advertisement.find(params[:id])
-   @ads.increment!(:clicked)
+   @ads.increment!(:clicked) 
   redirect_to @ads.link
   end 
 
