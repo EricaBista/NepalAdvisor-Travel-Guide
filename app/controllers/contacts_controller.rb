@@ -15,8 +15,6 @@ class ContactsController < InheritedResources::Base
 		@contacts = Contact.all
 	end
 
-
-
   private
 
     def contact_params

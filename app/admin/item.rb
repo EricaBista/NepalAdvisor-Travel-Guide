@@ -1,5 +1,5 @@
 ActiveAdmin.register Item do
-  config.sort_order = 'order_asc'
+  # config.sort_order = 'order_asc'
   # controller do
   # authorize_resource class: false
   # See permitted parameters documentation:
@@ -138,12 +138,12 @@ ActiveAdmin.register Item do
 end
 
 
- collection_action :sort, :method => :post do
-    params[:items].each_with_index do |id, index|
-      Item.update_all(['order=?', index+1], ['id=?', id])
-    end
-    render :nothing => true
-  end
+ # collection_action :sort, :method => :post do
+ #    params[:items].each_with_index do |id, index|
+ #      Item.update_all(['order=?', index+1], ['id=?', id])
+ #    end
+ #    render :nothing => true
+ #  end
 
 
 filter :category 
@@ -151,6 +151,4 @@ filter :Name
 filter :Description
 filter :category, as: :select, collection: -> {Category.all.map{|s| [s.Name,s.id]}.uniq},  input_html: { class: 'chosen-input' } #or as you've shown before, using pluck :)
 
-
- 
 end

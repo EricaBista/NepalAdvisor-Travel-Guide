@@ -39,7 +39,7 @@ ActiveAdmin.register Advertisement do
             f.input :clicked
             f.input :max_clicked
             f.input :link
-            f.input :position
+            f.input :position, as: :select, collection: ['vertical', 'horizontal'], :prompt => true
           end
         f.actions 
      end 
