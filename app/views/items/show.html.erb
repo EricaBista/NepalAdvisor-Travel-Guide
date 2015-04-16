@@ -1,3 +1,4 @@
+   
    <!------ inner banner start from here ----> 
   <%
   if @item.category.banner?
@@ -84,7 +85,7 @@ end
                              
                              <div class="col-sm-7">
                              <div id="weather"></div>
-                             
+                             <div id="googleMap" style="width:400px;height:380px;"></div>
                              <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
                              
                              <br style="margin:10px 0px;"><%= @like_count%> LIKES / <span style="color:#5f9a16;"><%= @review_count%> Reviews</span></span>

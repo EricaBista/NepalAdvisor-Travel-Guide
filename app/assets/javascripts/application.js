@@ -20,61 +20,16 @@
 
 
 
-
-$(function() {
-  // $('a#add-another').click(function() {
-  //   $('#description-list li:first').clone().find('input').val('')
-  //   .end().appendTo('#description-list');
-  // });
-
-  // $(document).on("click", '.delete-description', function() {
-  //   if ($('#description-list li').length > 1)
-  // 		$(this).parent().remove();
-  //   else
-  // 		alert('You need at least one description.')
-  // });
-
-   
- });
-
-// function readURL(input) {
-// alert(1);
-//         if (input.files && input.files[0]) {
-//             var reader = new FileReader();
-            
-//             reader.onload = function (e) {
-//                 $('#blah').attr('src', e.target.result);
-                 
-//             }
-            
-//             reader.readAsDataURL(input.files[0]);
-//         }
-//     }
-
-// function serializeArtworks(){
-//   var categories = $.makeArray(
-//     $("#categories .category").map(function(){
-//       return $(this).data("id");
-//     })
-//   );
-//   return {ids: artworkIds};
-// };
-
-// $("#index_table_categories tbody").sortable({
-//   update: function(){
-//     $.ajax({
-//       url: "/admin/categories/sort",
-//       type: 'post',
-//       data: serializeArtworks(),
-//       complete: function(){
-//         $(".paginated_collection").effect("highlight");
-//       }
-//     });
-//   }
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(28.4005835,83.69416950000004),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
 
 
-
-
- //});
 //= require_tree .
 //= require tinymce
