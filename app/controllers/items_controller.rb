@@ -3,6 +3,7 @@
   before_filter :authorize, only: [:edit, :update]
   # GET /items
   # GET /items.json
+  
   def index
     @items = Item.all
   end
