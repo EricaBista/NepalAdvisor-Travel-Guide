@@ -1,5 +1,6 @@
  <%  lat=@item.descriptions.where(:Title => 'latitude')  %>
-    <% lon=@item.descriptions.where(:Title => 'longitude')  %>   
+    <% lon=@item.descriptions.where(:Title => 'longitude')  %>  
+<% add= @item.descriptions.where(:Title => 'address')%>
    <!------ inner banner start from here ----> 
   <%
   if @item.category.banner?
@@ -85,8 +86,12 @@ end
                              <div class="col-sm-1"></div>
                              
                              <div class="col-sm-7">
+<!-- yahoo weather implementation -->
+                             <% if add.present? %>
                              <div id="weather"></div>
+                             <% end %>
 
+<!-- google map implementation -->
                              <% if (lat && lon).present? %>
                              <div id="googleMap" style="width:400px;height:380px;"></div>
                              <% end %>
@@ -276,11 +281,11 @@ end
     });
 });
   </script>
-  
+
    <% if (lat && lon).present? %>
-<script type="text/javascript">
-var myCenter=new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>);
-  function initialize() {
+   <script type="text/javascript">
+   var myCenter=new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>);
+   function initialize() {
   var mapProp = {
 
       
@@ -300,3 +305,31 @@ marker.setMap(map);
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <% end %>
+
+<% if add.present? %>
+<script >
+$(document).ready(function() {  
+
+  getWeather(); //Get the initial weather.
+  setInterval(getWeather, 60000); //Update the weather every 10 minutes.
+});
+
+function getWeather() {
+  $.Weather({
+    location: '<%= strip_tags(add[0].Content) %>, Nepal',
+    unit: 'c',
+    success: function(weather) {
+      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+       html += '<li class="currently">'+weather.currently+'</li>';
+      
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+}
+</script>
+<% end%>

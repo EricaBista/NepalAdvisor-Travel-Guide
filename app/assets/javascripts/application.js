@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 
-//= require weather.js
+
 //= require jquery.simpleWeather.js
 //= require bootstrap.min.js
 
