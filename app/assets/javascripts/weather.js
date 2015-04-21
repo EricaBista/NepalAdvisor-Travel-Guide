@@ -1,4 +1,3 @@
-
 $(document).ready(function() {  
 
   getWeather(); //Get the initial weather.
@@ -13,7 +12,7 @@ function getWeather() {
       html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
        html += '<li class="currently">'+weather.currently+'</li>';
-      // html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
+      
   
       $("#weather").html(html);
     },

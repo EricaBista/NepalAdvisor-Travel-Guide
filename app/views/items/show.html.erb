@@ -111,12 +111,12 @@ end
             </div>
             </div>
             
-       <% @item.descriptions.each do |a| %>
+       <% @item.descriptions.where('Title != ? AND Title != ?', 'longitude', 'latitude').each do |a| %>
             
        <div class="col-sm-12">
              <div class="row">
              <div class="pageTitleTab"> 
-             <h5><%= a.Title%></h5>
+             <h5><%= a.Title %></h5>
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
 
@@ -149,7 +149,7 @@ end
             Share:
         
            <%= link_to image_tag('fa.jpg',:class =>"img-responsive"), "http://www.facebook.com/sharer.php?u="+ request.original_url , :target => "_blank"%>
-            <%= link_to image_tag('twitter.jpg',:class =>"img-responsive"), "http://twitter.com/share?url="+ request.original_url , :target => "_blank", :target => "_blank" %>
+            <%= link_to image_tag('twitter.jpg',:class =>"img-responsive"), "http://twitter.com/share?url="+ request.original_url , :target => "_blank" %>
             <%= link_to image_tag('g+.jpg',:class =>"img-responsive"), "https://plus.google.com/share?url="+ request.original_url , :target => "_blank" %>
             <%= link_to image_tag('in.jpg',:class =>"img-responsive"), "http://www.linkedin.com/shareArticle?mini=true&url="+ request.original_url , :target => "_blank" %>
             <%= link_to image_tag('pin.jpg',:class =>"img-responsive"), "javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" %> 
@@ -276,18 +276,26 @@ end
     });
 });
   </script>
-   <% if lat.present? %>
+  
+   <% if (lat && lon).present? %>
 <script type="text/javascript">
+var myCenter=new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>);
   function initialize() {
   var mapProp = {
 
       
     center:new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>),
     zoom:5,
+    center:myCenter,
    
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
