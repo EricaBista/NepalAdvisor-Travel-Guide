@@ -116,7 +116,7 @@ end
             </div>
             </div>
             
-       <% @item.descriptions.each do |a| %>
+       <% @item.descriptions.where('\"Title\" != ? AND \"Title\" != ?', 'longitude', 'latitude').each do |a| %>
             
        <div class="col-sm-12">
              <div class="row">
