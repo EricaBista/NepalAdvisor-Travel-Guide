@@ -1,6 +1,6 @@
- <%  lat = @item.descriptions.where(:Title => 'latitude') if present? %>
-    <% lon = @item.descriptions.where(:Title => 'longitude') if present? %>  
-<% add = @item.descriptions.where(:Title => 'address') if present?%>
+ <%  lat = [24]  %>
+    <% lon = [54]  %>  
+<% add = @item.descriptions.where(:Title => 'address') %>
    <!------ inner banner start from here ----> 
   <%
   if @item.category.banner?
@@ -121,7 +121,7 @@ end
        <div class="col-sm-12">
              <div class="row">
              <div class="pageTitleTab"> 
-             <h5><%= a.Title %></h5>
+             <h5><%= a.Title.html_safe %></h5>
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
 
@@ -284,25 +284,7 @@ end
 
    <% if (lat && lon).present? %>
    <script type="text/javascript">
-   var myCenter=new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>);
-   function initialize() {
-  var mapProp = {
-
-      
-    center:new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>),
-    zoom:5,
-    center:myCenter,
    
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-  var marker=new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <% end %>
 

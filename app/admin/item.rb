@@ -95,7 +95,7 @@ ActiveAdmin.register Item do
                     item.descriptions.each do |d|
                       tr do
                         td do
-                         h4 d.Title 
+                          d.Title 
                          
                         end
                         td do 
