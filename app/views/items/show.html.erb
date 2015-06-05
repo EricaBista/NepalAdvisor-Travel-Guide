@@ -1,5 +1,5 @@
- <%  lat = [24]  %>
-    <% lon = [54]  %>  
+ <%  lat = @item.descriptions.where(:Title => 'latitude')  %>
+    <% lon = @item.descriptions.where(:Title => 'longitude')  %>  
 <% add = @item.descriptions.where(:Title => 'address') %>
    <!------ inner banner start from here ----> 
   <%
@@ -40,6 +40,52 @@ end
   <div class="row">
           
             <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
+              
+              <%= render "common/horizontal_ads" %>
+             
+              <div class="gap"></div>
+              
+             
+              <%= render "common/alert" %>
+             
+             <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitle"> 
+            
+             <h5><%= @item.Name%><small> <%= @item.short_tag.html_safe %></small></h5>
+
+             <div class="border"></div>
+             <div class="gap"></div>
+
+                             <div class="row">
+                             
+                             <div class="col-sm-4">
+                             <% if @item.images[0].present? %>
+                            <a class="itembigimg" href="<%= @item.images[0].image %>" data-lightbox="item" >
+
+                             <%= image_tag(@item.images[0].image_url(:big_thumb),  :class =>"img-responsive showimagediv", :id => "zoom_031")  %></a>
+                             <% else %>
+                              <%= image_tag("nowall.jpg", :class=>"img-responsive") %>
+
+                           <% end %> 
+                           
+                                             <div class="row">
+                                                 <div class="thumImg">
+                                                 <% @item.images.each do |i| %>
+                                                    <div class="col col-sm-4 thumIcon">
+                                                        <%= image_tag(i.image_url(:small_thumb),  :class =>"img-responsive gallerythumbnail", :data=>{ :big => i.image_url(:big_thumb), :full => i.image_url})%>
+                                                    </div>
+                                                 <% end %>
+                                                 </div>
+                                             </div>
+                                             <!-- <div class="viewAllImg"><a href="#">+ view Gallery</a></div> -->
+                                             
+                             
+                             </div>
+                             
+                             <div class="col-sm-1"></div>
+                             
+                             <div class="col-sm-7">
 <!-- yahoo weather implementation -->
                              <% if add.present? %>
                              <div id="weather"></div>
@@ -70,12 +116,12 @@ end
             </div>
             </div>
             
-       <% @item.descriptions.where('Title != ? AND Title != ?', 'longitude', 'latitude').each do |a| %>
+       <% @item.descriptions.each do |a| %>
             
        <div class="col-sm-12">
              <div class="row">
              <div class="pageTitleTab"> 
-             <h5><%= a.Title.html_safe %></h5>
+             <h5><%= a.Title %></h5>
              <div class="border"></div>
              <div class="col col-sm-12 lawInfo">
 
@@ -238,7 +284,25 @@ end
 
    <% if (lat && lon).present? %>
    <script type="text/javascript">
+   var myCenter=new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>);
+   function initialize() {
+  var mapProp = {
+
+      
+    center:new google.maps.LatLng(<%=strip_tags(lat[0].Content) %>,<%=strip_tags(lon[0].Content) %>),
+    zoom:5,
+    center:myCenter,
    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <% end %>
 
