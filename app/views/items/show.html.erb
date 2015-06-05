@@ -1,6 +1,6 @@
- <%  lat=@item.descriptions.where(:Title => 'latitude')  %>
-    <% lon=@item.descriptions.where(:Title => 'longitude')  %>  
-<% add= @item.descriptions.where(:Title => 'address')%>
+ <%  lat = @item.descriptions.where(:Title => 'latitude')  %>
+    <% lon = @item.descriptions.where(:Title => 'longitude')  %>  
+<% add = @item.descriptions.where(:Title => 'address')%>
    <!------ inner banner start from here ----> 
   <%
   if @item.category.banner?
