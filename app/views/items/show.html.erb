@@ -1,0 +1,271 @@
+ <%  lat = [24]  %>
+    <% lon = [54]  %>  
+<% add = @item.descriptions.where(:Title => 'address') %>
+   <!------ inner banner start from here ----> 
+  <%
+  if @item.category.banner?
+  items_banner=@item.category.banner
+else
+  items_banner='/assets/banner/banner1.jpg'
+end
+%>
+   <style>
+.banner1
+{ 
+  background:url(<%= items_banner %>) no-repeat center center ;
+}
+</style>
+  <div class="banner1">
+    <div class="container">
+    <div class="col col-sm-12"
+    <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+    <% if @item.category.bannername.present? %>
+    <h2><%= @item.category.bannername.html_safe %> in Nepal</h2>
+<% else %>
+<h2><%= @item.category.Name.html_safe %> in Nepal</h2>
+   <% end %>
+    </div>
+    <div class="col-sm-4"></div>
+    </div></div>
+    
+    </div>
+
+  <!---------------- inner banner end here ------------------------------------>      
+ <div class="gap"></div>
+ <!------- main body start from here ----------> 
+  
+    <div class="container">
+  <div class="row">
+          
+            <div class="col col-sm-9"><!-------------------------------- content body start from here -------------------------------->
+<!-- yahoo weather implementation -->
+                             <% if add.present? %>
+                             <div id="weather"></div>
+                             <% end %>
+
+<!-- google map implementation -->
+                             <% if (lat && lon).present? %>
+                             <div id="googleMap" style="width:400px;height:380px;"></div>
+                             <% end %>
+
+                             <span class="likesReview" style="position:relative; top:20px;"><i class="fa fa-tags"></i> Category: <%= @item.category.Name %>
+                             
+                             <br style="margin:10px 0px;"><%= @like_count%> LIKES / <span style="color:#5f9a16;"><%= @review_count%> Reviews</span></span>
+                             </div>
+                            
+                            </div>
+            
+             </div>
+             
+             <div class="divider"></div>
+          </div><!------------ row end ------------>  
+            </div><!---------- col col-sm-12 end ----------> 
+           
+            <div class="col col-sm-12 shortInfo">
+            <div class="row">
+            
+            <p><i><%= @item.Description.html_safe %></i></p>
+            </div>
+            </div>
+            
+       <% @item.descriptions.where('Title != ? AND Title != ?', 'longitude', 'latitude').each do |a| %>
+            
+       <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5><%= a.Title.html_safe %></h5>
+             <div class="border"></div>
+             <div class="col col-sm-12 lawInfo">
+
+             <%= a.Content.html_safe %>
+
+             </div> 
+            </div>
+          </div><!------------- row end ------------->    
+            </div><!------------ col col-sm-12 end ------------>   
+            
+          <% end %>  
+            
+            <div class="col-sm-12">
+            <div class="row">
+            <div class="likeReply">
+            <div class="col col-sm-7">
+            Was this review helpful?: <span style="padding-left:10px;">
+            
+            <% if signed_in? && like = current_user.likes.find_by_item_id(@item.id)  %>
+            <%= link_to "UnLike", like , :method => :delete %>
+            
+          <% else %>
+            <%= link_to "Like",  signed_in? ? likes_path(:like => { :item_id => @item.id }) :new_user_session_path, :method => :post %>
+          <% end %>
+            </span> / <span style="color:#5f9a16;">Reply</span>
+            </div>
+            
+            
+            <div class="col col-sm-5 shareIcon">
+            Share:
+        
+           <%= link_to image_tag('fa.jpg',:class =>"img-responsive"), "http://www.facebook.com/sharer.php?u="+ request.original_url , :target => "_blank"%>
+            <%= link_to image_tag('twitter.jpg',:class =>"img-responsive"), "http://twitter.com/share?url="+ request.original_url , :target => "_blank" %>
+            <%= link_to image_tag('g+.jpg',:class =>"img-responsive"), "https://plus.google.com/share?url="+ request.original_url , :target => "_blank" %>
+            <%= link_to image_tag('in.jpg',:class =>"img-responsive"), "http://www.linkedin.com/shareArticle?mini=true&url="+ request.original_url , :target => "_blank" %>
+            <%= link_to image_tag('pin.jpg',:class =>"img-responsive"), "javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" %> 
+            
+            </div>
+            
+            </div>
+          </div>
+            </div>
+             <div class="col-sm-12">
+             <div class="row">
+             <div class="youMayPageTitleTab"> 
+             <h5>You May Also Like</h5>
+            
+             <div class="border"></div>
+                <div class="row">
+                 <!---------- row start ---------->
+                 <% @items.each do |b| %>
+                <div class="col-sm-3">
+                <% if b.images[0].present? %>
+                <%= link_to image_tag(b.images[0].image_url(:thumb),:class =>"img-responsive"), slugged_path(b.slug)   %>
+               <% else %>
+               <%= link_to image_tag("nowall.jpg", :class=>"img-responsive"), slugged_path(b.slug) %>
+               <% end %>
+                <div class="youMayPlaceInfo">
+                <span class="youMayMainTitle"><%= b.Name %></span></br>
+                <span class="youMayMainTitleLocation"><%= b.short_tag%></span></br>
+                <span class="youMayLikesReview"><%= b.likes.count%> LIKES / <span style="color:#5f9a16;"><%= b.reviews.where(:approved => true).count %> Reviews</span></span>
+                </div></div>
+                
+                <% end %>
+                
+                </div><!---------- row end ---------->
+                
+            
+          </div>
+          </div><!------------- row end ------------->    
+            </div><!------------ col col-sm-12 end ------------>      
+        
+        
+        <div class="col-sm-12">
+             <div class="row">
+             <div class="pageTitleTab"> 
+             <h5>Reviews on <%= @item.Name %></h5>
+             <div class="border"></div>
+             <h4><small>Write your Reviews / Comments:</small></h4>
+             <div class="col col-sm-8 reviewForm">
+          
+         <!-- Title of your review: -->
+
+         <%= render :partial => 'reviews/form', :locals => {:item_id => @item.id}   %>
+
+        <!--  <input type="" class="form-control" id="reviewTitle">  -->
+        
+             <!-- <button type="submit" class="btn btn-success">Submit yo --><!-- ur reviews</ --><!-- button> -->
+
+             </div> 
+          </div>
+          </div><!------------ row end ------------->    
+            </div><!------------ col col-sm-12 end ------------> 
+            
+             <div class="col-sm-12">
+             <div class="row">
+             
+             <div class="gap"></div>
+             <div class="gap"></div>
+             <div class="border"></div>
+             
+             <div class="review">
+             
+             <% @item.reviews.where(:approved => true).each do |g| %>
+             <div class="col col-sm-2">
+             <div class="row">
+             <% user=User.find_by_id(g.user_id) %>
+             
+              <%  if user.picture.present? %>
+                <%= image_tag(user.picture_url(:avatar), :class => "img-circle img-responsive") %>
+               <%  else %>
+               <%=  image_tag("man.png", :class=>"img-circle img-responsive") %>
+               <% end %>
+              <div class="reviewerName"> <%= user.full_name if present?%> </div>
+             </div>
+             </div>
+             
+             <div class="col col-sm-10">
+             <div class="row">
+             <div class="reviewTitle"><%= g.title.html_safe %></div>
+             <span class="reviewDate"><h5> <small> <%= g.created_at.strftime("%B %d, %Y") %></small></h5></span>
+             <p><%= g.description.html_safe %> </p>
+              <div class="likeNReply"> &nbsp;
+             <%#= image_tag('like.jpg',:class =>"img-responsive")%><!-- <span style="padding:0 20px 0 5px;">20</span> Was this review helpful?: <span style="padding-left:3px;">Like</span> / <span style="color:#5f9a16;">Reply</span> -->
+             </div>
+             </div>
+             </div>
+             <% end %>
+            
+            </div><!---------- review end ----------> 
+          </div><!------------ row end ------------>    
+            </div><!------------ col col-sm-12 end ------------> 
+</div><!------------------------------- content body end here --------------------------------> 
+ 
+ <script type="text/javascript"> 
+ $("#zoom_03").elevateZoom({gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+  $("#zoom_03").bind("click", function(e) { 
+  
+  var ez = $('#zoom_03').data('elevateZoom');   
+   $.fancybox(ez.getGalleryList()); 
+   return false; }); 
+
+  $(document).ready(function() {
+    $('.gallerythumbnail').on('click', function() {
+        // var img = $('<img />', {src    : this.src,
+        //                         'class': 'fullImage'
+        //           });
+        var newsrc=$(this).data("big")
+        var fullsrc=$(this).data("full")
+
+        
+        $(".itembigimg").attr('href',fullsrc)
+
+         $(".showimagediv").fadeOut(400, function() {
+           $('.showimagediv').attr('src',newsrc)
+        }).fadeIn(400);
+    });
+});
+  </script>
+
+   <% if (lat && lon).present? %>
+   <script type="text/javascript">
+   
+</script>
+<% end %>
+
+<% if add.present? %>
+<script >
+$(document).ready(function() {  
+
+  getWeather(); //Get the initial weather.
+  setInterval(getWeather, 60000); //Update the weather every 10 minutes.
+});
+
+function getWeather() {
+  $.Weather({
+    location: '<%= strip_tags(add[0].Content) %>, Nepal',
+    unit: 'c',
+    success: function(weather) {
+      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+       html += '<li class="currently">'+weather.currently+'</li>';
+      
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+}
+</script>
+<% end%>
