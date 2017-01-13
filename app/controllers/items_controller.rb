@@ -1,68 +1,48 @@
-  class ItemsController < ApplicationController
+class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :destroy]
   before_filter :authorize, only: [:edit, :update]
-  # GET /items
-  # GET /items.json
-  
+ 
   def index
     @items = Item.all
   end
-  # GET /items/1
-  # GET /items/1.json
+  
   def show
-   @item = Item.find_by_slug!(params[:slug])
+    @item = Item.find_by_slug!(params[:slug])
     @items = Item.where(:category_id => @item.category_id).where.not(:id => @item.id).limit(4).order("RANDOM()")
-     # @image = Image.find(params[:id]) 
     @review = Review.new
-
     @review_count=Review.where(:item_id =>@item).count
-    @like_count=Like.where(:item_id =>@item).count
-    
+    @like_count=Like.where(:item_id =>@item).count 
   end
 
-  # GET /items/new
   def new
     @item = Item.new
     @description = Description.new
     @image = Image.new
   end
 
-  # GET /items/1/edit
   def edit
-   @item = Item.find(params[:id])
-   @description = Description.find_by(item_id=@item.id)
+    @item = Item.find(params[:id])
+    @description = Description.find_by(item_id=@item.id)
   end
 
-
-
-  # POST /items
-  # POST /items.json
   def create
     @item = Item.new(item_params)
-
     params[:description].each_value { |desc| @item.descriptions.build(desc) }
-       #@description = @item.descriptions.build(description_params)
-       # params[:image].each_value { |img| @item.images.build(img) }
-        @image = @item.images.build(image_params)
+    @image = @item.images.build(image_params)
 
     respond_to do |format|
       if @item.save
-      
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
-       else
+      else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
-
     respond_to do |format|
-      
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
@@ -85,22 +65,18 @@
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
-
   def destroy
-
     @item.destroy
-     respond_to do |format|
+    respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-   def search
-      @q=params[:q]
-      @items = Item.item_search(params[:q])
-      @categories = Category.category_search(params[:q])
+  def search
+    @q=params[:q]
+    @items = Item.item_search(params[:q])
+    @categories = Category.category_search(params[:q])
   end
 
   def seed
@@ -108,24 +84,22 @@
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-       @image = Image.find_by item:@item 
-       @description = Description.find_by item:@item 
-    end
 
-    def image_params
-      params.require(:image).permit(:Title, :Content, :Order, :image)
-    end
+  def set_item
+    @item = Item.find(params[:id])
+    @image = Image.find_by item:@item 
+    @description = Description.find_by item:@item 
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def item_params
-      params.require(:item).permit(:Name, :Description, :Order, :category_id, :slug)
-    end
+  def image_params
+    params.require(:image).permit(:Title, :Content, :Order, :image)
+  end
+  
+  def item_params
+    params.require(:item).permit(:Name, :Description, :Order, :category_id, :slug)
+  end
 
-    def description_params
-      params.require(:description).permit({:description_attributes => []})
-    end
-
+  def description_params
+    params.require(:description).permit({:description_attributes => []})
+  end
 end
