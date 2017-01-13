@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class IconUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -12,6 +10,7 @@ class IconUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -32,7 +31,6 @@ class IconUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  
 
    version :avatar do
      process :resize_to_fill => [80, 80]
