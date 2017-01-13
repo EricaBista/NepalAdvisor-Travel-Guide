@@ -1,3 +1,2 @@
-class Restaurant < ActiveRecord::Base
-	
+class Restaurant < ActiveRecord::Base	
 end
