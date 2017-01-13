@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class AddUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -12,6 +10,7 @@ class AddUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -33,18 +32,21 @@ class AddUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   
-
    version :horizontal do
      process :resize_to_fill => [847, 91]
    end
- version :vertical do
+   
+   version :vertical do
      process :resize_to_fill => [252, 212]
    end
+   
    version :banner do
      process :resize_to_fill => [1901, 198]
    end
+  
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
+  
   def extension_white_list
     %w(jpg jpeg gif png)
   end
