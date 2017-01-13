@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
   load_and_authorize_resource skip_load_resource only: [:create] 
   
-	def edit
-  	@user = current_user
+  def edit
+    @user = current_user
   end
 
   def update_password
     @user = User.find(current_user.id)
     if @user.update(user_params)
-    	sign_in @user, :bypass => true
+      sign_in @user, :bypass => true
       redirect_to root_path
     else
       render "update_password"
@@ -22,38 +22,38 @@ class UsersController < ApplicationController
   end
 
   def update
-		respond_to do |format|
-			if @user.update(user_params)
-				format.html { redirect_to profile_path, notice: 'user was successfully updated.' }
-				format.json { render :show, status: :ok, location: @user }
-			else
-				format.html { render :edit }
-				format.json { render json: @user.errors, status: :unprocessable_entity }
-			end
-		end
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to profile_path, notice: 'user was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
- 		@user = User.new(user_params)
-		if @user.save
-  		session[:user_id] = @user.id
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
       redirect_to root_url, notice: "Thank you for signing in"
-  	else
-  		render "new"
-  	end
+    else
+      render "new"
+    end
   end
 
- 	def set_user
-  	@user = User.find(params[:id])
+  def set_user
+    @user = User.find(params[:id])
   end
-	
-	private
-	
+  
+  private
+  
   def user_params
-  	params.require(:user).permit(:email, :password, :password_confirmation, :current_password, :picture, :full_name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :current_password, :picture, :full_name)
   end
 end
