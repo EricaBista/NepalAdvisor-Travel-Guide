@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :destroy]
-  before_filter :authorize, only: [:edit, :update]
+  before_action :authorize, only: [:edit, :update]
  
   def index
     @items = Item.all

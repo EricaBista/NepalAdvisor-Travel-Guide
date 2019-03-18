@@ -141,7 +141,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  # config.before_filter :do_something_awesome
+  # config.before_action :do_something_awesome
 
   # == Setting a Favicon
   #
@@ -241,7 +241,7 @@ ActiveAdmin.setup do |config|
   config.logout_link_path      = :destroy_user_session_path
   config.logout_link_method    = :delete
   config.comments = :false
-  config.show_comments_in_menu = false
+  # config.show_comments_in_menu = false
   config.register_stylesheet 'active_admin_custom.css'
   config.register_javascript 'tinymce/tinymce.min.js'
   

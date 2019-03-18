@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_filter :authorize, only: [:update, :create]
+  before_action :authorize, only: [:update, :create]
 
   def index
     @reviews = Review.all

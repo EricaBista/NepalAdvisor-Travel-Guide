@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout
-  before_filter :set_menu
-  before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_filter :store_location
+  before_action :set_menu
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :store_location
 
   def store_location
     return unless request.get? 
